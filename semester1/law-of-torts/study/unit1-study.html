@@ -1,3 +1,321 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>📚 Law of Torts – Unit 1 Study Material</title>
-<style>body{font-family:Arial,sans-serif;max-width:900px;margin:40px auto;padding:20px;line-height:1.6;background:#f5f7fb;color:#222}a{color:#2563eb}main{background:white;padding:25px;border-radius:12px}h1{color:#172554}</style></head>
-<body><main><a href="../index.html">← Back to Law of Torts</a><h1>📚 Law of Torts – Unit 1 Study Material</h1><p>Replace this placeholder with your existing HTML.</p></main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Law of Torts — Unit I: Foundations (Final)</title>
+<style>
+:root{
+  --bg:#faf7f2; --card:#fff; --ink:#1f2422; --sub:#5b6764; --line:#e4ddd0;
+  --accent:#8a3b2b; --accent2:#2f5d50; --hi:#f4e9d8; --good:#2f5d50; --bad:#8a3b2b;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#181614;--card:#221f1c;--ink:#f0ece4;--sub:#b7ada0;--line:#3a352f;--hi:#332c1f;}
+}
+:root[data-theme="dark"]{--bg:#181614;--card:#221f1c;--ink:#f0ece4;--sub:#b7ada0;--line:#3a352f;--hi:#332c1f;}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.5;padding-bottom:60px}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--accent);color:#fff;padding:14px 16px;z-index:10;font-family:Arial,sans-serif}
+header h1{margin:0;font-size:1.05rem}
+header p{margin:2px 0 0;font-size:.78rem;opacity:.9}
+.wrap{max-width:800px;margin:0 auto;padding:14px}
+nav.tabs{display:flex;gap:6px;overflow-x:auto;padding:10px 14px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:52px;z-index:9;font-family:Arial,sans-serif}
+nav.tabs a{flex:none;font-size:.74rem;padding:6px 10px;border-radius:20px;background:var(--hi);color:var(--ink);text-decoration:none;border:1px solid var(--line)}
+h2{font-family:Arial,sans-serif;color:var(--accent);border-bottom:2px solid var(--accent);padding-bottom:4px;margin-top:32px;font-size:1.12rem}
+h3{font-family:Arial,sans-serif;color:var(--accent2);font-size:.98rem;margin-top:18px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.core{background:var(--hi);border-left:4px solid var(--accent);padding:10px 12px;border-radius:6px;margin:8px 0;font-size:.9rem}
+.core b.tag{font-family:Arial,sans-serif;font-size:.68rem;letter-spacing:.05em;color:var(--accent);display:block;margin-bottom:3px}
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.82rem}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{background:var(--accent2);color:#fff;font-family:Arial,sans-serif;font-size:.74rem}
+tr:nth-child(even) td{background:var(--hi)}
+details{background:var(--card);border:1px solid var(--line);border-radius:8px;margin:7px 0;padding:0 12px;overflow:hidden}
+details summary{cursor:pointer;padding:9px 0;font-family:Arial,sans-serif;font-weight:bold;color:var(--accent2);list-style:none}
+details summary::before{content:"▸ ";display:inline-block;transition:.15s}
+details[open] summary::before{content:"▾ "}
+details[open] summary{border-bottom:1px solid var(--line)}
+details .body{padding:8px 0 12px;font-size:.88rem}
+.case b{color:var(--accent)}
+.flip{perspective:900px;height:auto;min-height:110px;margin:8px 0;cursor:pointer}
+.flip-in{position:relative;transition:transform .5s;transform-style:preserve-3d;min-height:110px}
+.flip.on .flip-in{transform:rotateY(180deg)}
+.flip-f,.flip-b{position:absolute;inset:0;backface-visibility:hidden;border-radius:8px;padding:10px 12px;font-size:.82rem;border:1px solid var(--line)}
+.flip-f{background:var(--hi)}
+.flip-b{background:var(--accent2);color:#fff;transform:rotateY(180deg)}
+.tap{font-size:.65rem;color:var(--sub);text-align:right;font-family:Arial,sans-serif}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:520px){.grid2{grid-template-columns:1fr}}
+.mnem{background:var(--accent2);color:#fff;border-radius:8px;padding:10px 12px;font-size:.85rem;margin:8px 0;font-family:Arial,sans-serif}
+.qbox{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:6px 0;font-size:.86rem}
+.qbox button{font-family:Arial,sans-serif;font-size:.73rem;background:var(--accent);color:#fff;border:none;padding:4px 10px;border-radius:14px;margin-top:6px;cursor:pointer}
+.ans{display:none;margin-top:8px;font-size:.83rem;background:var(--hi);padding:8px;border-radius:6px}
+.ans.show{display:block}
+.pill{display:inline-block;font-family:Arial,sans-serif;font-size:.66rem;background:var(--bad);color:#fff;border-radius:10px;padding:2px 8px;margin-right:4px}
+.pill.g{background:var(--good)}
+.pyq{font-family:Arial,sans-serif;font-size:.68rem;color:var(--sub);background:var(--hi);border:1px dashed var(--line);border-radius:6px;padding:4px 8px;margin:2px 0 8px;display:inline-block}
+.angle{background:#fff3ea;border-left:3px solid var(--accent);border-radius:4px;padding:7px 9px;font-size:.82rem;margin:6px 0;font-family:Arial,sans-serif}
+@media (prefers-color-scheme: dark){.angle{background:#3a2a1f;}}
+.trap{background:#fdeeee;border:1px dashed var(--bad);border-radius:6px;padding:7px 9px;font-size:.82rem;margin:6px 0}
+@media (prefers-color-scheme: dark){.trap{background:#3a2222;}}
+.think{background:var(--hi);border-radius:6px;padding:8px 10px;font-size:.85rem;margin:6px 0;border:1px dotted var(--sub)}
+ul{padding-left:20px}
+.progress{font-family:Arial,sans-serif;font-size:.75rem;color:var(--sub);text-align:center;margin-top:6px}
+#score{font-family:Arial,sans-serif;font-weight:bold;color:var(--accent)}
+footer{text-align:center;font-size:.75rem;color:var(--sub);font-family:Arial,sans-serif;margin-top:30px}
+</style>
+</head>
+<body>
+<header>
+<h1>⚖️ LAW OF TORTS — UNIT I (FINAL)</h1>
+<p>Foundations · PYQ-aligned · 70–80% exam strategy</p>
+</header>
+<nav class="tabs">
+<a href="#ov">Overview</a><a href="#p1">Meaning &amp; Definitions</a><a href="#p2">Civil Wrongs &amp; Evolution</a>
+<a href="#p3">Mental Elements</a><a href="#cases">Case Bank</a><a href="#map">PYQ Map</a><a href="#quiz">Self-Test</a><a href="#sheet">Revision Sheet</a>
+</nav>
+<div class="wrap">
+
+<h2 id="ov">Unit Overview</h2>
+<div class="core"><b class="tag">WHAT THIS PAGE DOES</b>This is the <b>final, PYQ-aligned</b> version of your Unit I material — restructured around what KSLU actually asks, not just the textbook order. 🔴 = repeated PYQ · 🟠 = high priority · 🟡 = important · ⚪ = syllabus/supporting. Where the PYQ list gives years, they're shown as "Asked in: ...". This is a study-priority signal from the supplied PYQ list, not a guarantee of the next paper.</div>
+<div class="core"><b class="tag">LEARNING OBJECTIVES</b>By the end of this unit you should be able to: define tort and state its essentials · explain tortious liability and separate it from contract/crime · use Injuria/Damnum and Ubi Jus Ibi Remedium with cases · explain the mental elements (intention, motive, malice) · write a 5/10/16-mark answer on any of the above without hesitating on structure.</div>
+
+<h2 id="p1">PART 1 — Meaning, Definitions &amp; Tortious Liability</h2>
+
+<h3>1. What is a Tort? <span class="pyq">⚪ syllabus foundation — always the opening line of any answer</span></h3>
+<div class="core"><b class="tag">CORE IDEA</b>Tort = a civil wrong, independent of contract, remedied usually by <i>unliquidated damages</i>. From Latin <i>"tortum"</i> = twisted/crooked — conduct that is "twisted" away from lawful conduct. Formula: <b>Wrongful Act/Omission + Legal Damage + Legal Remedy → Tortious Liability.</b></div>
+
+<h3>2. Definitions — Winfield, Salmond, Fraser <span class="pyq">🟠 definition/theory theme — recurring</span></h3>
+<div class="grid2">
+<div class="flip" onclick="this.classList.toggle('on')"><div class="flip-in">
+<div class="flip-f"><b>WINFIELD</b><div class="tap">tap to flip</div></div>
+<div class="flip-b">Tortious liability arises from breach of a duty <b>primarily fixed by law</b>; the duty is owed to persons generally, and its breach is redressable by an action for unliquidated damages.</div>
+</div></div>
+<div class="flip" onclick="this.classList.toggle('on')"><div class="flip-in">
+<div class="flip-f"><b>SALMOND</b><div class="tap">tap to flip</div></div>
+<div class="flip-b">A civil wrong for which the remedy is a common law action for unliquidated damages, and which is <b>not exclusively</b> the breach of a contract, trust or other equitable obligation.</div>
+</div></div>
+<div class="flip" onclick="this.classList.toggle('on')"><div class="flip-in">
+<div class="flip-f"><b>FRASER</b> <span class="pill">⚪ syllabus</span><div class="tap">tap to flip</div></div>
+<div class="flip-b">Tort is an infringement of a right <i>in rem</i> (a right available against the world at large) of a private individual, giving rise to a right of compensation at the suit of the injured party.</div>
+</div></div>
+</div>
+<div class="angle">🎯 EXAM ANGLE — Possible question: "Explain/compare the definitions of Tort given by Winfield and Salmond." State both in full, then one line each on what they emphasise: Winfield = duty fixed by law (broad); Salmond = specific civil wrong excluding contract/trust (narrower).</div>
+
+<h3>3. Tortious Liability <span class="pill">➕ ADDED — was missing</span> <span class="pyq">🔴 Asked in: 2016, 2024</span></h3>
+<div class="core"><b class="tag">MEANING</b>"Tortious liability" is the legal responsibility that arises specifically from a <b>tort</b> — as opposed to liability arising from a <b>contract</b> (voluntarily agreed) or a <b>crime</b> (a public wrong punished by the State). It arises the moment the three essentials (wrongful act + legal damage + legal remedy) are satisfied, independent of any agreement between the parties.</div>
+<table><tr><th>Basis</th><th>Tortious Liability</th><th>Contractual Liability</th><th>Criminal Liability</th></tr>
+<tr><td>Source of duty</td><td>Fixed by law, owed generally</td><td>Created by agreement</td><td>Fixed by penal law, owed to the State/society</td></tr>
+<tr><td>Consent/privity</td><td>Not required</td><td>Required (privity)</td><td>Not relevant</td></tr>
+<tr><td>Who enforces</td><td>Injured person sues</td><td>Injured party to contract sues</td><td>State prosecutes</td></tr>
+<tr><td>Remedy</td><td>Unliquidated damages</td><td>Damages tied to breach/specific performance</td><td>Punishment</td></tr>
+</table>
+<div class="angle">🎯 EXAM ANGLE — Possible question: "Define tortious liability and distinguish it from contractual and criminal liability." Use the table above directly as your answer skeleton — one row = one paragraph.</div>
+
+<h3>4. Essential Elements — remember W + D + R <span class="pyq">🔴 core of almost every Unit I answer</span></h3>
+<ul>
+<li><b>Wrongful Act/Omission</b> — breach of a <i>legal</i> duty, not merely a moral one (e.g. reckless driving; a doctor's failure to warn of a known risk)</li>
+<li><b>Legal Damage (Injuria)</b> — violation of a legal right; actual loss is not always needed (see Injuria/Damnum below)</li>
+<li><b>Legal Remedy</b> — generally unliquidated (court-assessed) damages</li>
+</ul>
+<details><summary>Case: Ashby v White (1703) <span class="pill">🧩 added case-box</span></summary><div class="body case">
+<b>Facts:</b> A qualified voter was wrongfully denied his vote by the returning officer; his preferred candidate still won, so no financial loss occurred.<br>
+<b>Decision:</b> Held liable — damages awarded.<br>
+<b>Principle:</b> Violation of a legal right is itself actionable, even without actual loss — this single case supports THREE topics at once: essential elements, injuria sine damno, and Ubi Jus Ibi Remedium.
+</div></details>
+<div class="think">🧩 THINK &amp; ANSWER: A person's phone is stolen but he later gets it back undamaged and unused. Has a tort been committed? <i>(Yes — the legal right to possession was violated the moment it was taken; return of the phone doesn't erase the tortious act, though it may reduce damages.)</i></div>
+
+<h3>5. Law of Tort vs Law of Torts <span class="pyq">🟠 definition/theory theme</span></h3>
+<div class="core"><b class="tag">ONE-LINE MEMORY</b>WINFIELD = wider/general principle → "Law of <b>Tort</b>". SALMOND = narrower/specific list → "Law of <b>Torts</b>".</div>
+<table><tr><th>Basis</th><th>Winfield</th><th>Salmond</th></tr>
+<tr><td>View</td><td>General principle: all unjustifiable harm is tortious unless covered by a recognised defence</td><td>Only specific, recognised torts exist ("pigeon-hole" system)</td></tr>
+<tr><td>New torts</td><td>Can develop as society changes</td><td>Must fit an existing category</td></tr>
+<tr><td>Nature</td><td>Flexible / progressive (growing tree)</td><td>Rigid / conservative</td></tr>
+</table>
+<div class="core"><b class="tag">EXAM NOTE</b>Modern English and Indian courts generally lean toward the broader Winfield approach — new areas like privacy, harassment and constitutional torts show tort law's continuing growth.</div>
+
+<h3>6. Development / Evolution of Law of Torts <span class="pyq">🟠 Asked in: 2011, 2012, 2023 — keep this brief</span></h3>
+<details><summary>Evolution — quick flow (tap)</summary><div class="body">
+English common law/writ system → 18th–19th c. case-law expansion (esp. negligence, Industrial Revolution) → adopted in India via colonial courts (justice, equity, good conscience) → post-Independence Indian courts developed State liability &amp; constitutional torts (<i>State of Rajasthan v Vidhyawati; Kasturilal v State of UP; Rudal Shah v State of Bihar; Bhim Singh v State of J&amp;K</i>) → absolute liability (<i>M.C. Mehta v Union of India</i>).
+<br><br><span class="pill">Note</span>These State-liability and absolute-liability cases are named here only as one-line evolution markers — their full facts/decision/principle belong to Units II (vicarious/State liability) and III (absolute liability), so don't over-prepare them here.
+</div></details>
+<div class="angle">🎯 EXAM ANGLE — Possible question: "Trace the evolution/development of Law of Torts in England and India." Keep it to the flow above — 4–5 lines, not a history essay.</div>
+
+<h2 id="p2">PART 2 — Civil Wrongs, Ubi Jus Ibi Remedium &amp; Legal Damage</h2>
+
+<h3>7. "All torts are civil wrongs, but all civil wrongs are not torts" <span class="pill">➕ ADDED — was missing</span> <span class="pyq">🔴 Asked in: 2012, 2019, 2020, 2022, 2025</span></h3>
+<div class="core"><b class="tag">MEANING</b>"Civil wrongs" is the wider umbrella category; "torts" is a narrower category within it. The wider category of civil wrongs also includes <b>breach of contract</b> and <b>breach of trust</b> — neither of which is a tort, because Salmond's own definition specifically excludes wrongs that are "exclusively" a breach of contract or trust.</div>
+<ul>
+<li><b>Why every tort is a civil wrong</b> — remedied by civil action, principal remedy = unliquidated damages.</li>
+<li><b>Why every civil wrong isn't a tort</b> — e.g. if A breaks a contractual promise to deliver goods, B's remedy is contractual, not tortious, because the duty arose from agreement, not from a duty independently fixed by law.</li>
+</ul>
+<div class="angle">🎯 EXAM ANGLE — Possible question: <i>"All torts are civil wrongs, but all civil wrongs are not torts." Discuss/justify with cases.</i> Structure: meaning → why every tort is civil → why breach of contract/trust isn't automatically a tort (with the illustration above) → conclusion on source of duty being the key differentiator.</div>
+
+<h3>8. Tort vs Crime vs Contract <span class="pyq">🔴 Asked in: 2010–2016, 2021–2025, 2026</span></h3>
+<table><tr><th>Basis</th><th>Tort</th><th>Contract</th><th>Crime</th></tr>
+<tr><td>Nature</td><td>Civil wrong</td><td>Civil wrong</td><td>Public wrong</td></tr>
+<tr><td>Duty from</td><td>Law</td><td>Agreement</td><td>Penal law</td></tr>
+<tr><td>Who sues</td><td>Plaintiff</td><td>Plaintiff</td><td>State</td></tr>
+<tr><td>Privity</td><td>Not required</td><td>Required</td><td>N/A</td></tr>
+<tr><td>Remedy</td><td>Unliquidated damages</td><td>Damages (may be liquidated)/specific performance</td><td>Punishment</td></tr>
+<tr><td>Proof standard</td><td>Balance of probabilities</td><td>Balance of probabilities</td><td>Beyond reasonable doubt</td></tr>
+</table>
+<div class="trap">⚠️ COMMON TRAP: Don't just say "tort is civil, crime is criminal" and stop — examiners want the privity, proof-standard and remedy rows too for full marks.</div>
+
+<h3>9. Ubi Jus Ibi Remedium <span class="pyq">🔴 Asked in: 2011, 2012, 2013, 2019, 2021, 2022, 2024</span></h3>
+<div class="core"><b class="tag">MEANING</b>"Where there is a right, there is a remedy." Wherever a legally recognised right is violated, the law must provide a means of redress — otherwise the right would be meaningless. Applies only to <b>legal</b> rights, not moral/social/religious ones.</div>
+<details><summary>Case: Ashby v White (1703) — reused, this is the maxim's leading case</summary><div class="body case">
+<b>Facts:</b> Qualified voter wrongfully stopped from voting; his candidate still won — no financial loss.<br>
+<b>Decision:</b> Plaintiff succeeded.<br>
+<b>Principle:</b> Because a legal right existed, its violation was actionable in itself — the law provided a remedy even without proof of loss.
+</div></details>
+<div class="angle">🎯 EXAM ANGLE — Possible question: "Explain/trace the development of Ubi Jus Ibi Remedium." Meaning → scope (legal rights only) → Ashby v White in full → limitation (doesn't create new rights, only remedies existing ones) → conclusion.</div>
+
+<h3>10. Legal Damage <span class="pyq">🟠 Asked in: 2021, 2026</span></h3>
+<div class="core"><b class="tag">MEANING</b>Legal damage means the infringement of a <b>legal right</b>, distinct from actual/factual loss. "Injuria" = legal injury (right violated); "Damnum" = actual loss. Tort law is concerned with injuria, not merely damnum.</div>
+<div class="angle">🎯 EXAM ANGLE — Possible question: "Explain legal damage as an essential element of Tort." This is really the same core idea as Injuria/Damnum below — write the definition, then go straight into the two maxims as your supporting material so you aren't repeating yourself across two answers.</div>
+
+<h3>11 &amp; 12. Injuria Sine Damno vs Damnum Sine Injuria <span class="pyq">🔴 Asked in: 2011, 2012, 2017, 2018, 2019, 2021, 2023, 2026</span></h3>
+<div class="core"><b class="tag">ALSO ASKED AS</b>"Every injury imports damage but every damage is not injury" (2013, 2020, 2023, 2024) is the <b>same theme</b> in different wording — one answer covers both question forms.</div>
+<table><tr><th>Basis</th><th>Injuria sine damno</th><th>Damnum sine injuria</th></tr>
+<tr><td>Meaning</td><td>Legal injury, no actual loss</td><td>Actual loss, no legal injury</td></tr>
+<tr><td>Actionable?</td><td><span class="pill g">YES</span></td><td><span class="pill">NO</span></td></tr>
+<tr><td>Case</td><td>Ashby v White (1703)</td><td>Gloucester Grammar School Case (1410)</td></tr>
+</table>
+<details><summary>Case: Ashby v White (1703) — full case-box <span class="pill">🧩 added</span></summary><div class="body case">
+<b>Facts:</b> A qualified voter was wrongfully and maliciously denied his vote by the returning officer; his candidate won anyway, so no financial loss resulted.<br>
+<b>Decision:</b> Defendant held liable, damages awarded.<br>
+<b>Principle:</b> Violation of a legal right is actionable by itself, regardless of actual loss — injuria sine damno.
+</div></details>
+<details><summary>Case: Gloucester Grammar School Case (1410) — full case-box <span class="pill">🧩 added</span></summary><div class="body case">
+<b>Facts:</b> The defendant opened a rival school next door, charging lower fees; the plaintiff's school lost students and income.<br>
+<b>Decision:</b> No action lay against the defendant.<br>
+<b>Principle:</b> Loss caused by lawful competition, without violation of any legal right, is not actionable — damnum sine injuria.
+</div></details>
+<div class="mnem">📌 MEMORY: RIGHT violated + LOSS absent = still actionable (injuria sine damno). LOSS present + RIGHT not violated = not actionable (damnum sine injuria).</div>
+<div class="angle">🎯 EXAM ANGLE — Possible question: "Explain Injuria sine damno and Damnum sine injuria with decided cases" OR "Distinguish Injuria sine damno and Damnum sine injuria." Same material either way — definition of each → full case → the distinction table → one-line conclusion.</div>
+
+<h2 id="p3">PART 3 — Mental Elements in Tort</h2>
+<div class="core"><b class="tag">CORE IDEA</b><span class="pyq">🔴 Asked in: 2011, 2013, 2018, 2023, 2024, 2026</span><br>Tort law does not require <i>mens rea</i> the way criminal law does — liability can rest on intention, negligence, or strict liability. Still, the mental state matters for specific torts. Four concepts to master: <b>Intention • Motive • Malice in Law • Malice in Fact.</b></div>
+
+<div class="grid2">
+<div class="flip" onclick="this.classList.toggle('on')"><div class="flip-in">
+<div class="flip-f"><b>INTENTION</b><div class="tap">tap to flip</div></div>
+<div class="flip-b">Conscious desire/purpose to bring about an act or its consequence. Relevant in assault, battery, false imprisonment, deceit, malicious prosecution. NOT needed for negligence or strict liability.</div>
+</div></div>
+<div class="flip" onclick="this.classList.toggle('on')"><div class="flip-in">
+<div class="flip-f"><b>MOTIVE</b><div class="tap">tap to flip</div></div>
+<div class="flip-b">The "why" behind the act. <b>Generally irrelevant</b> — good motive ≠ excuse; bad motive ≠ liability for a lawful act. Exceptions: malicious prosecution, conspiracy, deceit, qualified privilege.</div>
+</div></div>
+<div class="flip" onclick="this.classList.toggle('on')"><div class="flip-in">
+<div class="flip-f"><b>MALICE IN LAW</b><div class="tap">tap to flip</div></div>
+<div class="flip-b">Doing a wrongful act intentionally, without lawful justification. <b>Presumed</b> from the act itself — personal ill-will need not be proved. E.g. deliberate publication of a false defamatory statement.</div>
+</div></div>
+<div class="flip" onclick="this.classList.toggle('on')"><div class="flip-in">
+<div class="flip-f"><b>MALICE IN FACT</b><div class="tap">tap to flip</div></div>
+<div class="flip-b">Actual spite, hatred or improper motive against the plaintiff. <b>Must be proved</b> as a fact — e.g. prosecuting someone purely out of personal revenge.</div>
+</div></div>
+</div>
+
+<h3>13. Intention vs Motive vs Malice <span class="pill">➕ ADDED — 3-way table was missing</span> <span class="pyq">🔴 Asked in: 2012, 2013, 2025</span></h3>
+<table><tr><th>Basis</th><th>Intention</th><th>Motive</th><th>Malice</th></tr>
+<tr><td>Meaning</td><td>Conscious purpose to do the act</td><td>The underlying reason "why"</td><td>Legal: no justification / Fact: actual ill-will</td></tr>
+<tr><td>Relevance</td><td>Essential in intentional torts</td><td>Generally irrelevant</td><td>Relevant in specific torts (defamation, malicious prosecution)</td></tr>
+<tr><td>Proof</td><td>Must relate to the act itself</td><td>Not usually required to be proved</td><td>Malice in law presumed; malice in fact must be proved</td></tr>
+</table>
+<div class="angle">🎯 EXAM ANGLE — Possible question: "Distinguish Intention, Motive and Malice." Use this table as your core, then add one case per column: Intention → any intentional tort example; Motive → Bradford Corporation v Pickles; Malice → the defamation example above.</div>
+
+<details><summary>Case: Bradford Corporation v Pickles (1895)</summary><div class="body case">
+<b>Facts:</b> Pickles diverted underground water on his own land with the bad motive of forcing Bradford Corporation to buy his land at a high price.<br>
+<b>Decision:</b> No liability — he was exercising a lawful right.<br>
+<b>Principle:</b> A lawful act does not become tortious merely because it is done with a bad motive.
+</div></details>
+
+<table><tr><th>Basis</th><th>Malice in Law</th><th>Malice in Fact</th></tr>
+<tr><td>Also called</td><td>Legal/Implied malice</td><td>Actual/Express malice</td></tr>
+<tr><td>Proof</td><td>Presumed by law</td><td>Must be proved</td></tr>
+<tr><td>Example</td><td>False defamatory publication</td><td>Malicious prosecution from personal grudge</td></tr>
+</table>
+
+<div class="trap">⚠️ COMMON TRAP: Don't say "motive is always irrelevant" without qualifying it — examiners specifically reward naming the exceptions (malicious prosecution, conspiracy, deceit, qualified privilege).</div>
+<div class="mnem">📌 I.M.M.M. — Intention = desire to act · Motive = why, usually irrelevant · Malice in Law = wrongful act, no justification, presumed · Malice in Fact = actual spite, must be proved. Bradford v Pickles = bad motive + legal right → NO liability.</div>
+
+<h2 id="cases">Important Unit I Case Bank <span class="pyq">Quick-reference — facts/decision/principle in one line each</span></h2>
+<table><tr><th>Case</th><th>Used For</th><th>One-line Principle</th></tr>
+<tr><td>Ashby v White (1703)</td><td>Essentials · Injuria sine damno · Ubi jus ibi remedium</td><td>Legal right violated → actionable even without loss</td></tr>
+<tr><td>Gloucester Grammar School Case (1410)</td><td>Damnum sine injuria</td><td>Loss from lawful competition, no right violated → not actionable</td></tr>
+<tr><td>Bradford Corporation v Pickles (1895)</td><td>Motive</td><td>Bad motive doesn't make a lawful act tortious</td></tr>
+<tr><td>State of Rajasthan v Vidhyawati (1962)</td><td>Evolution — one-liner only</td><td>Early Indian State vicarious liability (full treatment: Unit II)</td></tr>
+<tr><td>Kasturilal v State of U.P. (1965)</td><td>Evolution — one-liner only</td><td>Sovereign function limited State liability (full treatment: Unit II)</td></tr>
+<tr><td>Rudal Shah v State of Bihar (1983)</td><td>Evolution — one-liner only</td><td>Constitutional compensation for illegal detention</td></tr>
+<tr><td>Bhim Singh v State of J&amp;K (1985)</td><td>Evolution — one-liner only</td><td>Constitutional compensation for liberty violation</td></tr>
+<tr><td>M.C. Mehta v Union of India (1987)</td><td>Evolution — one-liner only</td><td>Absolute liability doctrine (full treatment: Unit III)</td></tr>
+</table>
+
+<h2 id="map">PYQ Priority Map <span class="pill">➕ ADDED — new section</span></h2>
+<div class="core">Study order if time is short: 🔴 first, then 🟠, then 🟡/⚪. This mirrors the supplied PYQ master list, not a guess.</div>
+<table><tr><th>Priority</th><th>Topic</th><th>Years / Evidence</th></tr>
+<tr><td>🔴</td><td>Define Tort + essential elements</td><td>2012,14,17,19,21,22,24,26</td></tr>
+<tr><td>🔴</td><td>Tort vs Crime vs Contract</td><td>2010–16, 2021–25, 2026</td></tr>
+<tr><td>🔴</td><td>Tortious liability vs contractual/criminal</td><td>2016, 2024</td></tr>
+<tr><td>🔴</td><td>"All civil wrongs are not torts"</td><td>2012,19,20,22,25</td></tr>
+<tr><td>🔴</td><td>"Every injury imports damage..."</td><td>2013,20,23,24</td></tr>
+<tr><td>🔴</td><td>Injuria sine damno / Damnum sine injuria</td><td>2011,12,17,18,19,21,23,26</td></tr>
+<tr><td>🔴</td><td>Ubi Jus Ibi Remedium</td><td>2011,12,13,19,21,22,24</td></tr>
+<tr><td>🔴</td><td>Mental elements — importance</td><td>2011,13,18,23,24,26</td></tr>
+<tr><td>🔴</td><td>Intention, Motive, Malice — distinguish</td><td>2012,13,25</td></tr>
+<tr><td>🟠</td><td>Malice in Law vs Malice in Fact</td><td>2012,17,22</td></tr>
+<tr><td>🟠</td><td>Evolution of Law of Torts</td><td>2011,12,23</td></tr>
+<tr><td>🟠</td><td>Legal damage (standalone)</td><td>2021,26</td></tr>
+<tr><td>🟠</td><td>Nature &amp; scope of Law of Torts</td><td>syllabus/core theme</td></tr>
+<tr><td>🟠</td><td>Winfield vs Salmond definitions</td><td>definition/theory theme</td></tr>
+</table>
+
+<h2 id="quiz">Self-Test — Quick Recall</h2>
+<div id="qs"></div>
+<div class="progress">Score: <span id="score">0</span> / 12</div>
+
+<h2 id="sheet">UNIT I — Last-Day One-Page Revision</h2>
+<div class="core"><b class="tag">1. CORE</b>Civil wrong → legal right/duty involved → remedy = unliquidated damages. 3 essentials: Wrongful Act/Omission + Legal Damage + Legal Remedy.</div>
+<div class="core"><b class="tag">2. TORTIOUS LIABILITY</b>Duty fixed by law (not agreement) + owed generally + no privity needed + remedy = unliquidated damages. Distinguishes it from both contract (agreement-based) and crime (State-prosecuted, punishment).</div>
+<div class="core"><b class="tag">3. CIVIL WRONGS</b>All torts are civil wrongs, but breach of contract/trust are civil wrongs too, and are NOT torts — the duty's source (law vs agreement) is the key differentiator.</div>
+<div class="core"><b class="tag">4. MAXIMS</b>Ubi jus ibi remedium: right→remedy. Injuria sine damno = ACTIONABLE (Ashby v White). Damnum sine injuria = NOT ACTIONABLE (Gloucester Grammar School).</div>
+<div class="core"><b class="tag">5. DEFINITIONS</b>Winfield: duty fixed by law + owed generally + unliquidated damages. Salmond: civil wrong + unliquidated damages + not exclusively contract/trust. Fraser: infringement of a right in rem.</div>
+<div class="core"><b class="tag">6. MENTAL ELEMENTS</b>I.M.M.M. — Intention (essential in intentional torts), Motive (generally irrelevant), Malice in Law (presumed), Malice in Fact (proved). Bradford v Pickles: bad motive + legal right → no liability.</div>
+<div class="core"><b class="tag">7. CASES ONE-LINERS</b>Ashby v White — right violated, no loss, still actionable. Gloucester Grammar — loss from lawful competition, not actionable. Bradford v Pickles — bad motive ≠ tort.</div>
+
+<footer>Unit I FINAL study material · PYQ-aligned · Exam Q&amp;A to follow separately, not duplicated here</footer>
+</div>
+
+<script>
+const QUIZ=[
+["3 essential elements of a tort?","Wrongful Act/Omission + Legal Damage + Legal Remedy"],
+["What makes tortious liability different from contractual liability?","Tortious duty is fixed by law and owed generally; contractual duty arises from agreement and needs privity"],
+["Is breach of contract a tort?","No — it's a civil wrong, but Salmond's definition specifically excludes wrongs that are exclusively breach of contract/trust"],
+["Difference between injuria and damnum?","Injuria = legal injury (right violated); Damnum = actual loss/damage"],
+["Case for Injuria sine damno?","Ashby v White (1703)"],
+["Case for Damnum sine injuria?","Gloucester Grammar School Case (1410)"],
+["Meaning of Ubi jus ibi remedium?","Where there is a right, there is a remedy"],
+["Is motive generally relevant in tort?","No — generally irrelevant (exceptions: malicious prosecution, conspiracy, deceit, qualified privilege)"],
+["What is Malice in Law?","Wrongful act done intentionally without lawful justification — presumed"],
+["What is Malice in Fact?","Actual spite/ill-will/improper motive — must be proved"],
+["Key difference: Winfield vs Salmond?","Winfield = general principle ('Law of Tort'); Salmond = specific recognised torts ('Law of Torts')"],
+["Is intention required in negligence?","No — negligence and strict/absolute liability can arise without any intention to harm"]
+];
+const box=document.getElementById('qs');
+let score=0;
+QUIZ.forEach((q,i)=>{
+  const d=document.createElement('div');d.className='qbox';
+  d.innerHTML=`<b>Q${i+1}.</b> ${q[0]}<br><button data-i="${i}">Reveal Answer</button><div class="ans" id="a${i}">${q[1]}</div>`;
+  box.appendChild(d);
+});
+box.addEventListener('click',e=>{
+  if(e.target.tagName==='BUTTON'){
+    const i=e.target.dataset.i, a=document.getElementById('a'+i);
+    if(!a.classList.contains('show')){a.classList.add('show');score++;document.getElementById('score').textContent=score;e.target.disabled=true;e.target.style.opacity=.5;}
+  }
+});
+</script>
+</body>
+</html>

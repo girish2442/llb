@@ -1,3 +1,232 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>📚 Law of Torts – Unit 3 Study Material</title>
-<style>body{font-family:Arial,sans-serif;max-width:900px;margin:40px auto;padding:20px;line-height:1.6;background:#f5f7fb;color:#222}a{color:#2563eb}main{background:white;padding:25px;border-radius:12px}h1{color:#172554}</style></head>
-<body><main><a href="../index.html">← Back to Law of Torts</a><h1>📚 Law of Torts – Unit 3 Study Material</h1><p>Replace this placeholder with your existing HTML.</p></main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Law of Torts — Unit III: Negligence, Nuisance & Liability</title>
+<style>
+:root{
+  --bg:#faf7f2; --card:#fff; --ink:#1f2422; --sub:#5b6764; --line:#e4ddd0;
+  --accent:#8a3b2b; --accent2:#2f5d50; --hi:#f4e9d8; --good:#2f5d50; --bad:#8a3b2b;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#181614;--card:#221f1c;--ink:#f0ece4;--sub:#b7ada0;--line:#3a352f;--hi:#332c1f;}
+}
+:root[data-theme="dark"]{--bg:#181614;--card:#221f1c;--ink:#f0ece4;--sub:#b7ada0;--line:#3a352f;--hi:#332c1f;}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.5;padding-bottom:60px}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--accent);color:#fff;padding:14px 16px;z-index:10;font-family:Arial,sans-serif}
+header h1{margin:0;font-size:1.05rem}
+header p{margin:2px 0 0;font-size:.78rem;opacity:.9}
+.wrap{max-width:800px;margin:0 auto;padding:14px}
+nav.tabs{display:flex;gap:6px;overflow-x:auto;padding:10px 14px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:52px;z-index:9;font-family:Arial,sans-serif}
+nav.tabs a{flex:none;font-size:.76rem;padding:6px 10px;border-radius:20px;background:var(--hi);color:var(--ink);text-decoration:none;border:1px solid var(--line)}
+h2{font-family:Arial,sans-serif;color:var(--accent);border-bottom:2px solid var(--accent);padding-bottom:4px;margin-top:34px;font-size:1.15rem}
+h3{font-family:Arial,sans-serif;color:var(--accent2);font-size:1rem;margin-top:20px}
+.core{background:var(--hi);border-left:4px solid var(--accent);padding:10px 12px;border-radius:6px;margin:10px 0;font-size:.92rem}
+.core b.tag{font-family:Arial,sans-serif;font-size:.7rem;letter-spacing:.05em;color:var(--accent);display:block;margin-bottom:3px}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.82rem}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{background:var(--accent2);color:#fff;font-family:Arial,sans-serif;font-size:.75rem}
+tr:nth-child(even) td{background:var(--hi)}
+details{background:var(--card);border:1px solid var(--line);border-radius:8px;margin:8px 0;padding:0 12px;overflow:hidden}
+details summary{cursor:pointer;padding:10px 0;font-family:Arial,sans-serif;font-weight:bold;color:var(--accent2);list-style:none}
+details summary::before{content:"▸ ";display:inline-block;transition:.15s}
+details[open] summary::before{content:"▾ "}
+details[open] summary{border-bottom:1px solid var(--line)}
+details .body{padding:8px 0 12px;font-size:.9rem}
+.case b{color:var(--accent)}
+.flip{perspective:900px;height:auto;min-height:120px;margin:8px 0;cursor:pointer}
+.flip-in{position:relative;transition:transform .5s;transform-style:preserve-3d;min-height:120px}
+.flip.on .flip-in{transform:rotateY(180deg)}
+.flip-f,.flip-b{position:absolute;inset:0;backface-visibility:hidden;border-radius:8px;padding:10px 12px;font-size:.82rem;border:1px solid var(--line)}
+.flip-f{background:var(--hi)}
+.flip-b{background:var(--accent2);color:#fff;transform:rotateY(180deg)}
+.tap{font-size:.68rem;color:var(--sub);text-align:right;font-family:Arial,sans-serif}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-family:Arial,sans-serif;font-size:.8rem;margin:10px 0}
+.flow span{background:var(--accent2);color:#fff;padding:6px 10px;border-radius:16px}
+.flow i{color:var(--sub)}
+@media(max-width:520px){.grid2{grid-template-columns:1fr}}
+.mnem{background:var(--accent2);color:#fff;border-radius:8px;padding:10px 12px;font-size:.85rem;margin:10px 0;font-family:Arial,sans-serif}
+.qbox{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:6px 0;font-size:.88rem}
+.qbox button{font-family:Arial,sans-serif;font-size:.75rem;background:var(--accent);color:#fff;border:none;padding:4px 10px;border-radius:14px;margin-top:6px;cursor:pointer}
+.ans{display:none;margin-top:8px;font-size:.85rem;background:var(--hi);padding:8px;border-radius:6px}
+.ans.show{display:block}
+.pill{display:inline-block;font-family:Arial,sans-serif;font-size:.68rem;background:var(--bad);color:#fff;border-radius:10px;padding:2px 8px;margin-right:4px}
+.pill.g{background:var(--good)}
+ul{padding-left:20px}
+.progress{font-family:Arial,sans-serif;font-size:.75rem;color:var(--sub);text-align:center;margin-top:6px}
+#score{font-family:Arial,sans-serif;font-weight:bold;color:var(--accent)}
+footer{text-align:center;font-size:.75rem;color:var(--sub);font-family:Arial,sans-serif;margin-top:30px}
+</style>
+</head>
+<body>
+<header>
+<h1>⚖️ LAW OF TORTS — UNIT III</h1>
+<p>Negligence · Nuisance · Strict & Absolute Liability · Remedies</p>
+</header>
+<nav class="tabs">
+<a href="#p6">P6: Negligence</a><a href="#p7">P7: Nuisance</a><a href="#p8">P8: Strict/Absolute</a>
+<a href="#p9">P9: Remedies</a><a href="#quiz">Self-Test</a><a href="#sheet">Revision Card</a>
+</nav>
+<div class="wrap">
+
+<div class="core"><b class="tag">SYLLABUS CHECK — UNIT III</b>KSLU Unit III: Negligence, Nuisance, Strict Liability, Absolute Liability, Legal Remedies, Awards/Damages, Remoteness of Damage. All mapped below — Parts 6–9.</div>
+
+<h2 id="p6">PART 6 — Negligence</h2>
+<div class="core"><b class="tag">CORE</b>Negligence = breach of a legal duty to take care, resulting in damage. <b>Winfield:</b> breach of legal duty to take care → damage to plaintiff. <b>Blyth v Birmingham Waterworks (1856):</b> omitting what a reasonable person would do, or doing what one would not.</div>
+
+<h3>3 Essential Elements — proof flow</h3>
+<div class="flow"><span>Duty of care</span><i>→</i><span>Breach</span><i>→</i><span>Factual causation</span><i>→</i><span>Remoteness</span><i>→</i><span>Extent (thin skull)</span></div>
+
+<details><summary>Case: Donoghue v Stevenson (1932) — Duty / Neighbour Principle</summary><div class="body case"><b>Facts:</b> Mrs. Donoghue drank ginger beer from an opaque bottle allegedly containing a decomposed snail, fell ill.<br><b>Principle:</b> Established the neighbour principle — take reasonable care to avoid acts/omissions likely to injure persons closely & directly affected.</div></details>
+<details><summary>Case: Blyth v Birmingham Waterworks Co. (1856) — Breach / Reasonable Person</summary><div class="body case"><b>Facts:</b> Damage occurred during an exceptionally severe frost.<br><b>Principle:</b> Negligence = failing the reasonable-person standard in the circumstances; an accident alone doesn't prove negligence.</div></details>
+<details><summary>Case: Barnett v Chelsea Hospital (1969) — But-For Causation</summary><div class="body case"><b>Facts:</b> Patient who'd ingested arsenic died; hospital allegedly failed to treat him promptly.<br><b>Principle:</b> Not liable — patient would have died even with proper treatment ("but for" test not satisfied).</div></details>
+<details><summary>Case: Wagon Mound No. 1 (1961) — Remoteness</summary><div class="body case"><b>Facts:</b> Oil escaped into Sydney Harbour, later caught fire and caused damage.<br><b>Principle:</b> Modern test — liable only for damage of a reasonably foreseeable <i>type</i>; too-remote damage is not recoverable. (Re Polemis 1921 = older direct-consequence approach, now superseded.)</div></details>
+<details><summary>Case: Smith v Leech Brain (1962) — Thin Skull Rule</summary><div class="body case"><b>Facts:</b> A burn led to a far more serious consequence due to the victim's unusual condition.<br><b>Principle:</b> "Take the victim as you find him" — liable for full extent if the <i>type</i> of harm was foreseeable, even if its severity wasn't.</div></details>
+
+<h3>Medical Negligence</h3>
+<details><summary>Case: Bolam v Friern Hospital (1957) — Bolam Test</summary><div class="body case"><b>Principle:</b> A doctor is not negligent if acting in accordance with a practice accepted as proper by a responsible body of medical opinion.</div></details>
+<details><summary>Case: IMA v V.P. Shantha (1995) — Medical Services & Consumer Law</summary><div class="body case"><b>Principle:</b> Medical services can fall within "services" under the Consumer Protection Act, 1986 — deficiency claims possible alongside tort remedies.</div></details>
+
+<h3>Contributory Negligence (recap)</h3>
+<div class="core">Plaintiff's own lack of reasonable care contributing to the damage. Differs from volenti (voluntary risk acceptance); modern law <b>apportions</b> damages rather than a complete bar.</div>
+
+<div class="mnem">📌 NEGLIGENCE = D+B+D → Duty (Donoghue) + Breach (Blyth) + Damage, via Causation (Barnett) + Remoteness (Wagon Mound) + Thin Skull (Smith v Leech Brain). Medical → Bolam; consumer context → IMA v Shantha.</div>
+
+<h2 id="p7">PART 7 — Nuisance</h2>
+<div class="core"><b class="tag">CORE</b>Unlawful interference with rights connected with land — <b>Public Nuisance</b> (affects community) vs <b>Private Nuisance</b> (unreasonable interference with one person's land use/enjoyment).</div>
+
+<h3>Public Nuisance</h3>
+<div class="core">Affects the community/class of public (health, safety, comfort, public rights). A private individual generally can't sue as "just one of the public" — needs <b>special damage</b> beyond general inconvenience.</div>
+<details><summary>Case: Winterbottom v Lord Derby (1867)</summary><div class="body case"><b>Facts:</b> Defendant obstructed a public footpath; an individual sued personally.<br><b>Principle:</b> Could not sue as a mere member of the public without special damage.</div></details>
+<details><summary>Case: Rose v Miles (1815)</summary><div class="body case"><b>Facts:</b> A barge blocked a public navigable waterway, forcing plaintiff to incur extra expense.<br><b>Principle:</b> Plaintiff could sue — he suffered special damage beyond general public inconvenience.</div></details>
+
+<h3>Private Nuisance</h3>
+<div class="core">Forms: encroachment (roots/branches), physical damage (flooding), interference with enjoyment (noise, smell, smoke, vibration, heat). Features: unreasonable interference + with use/enjoyment of land + usually continuous/recurring + substantial.</div>
+<h3>Reasonableness Factors — flip cards</h3>
+<div class="grid2">
+<div class="flip" onclick="this.classList.toggle('on')"><div class="flip-in"><div class="flip-f"><b>Locality / character</b><div class="tap">tap</div></div><div class="flip-b">Sturges v Bridgman (1879): doctor set up near a confectioner's noisy machinery. Coming to an existing nuisance is NOT itself a defence; reasonableness depends on locality/circumstances.</div></div></div>
+<div class="flip" onclick="this.classList.toggle('on')"><div class="flip-in"><div class="flip-f"><b>Abnormal sensitivity</b><div class="tap">tap</div></div><div class="flip-b">Robinson v Kilvert (1889): heat affected unusually sensitive brown paper. Claim failed — abnormally sensitive use isn't protected if ordinary use wouldn't be substantially affected.</div></div></div>
+<div class="flip" onclick="this.classList.toggle('on')"><div class="flip-in"><div class="flip-f"><b>Malice</b><div class="tap">tap</div></div><div class="flip-b">Hollywood Silver Fox Farm v Emmett (1936): defendant deliberately disturbed a fox farm to harm business. Malice made interference unreasonable — liability followed.</div></div></div>
+<div class="flip" onclick="this.classList.toggle('on')"><div class="flip-in"><div class="flip-f"><b>Other factors</b><div class="tap">tap</div></div><div class="flip-b">Duration & frequency, severity/intensity, social utility of the defendant's activity — all weighed together.</div></div></div>
+</div>
+
+<table><tr><th>Basis</th><th>Public Nuisance</th><th>Private Nuisance</th></tr>
+<tr><td>Affected</td><td>Community/class</td><td>Individual/land user</td></tr>
+<tr><td>Individual action</td><td>Special damage required</td><td>Affected person with land interest</td></tr>
+<tr><td>Example</td><td>Blocking public road/waterway</td><td>Persistent factory noise</td></tr>
+</table>
+<table><tr><th>Basis</th><th>Nuisance</th><th>Negligence</th></tr>
+<tr><td>Focus</td><td>Interference with land use/enjoyment</td><td>Breach of duty of care</td></tr>
+<tr><td>Continuity</td><td>Often continuous/recurring</td><td>May be a single incident</td></tr>
+</table>
+
+<div class="mnem">📌 NUISANCE → Public: special damage (Rose v Miles). Private: unreasonable interference (Sturges = locality). Sensitivity → Robinson (fails). Malice → Hollywood Silver Fox (succeeds).</div>
+
+<h2 id="p8">PART 8 — Strict & Absolute Liability</h2>
+<h3>Rylands v Fletcher — Strict Liability</h3>
+<div class="core">One who brings/keeps a <b>dangerous thing</b> on land, making <b>non-natural use</b>, keeps it at his peril; if it <b>escapes</b> and causes <b>damage</b>, liable — subject to exceptions.</div>
+<details><summary>Case: Rylands v Fletcher (1868)</summary><div class="body case"><b>Facts:</b> Defendant built a reservoir; water escaped and flooded plaintiff's mine.<br><b>Principle:</b> Liability imposed despite no ordinary negligence — non-natural use + escape of a dangerous thing.</div></details>
+
+<h3>Non-Natural Use & Escape</h3>
+<div class="core">Non-natural use = beyond ordinary use, creating special/increased risk (e.g. large reservoirs, explosives, high-voltage electricity). Escape = the thing must move from defendant's land/control to outside it and cause damage — a key traditional requirement contrasted with absolute liability.</div>
+
+<h3>Exceptions to Strict Liability</h3>
+<div class="mnem">📌 Memory: God + Stranger + Consent + Statutory Authority + Plaintiff's fault — Act of God, Act of Stranger, Plaintiff's own fault, Consent/common benefit, Statutory authority.</div>
+
+<h3>Absolute Liability — M.C. Mehta</h3>
+<div class="core">Indian doctrine for hazardous/inherently dangerous industries — a <b>higher standard than Rylands</b>.</div>
+<details><summary>Case: M.C. Mehta v Union of India (1987)</summary><div class="body case"><b>Facts:</b> Shriram Foods & Fertilizers' hazardous chemical plant in Delhi leaked oleum gas, causing harm.<br><b>Principle:</b> SC developed absolute liability — hazardous enterprise owes an absolute, <b>non-delegable</b> duty to the community; if harm results, absolutely liable to compensate, <b>no Rylands-type exceptions</b>. Compensation should be proportionate to the enterprise's size, capacity and profitability.</div></details>
+
+<table><tr><th>Basis</th><th>Strict (Rylands)</th><th>Absolute (M.C. Mehta)</th></tr>
+<tr><td>Origin</td><td>Rylands v Fletcher (1868)</td><td>M.C. Mehta (1987)</td></tr>
+<tr><td>Exceptions</td><td>Recognised (God, Stranger, etc.)</td><td>None</td></tr>
+<tr><td>Application</td><td>Dangerous thing + non-natural use + escape</td><td>Hazardous/inherently dangerous enterprise</td></tr>
+<tr><td>Escape</td><td>Required traditionally</td><td>Not necessarily required</td></tr>
+<tr><td>Duty</td><td>Subject to exceptions</td><td>Non-delegable</td></tr>
+</table>
+
+<h2 id="p9">PART 9 — Legal Remedies, Damages & Remoteness</h2>
+<div class="core"><b class="tag">PURPOSE</b>Restore the plaintiff, so far as possible, to the position before the wrong. Judicial remedies: <b>Damages · Injunction · Specific Restitution.</b></div>
+
+<h3>Types of Damages — C.N.O.A.E.</h3>
+<table><tr><th>Type</th><th>Meaning</th></tr>
+<tr><td>Contemptuous</td><td>Smallest possible award — court disapproves of the claim/conduct though plaintiff technically succeeds</td></tr>
+<tr><td>Nominal</td><td>Small award for right violated without substantial actual loss</td></tr>
+<tr><td>Ordinary/Compensatory</td><td>Main monetary remedy — compensates and restores</td></tr>
+<tr><td>Aggravated</td><td>Extra compensatory damages where conduct worsened injury to dignity/feelings/reputation</td></tr>
+<tr><td>Exemplary/Punitive</td><td>Beyond compensation — punishes & deters</td></tr>
+</table>
+<div class="core"><b>Special damages</b> = specifically quantifiable/proved (medical bills, lost earnings, repairs). <b>General damages</b> = not precisely calculable (pain & suffering, loss of amenity, mental anguish).</div>
+
+<h3>Injunction</h3>
+<div class="grid2">
+<div class="flip" onclick="this.classList.toggle('on')"><div class="flip-in"><div class="flip-f"><b>Temporary / Permanent</b><div class="tap">tap</div></div><div class="flip-b">Temporary (interlocutory) — during the suit. Permanent (perpetual) — final order.</div></div></div>
+<div class="flip" onclick="this.classList.toggle('on')"><div class="flip-in"><div class="flip-f"><b>Prohibitory / Mandatory</b><div class="tap">tap</div></div><div class="flip-b">Prohibitory — stop doing something. Mandatory — do something (e.g. remove an obstruction).</div></div></div>
+</div>
+<details><summary>Case: Radhey Shyam v Gur Prasad (1978)</summary><div class="body case"><b>Facts:</b> Continuing interference from a flour mill in a residential area.<br><b>Principle:</b> Permanent injunction granted — continuing nuisance may justify injunction where damages alone are inadequate.</div></details>
+
+<h3>Specific Restitution & Extra-Judicial Remedies</h3>
+<div class="core">Specific restitution: court orders return of wrongfully taken land/goods, not just their money value.</div>
+<table><tr><th>Extra-Judicial Remedy</th><th>Meaning</th></tr>
+<tr><td>Expulsion of trespasser</td><td>Reasonable force to remove a trespasser</td></tr>
+<tr><td>Re-entry on land</td><td>Peaceably retaking possession, within legal limits</td></tr>
+<tr><td>Abatement of nuisance</td><td>Removing the source (e.g. overhanging branches) after appropriate notice</td></tr>
+<tr><td>Distress damage feasant</td><td>Retaining goods/animals causing damage until compensated, subject to legal limits</td></tr>
+</table>
+<div class="core"><span class="pill">Caution</span>Extra-judicial remedies must be exercised without breach of peace and with reasonable force — excess force creates liability.</div>
+
+<h3>Remoteness — Final Revision</h3>
+<div class="flow"><span>Factual: But-for (Barnett)</span><i>→</i><span>Legal: foreseeable TYPE (Wagon Mound)</span><i>→</i><span>Thin skull (Smith v Leech Brain)</span></div>
+
+<div class="mnem">📌 DAMAGES = C.N.O.A.E. Injunction = Temporary/Permanent + Prohibitory/Mandatory. Remoteness: But-for → Wagon Mound (type) → Thin Skull (extent). Re Polemis = old direct-consequence rule, superseded by Wagon Mound.</div>
+
+<h2 id="quiz">Self-Test — Recall Check</h2>
+<div id="qs"></div>
+<div class="progress">Score: <span id="score">0</span> / 12</div>
+
+<h2 id="sheet">UNIT III — Last-Day Revision Card</h2>
+<div class="core"><b class="tag">NEGLIGENCE</b>D+B+D → Donoghue (duty) + Blyth (breach) + Barnett (causation) + Wagon Mound (remoteness) + Smith v Leech Brain (thin skull).</div>
+<div class="core"><b class="tag">NUISANCE</b>Public → special damage → Rose v Miles. Private → unreasonable land interference → Sturges (locality). Sensitivity → Robinson. Malice → Hollywood Silver Fox.</div>
+<div class="core"><b class="tag">RYLANDS</b>Dangerous thing + Escape + Non-natural use + Damage → subject to exceptions (God/Stranger/Consent/Statutory/Plaintiff's fault).</div>
+<div class="core"><b class="tag">M.C. MEHTA</b>Hazardous industry + Absolute liability + no Rylands-type exceptions + non-delegable duty.</div>
+<div class="core"><b class="tag">DAMAGES & REMEDIES</b>C.N.O.A.E. · Injunction = Temporary/Permanent + Prohibitory/Mandatory · Specific restitution · Extra-judicial: expulsion, re-entry, abatement, distress damage feasant.</div>
+
+<footer>Unit III complete · Negligence, Nuisance, Strict & Absolute Liability, Remedies · send Unit IV next</footer>
+</div>
+
+<script>
+const QUIZ=[
+["3 essentials of negligence?","Duty of care + Breach of duty + Damage (causally connected & not too remote)"],
+["Neighbour principle — Donoghue v Stevenson?","Take reasonable care to avoid acts/omissions likely to injure those closely & directly affected by your conduct"],
+["Reasonable person test — Blyth?","Negligence = omitting what a reasonable person would do, or doing what one would not, in the circumstances"],
+["But-for test — Barnett?","Ask: but for the defendant's breach, would the damage have occurred? Hospital not liable — patient would've died regardless"],
+["Wagon Mound and remoteness?","Liable only for damage of a reasonably foreseeable TYPE; too-remote consequences aren't recoverable"],
+["Thin skull rule — Smith v Leech Brain?","Take the victim as you find him — liable for the full extent if the type of harm was foreseeable, even if unusually severe"],
+["Bolam test?","A doctor isn't negligent if acting per a practice accepted as proper by a responsible body of medical opinion"],
+["Public vs Private nuisance?","Public = affects the community, individual needs special damage to sue (Rose v Miles); Private = unreasonable interference with one person's land use/enjoyment (Sturges)"],
+["Elements of Rylands v Fletcher?","Dangerous thing on land + non-natural use + escape + resulting damage"],
+["Main exceptions to strict liability?","Act of God, Act of Stranger, Plaintiff's own fault, Consent/common benefit, Statutory authority"],
+["Absolute liability under M.C. Mehta?","Hazardous/inherently dangerous enterprise owes an absolute, non-delegable duty — liable to compensate with NO Rylands-type exceptions"],
+["Types of damages (C.N.O.A.E.)?","Contemptuous, Nominal, Ordinary/Compensatory, Aggravated, Exemplary/Punitive"]
+];
+const box=document.getElementById('qs');
+let score=0;
+QUIZ.forEach((q,i)=>{
+  const d=document.createElement('div');d.className='qbox';
+  d.innerHTML=`<b>Q${i+1}.</b> ${q[0]}<br><button data-i="${i}">Reveal Answer</button><div class="ans" id="a${i}">${q[1]}</div>`;
+  box.appendChild(d);
+});
+box.addEventListener('click',e=>{
+  if(e.target.tagName==='BUTTON'){
+    const i=e.target.dataset.i, a=document.getElementById('a'+i);
+    if(!a.classList.contains('show')){a.classList.add('show');score++;document.getElementById('score').textContent=score;e.target.disabled=true;e.target.style.opacity=.5;}
+  }
+});
+</script>
+</body>
+</html>

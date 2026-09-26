@@ -1,3 +1,255 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>📚 Law of Torts – Unit 2 Study Material</title>
-<style>body{font-family:Arial,sans-serif;max-width:900px;margin:40px auto;padding:20px;line-height:1.6;background:#f5f7fb;color:#222}a{color:#2563eb}main{background:white;padding:25px;border-radius:12px}h1{color:#172554}</style></head>
-<body><main><a href="../index.html">← Back to Law of Torts</a><h1>📚 Law of Torts – Unit 2 Study Material</h1><p>Replace this placeholder with your existing HTML.</p></main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Law of Torts — Unit II: General Defences & Vicarious Liability</title>
+<style>
+:root{
+  --bg:#faf7f2; --card:#fff; --ink:#1f2422; --sub:#5b6764; --line:#e4ddd0;
+  --accent:#8a3b2b; --accent2:#2f5d50; --hi:#f4e9d8; --good:#2f5d50; --bad:#8a3b2b;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#181614;--card:#221f1c;--ink:#f0ece4;--sub:#b7ada0;--line:#3a352f;--hi:#332c1f;}
+}
+:root[data-theme="dark"]{--bg:#181614;--card:#221f1c;--ink:#f0ece4;--sub:#b7ada0;--line:#3a352f;--hi:#332c1f;}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.5;padding-bottom:60px}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--accent);color:#fff;padding:14px 16px;z-index:10;font-family:Arial,sans-serif}
+header h1{margin:0;font-size:1.05rem}
+header p{margin:2px 0 0;font-size:.78rem;opacity:.9}
+.wrap{max-width:800px;margin:0 auto;padding:14px}
+nav.tabs{display:flex;gap:6px;overflow-x:auto;padding:10px 14px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:52px;z-index:9;font-family:Arial,sans-serif}
+nav.tabs a{flex:none;font-size:.78rem;padding:6px 10px;border-radius:20px;background:var(--hi);color:var(--ink);text-decoration:none;border:1px solid var(--line)}
+h2{font-family:Arial,sans-serif;color:var(--accent);border-bottom:2px solid var(--accent);padding-bottom:4px;margin-top:34px;font-size:1.15rem}
+h3{font-family:Arial,sans-serif;color:var(--accent2);font-size:1rem;margin-top:20px}
+.core{background:var(--hi);border-left:4px solid var(--accent);padding:10px 12px;border-radius:6px;margin:10px 0;font-size:.92rem}
+.core b.tag{font-family:Arial,sans-serif;font-size:.7rem;letter-spacing:.05em;color:var(--accent);display:block;margin-bottom:3px}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.83rem}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{background:var(--accent2);color:#fff;font-family:Arial,sans-serif;font-size:.76rem}
+tr:nth-child(even) td{background:var(--hi)}
+details{background:var(--card);border:1px solid var(--line);border-radius:8px;margin:8px 0;padding:0 12px;overflow:hidden}
+details summary{cursor:pointer;padding:10px 0;font-family:Arial,sans-serif;font-weight:bold;color:var(--accent2);list-style:none}
+details summary::before{content:"▸ ";display:inline-block;transition:.15s}
+details[open] summary::before{content:"▾ "}
+details[open] summary{border-bottom:1px solid var(--line)}
+details .body{padding:8px 0 12px;font-size:.9rem}
+.case b{color:var(--accent)}
+.flip{perspective:900px;height:auto;min-height:120px;margin:8px 0;cursor:pointer}
+.flip-in{position:relative;transition:transform .5s;transform-style:preserve-3d;min-height:120px}
+.flip.on .flip-in{transform:rotateY(180deg)}
+.flip-f,.flip-b{position:absolute;inset:0;backface-visibility:hidden;border-radius:8px;padding:10px 12px;font-size:.83rem;border:1px solid var(--line)}
+.flip-f{background:var(--hi)}
+.flip-b{background:var(--accent2);color:#fff;transform:rotateY(180deg)}
+.tap{font-size:.68rem;color:var(--sub);text-align:right;font-family:Arial,sans-serif}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:520px){.grid2{grid-template-columns:1fr}}
+.mnem{background:var(--accent2);color:#fff;border-radius:8px;padding:10px 12px;font-size:.85rem;margin:10px 0;font-family:Arial,sans-serif}
+.qbox{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:6px 0;font-size:.88rem}
+.qbox button{font-family:Arial,sans-serif;font-size:.75rem;background:var(--accent);color:#fff;border:none;padding:4px 10px;border-radius:14px;margin-top:6px;cursor:pointer}
+.ans{display:none;margin-top:8px;font-size:.85rem;background:var(--hi);padding:8px;border-radius:6px}
+.ans.show{display:block}
+.pill{display:inline-block;font-family:Arial,sans-serif;font-size:.68rem;background:var(--bad);color:#fff;border-radius:10px;padding:2px 8px;margin-right:4px}
+.pill.g{background:var(--good)}
+.trap{background:#fff3ea;border:1px dashed var(--accent);border-radius:6px;padding:8px 10px;font-size:.83rem;margin:5px 0}
+:root[data-theme="dark"] .trap,body{--x:0}
+@media (prefers-color-scheme: dark){.trap{background:#3a2a1f;}}
+ul{padding-left:20px}
+.progress{font-family:Arial,sans-serif;font-size:.75rem;color:var(--sub);text-align:center;margin-top:6px}
+#score{font-family:Arial,sans-serif;font-weight:bold;color:var(--accent)}
+footer{text-align:center;font-size:.75rem;color:var(--sub);font-family:Arial,sans-serif;margin-top:30px}
+</style>
+</head>
+<body>
+<header>
+<h1>⚖️ LAW OF TORTS — UNIT II</h1>
+<p>General Defences & Vicarious Liability · tap to expand · flip cards · self-test</p>
+</header>
+<nav class="tabs">
+<a href="#p4">Part 4: Defences</a><a href="#p5">Part 5: Vicarious Liability</a>
+<a href="#traps">Exam Traps</a><a href="#quiz">Self-Test</a><a href="#sheet">Memory Sheet</a>
+</nav>
+<div class="wrap">
+
+<div class="core"><b class="tag">SYLLABUS CHECK — UNIT II</b>KSLU syllabus for Unit II: General Defences (Volenti, Inevitable Accident, Act of God, Necessity, Private Defence, Statutory Authority, Consent/Mistake) + Vicarious Liability (Master–Servant, Course of Employment, Independent Contractor, Employer/Principal liability). All topics below are mapped to these exact headings — nothing added or dropped.</div>
+
+<h2 id="p4">PART 4 — General Defences</h2>
+<div class="core"><b class="tag">CORE IDEA</b>General defences are recognised grounds on which a defendant may escape liability (or, for contributory negligence, have damages apportioned) even after the plaintiff proves the tort. Order to learn: <b>Volenti → Contributory Negligence → Act of God → Private Defence → Necessity → Statutory Authority → Inevitable Accident → Mistake.</b></div>
+
+<h3>1. Volenti non fit injuria (Consent)</h3>
+<div class="core">"To one who is willing, no injury is done." Plaintiff who knows the risk and freely/voluntarily accepts it cannot recover for harm from that risk.</div>
+<div class="flip" onclick="this.classList.toggle('on')"><div class="flip-in">
+<div class="flip-f"><b>Conditions — VKF-C</b><div class="tap">tap to flip</div></div>
+<div class="flip-b">Knowledge of risk + Free & voluntary acceptance + genuine Consent (no fraud/compulsion) + injury within scope of risk accepted. <b>Rule: knowledge ≠ consent.</b></div>
+</div></div>
+<details><summary>Case: Hall v Brooklands Auto Racing Club (1933)</summary><div class="body case"><b>Facts:</b> Spectator injured when racing cars entered the spectator area.<br><b>Principle:</b> Attendance = consent to the ordinary risks of the event.</div></details>
+<details><summary>Case: Smith v Baker (1891)</summary><div class="body case"><b>Facts:</b> Employee kept working despite knowing of a danger.<br><b>Principle:</b> Mere knowledge ≠ voluntary consent, especially under economic compulsion.</div></details>
+<details><summary>Case: Haynes v Harwood (1935)</summary><div class="body case"><b>Facts:</b> Rescuer injured responding to danger the defendant created.<br><b>Principle:</b> Volenti doesn't defeat a rescue claim just because the rescuer knowingly faced danger.</div></details>
+<div class="mnem">📌 Volenti fails when: knowledge without real choice · economic/other compulsion · rescue cases · fraud/misrepresentation · harm beyond consented scope.</div>
+
+<h3>2. Contributory Negligence</h3>
+<div class="core">Plaintiff's own failure to take reasonable care contributes to the harm. Modern law does NOT fully bar recovery — damages may be <b>apportioned</b>.</div>
+<details><summary>Case: Davies v Mann (1842) — Last Opportunity Rule</summary><div class="body case"><b>Facts:</b> Plaintiff left a donkey tied on the road; defendant drove excessively fast and killed it.<br><b>Principle:</b> Though plaintiff was initially negligent, defendant had the <i>last opportunity</i> to avoid the accident and failed — liable.</div></details>
+
+<h3>3. Act of God (Vis Major)</h3>
+<div class="flip" onclick="this.classList.toggle('on')"><div class="flip-in">
+<div class="flip-f"><b>3 Essentials — NUH</b><div class="tap">tap to flip</div></div>
+<div class="flip-b">Natural cause (no human agency) + Unforeseeable/extraordinary event + Humans cannot guard against it.</div>
+</div></div>
+<details><summary>Case: Nichols v Marsland (1876)</summary><div class="body case"><b>Facts:</b> Extraordinary rainfall burst dams/lakes, flooding plaintiff's land.<br><b>Principle:</b> Rainfall was so extraordinary → Act of God succeeded.</div></details>
+<details><summary>Case: Ramalinga Nadar v Narayana Reddiar (1971)</summary><div class="body case"><b>Facts:</b> Goods lost during communal riots/mob violence.<br><b>Principle:</b> Riots involve human agency → NOT an Act of God.</div></details>
+
+<h3>4. Private Defence</h3>
+<div class="core">Permits reasonable force to protect self/others/property from unlawful harm — must be imminent threat + necessary + proportionate; never revenge for a past wrong; no deliberate harm to innocent third parties.</div>
+<details><summary>Case: Bird v Holbrook (1828)</summary><div class="body case"><b>Facts:</b> Spring gun set to protect tulips injured a trespasser.<br><b>Principle:</b> Force disproportionate → private defence <i>failed</i>. Exam line: imminent threat + necessary/proportionate force + Bird v Holbrook.</div></details>
+
+<h3>5. Necessity</h3>
+<div class="core">A lesser harm is caused to prevent a greater, imminent harm. Conditions: real & imminent danger + proportionate lesser harm + reasonable belief in necessity.</div>
+<details><summary>Case: Leigh v Gladstone (1909)</summary><div class="body case"><b>Facts:</b> Hunger-striking prisoner force-fed by prison authorities.<br><b>Principle:</b> Justified by necessity to preserve life/health.</div></details>
+<table><tr><th>Public Necessity</th><th>Private Necessity</th></tr>
+<tr><td>Protects the community (e.g. demolishing property to stop spreading fire) — generally a complete defence</td><td>Protects private interests — compensation for loss may still arise</td></tr></table>
+
+<h3>6. Statutory Authority</h3>
+<div class="core">Defence where act is authorised/required by statute and done within that authority, without negligence.</div>
+<table><tr><th>Absolute/Mandatory</th><th>Conditional/Permissive</th></tr>
+<tr><td>Statute commands the act, no real choice — inevitable consequences protected</td><td>Statute permits but doesn't compel — reasonable care still required</td></tr></table>
+<details><summary>Case: Vaughan v Taff Vale Railway Co. (1860)</summary><div class="body case"><b>Facts:</b> Sparks from a statutorily authorised railway engine caused fire to plaintiff's woods.<br><b>Principle:</b> Railway protected — authorised operation done without negligence; damage was an inevitable consequence. <b>Limit: statutory authority never excuses negligence.</b></div></details>
+
+<h3>7. Inevitable Accident</h3>
+<div class="core">Event that could not be foreseen/prevented by ordinary reasonable care. Unlike Act of God, need not be purely natural.</div>
+<details><summary>Case: Stanley v Powell (1891)</summary><div class="body case"><b>Facts:</b> A shot glanced off a tree and accidentally injured another person.<br><b>Principle:</b> Reasonable care could not have prevented it → inevitable accident.</div></details>
+
+<h3>Act of God vs Inevitable Accident</h3>
+<table><tr><th>Basis</th><th>Act of God</th><th>Inevitable Accident</th></tr>
+<tr><td>Cause</td><td>Purely natural forces</td><td>May involve human/mechanical element</td></tr>
+<tr><td>Human agency</td><td>None</td><td>May be partly involved</td></tr>
+<tr><td>Key case</td><td>Nichols v Marsland</td><td>Stanley v Powell</td></tr>
+</table>
+
+<h3>8. Mistake</h3>
+<div class="core"><span class="pill">Generally NOT a defence</span> in tort. Interfering with another's legal right remains actionable even from an honest mistake of fact.</div>
+
+<h3>General Defence — Decision Matrix</h3>
+<table><tr><th>Defence</th><th>Legal test</th><th>Result</th><th>Case</th></tr>
+<tr><td>Volenti</td><td>Knowledge + free voluntary consent</td><td>Complete defence</td><td>Hall/Smith</td></tr>
+<tr><td>Contributory Negligence</td><td>Plaintiff's negligence contributed</td><td>Damages apportioned</td><td>Davies v Mann</td></tr>
+<tr><td>Act of God</td><td>Natural+extraordinary+unforeseeable+unavoidable</td><td>Defence</td><td>Nichols</td></tr>
+<tr><td>Private Defence</td><td>Imminent threat + proportionate force</td><td>Defence</td><td>Bird</td></tr>
+<tr><td>Necessity</td><td>Lesser harm to prevent greater harm</td><td>Defence if conditions met</td><td>Leigh</td></tr>
+<tr><td>Statutory Authority</td><td>Authorised + no negligence</td><td>Defence within authority</td><td>Vaughan</td></tr>
+<tr><td>Inevitable Accident</td><td>Unforeseeable despite reasonable care</td><td>Defence</td><td>Stanley</td></tr>
+<tr><td>Mistake</td><td>Honest mistake alone</td><td>Generally no defence</td><td>—</td></tr>
+</table>
+
+<h2 id="p5">PART 5 — Vicarious Liability</h2>
+<div class="core"><b class="tag">CORE IDEA</b>Liability imposed on one person for another's tort due to a special legal relationship — chiefly master–servant/employer–employee. <b>VCB</b> = Valid relationship + Course of employment + Connection/benefit to master's business.</div>
+
+<div class="grid2">
+<div class="flip" onclick="this.classList.toggle('on')"><div class="flip-in">
+<div class="flip-f"><b>Respondeat Superior</b><div class="tap">tap to flip</div></div>
+<div class="flip-b">"Let the master answer." Employer bears responsibility for the acts of the employee.</div>
+</div></div>
+<div class="flip" onclick="this.classList.toggle('on')"><div class="flip-in">
+<div class="flip-f"><b>Qui facit per alium facit per se</b><div class="tap">tap to flip</div></div>
+<div class="flip-b">"He who acts through another, acts himself." Basis for principal-agent liability.</div>
+</div></div>
+</div>
+<div class="core">Justifications: employer benefits from the work → bears the risk; employer controls the employee; employer usually has more resources to compensate; encourages responsible hiring/supervision.</div>
+
+<h3>Control Test — Master & Servant</h3>
+<table><tr><th>Controls WHAT + HOW</th><th>Controls only result (WHAT)</th></tr>
+<tr><td>Employee/servant relationship</td><td>Independent contractor — generally outside vicarious liability</td></tr></table>
+
+<h3>Course of Employment vs Frolic of Own</h3>
+<table><tr><th>Point</th><th>Course of Employment</th><th>Frolic of Own</th></tr>
+<tr><td>Basic idea</td><td>Doing employer's work</td><td>Abandoning employer's business</td></tr>
+<tr><td>Wrongful manner</td><td>May still be within employment</td><td>Purely personal purpose</td></tr>
+<tr><td>Employer liable?</td><td><span class="pill g">Generally YES</span></td><td><span class="pill">Generally NO</span></td></tr>
+<tr><td>Case</td><td>Limpus</td><td>Joel v Morrison</td></tr>
+</table>
+<details><summary>Case: Limpus v London General Omnibus Co. (1862)</summary><div class="body case"><b>Facts:</b> Bus driver, forbidden to race, deliberately obstructed a rival bus causing an accident.<br><b>Principle:</b> Employer liable — driver was still doing the authorised job (driving the bus), just in an unauthorised way.</div></details>
+<details><summary>Case: Joel v Morrison (1834)</summary><div class="body case"><b>Facts:</b> Servant deviated from route to visit a friend, caused an accident.<br><b>Principle:</b> Frolic of his own — master not liable.</div></details>
+<details><summary>Case: Beard v London General Omnibus Co. (1900)</summary><div class="body case"><b>Facts:</b> Bus conductor (not authorised to drive) drove the bus on his own initiative and caused an accident.<br><b>Principle:</b> Entirely outside his employment — employer not liable.</div></details>
+<details><summary>Case: State of Rajasthan v Mst. Vidhyawati (1962)</summary><div class="body case"><b>Facts:</b> Government driver negligently knocked down a pedestrian while returning an official vehicle to the garage.<br><b>Principle:</b> Supreme Court held the State vicariously liable — driver acting in course of official employment. <b>Exam anchor: Vidhyawati = Indian State vicarious liability.</b></div></details>
+<details><summary>Case: Mersey Docks v Coggins & Griffith (1947) — Loaned Servant</summary><div class="body case"><b>Facts:</b> Crane driver lent by the harbour board to another firm.<br><b>Principle:</b> Original employer remained liable — it retained control over <i>how</i> the driver operated the crane. Rule: general employer stays liable unless the borrowing employer took full control.</div></details>
+
+<h3>Principal & Agent / Partners</h3>
+<div class="core">Agent acting within scope of authority commits a tort → principal may be vicariously liable (qui facit per alium facit per se). E.g. sales agent fraudulently misrepresents goods while conducting principal's business. Partners may be jointly & severally liable for a torts committed by one partner in the ordinary course of firm business.</div>
+
+<h3>Independent Contractor</h3>
+<div class="core">General rule: employer <b>not</b> vicariously liable for a contractor's torts (contractor controls the method, only the result is specified).</div>
+<details><summary>Exceptions where employer IS liable</summary><div class="body"><ul>
+<li>Extra-hazardous / inherently dangerous work</li>
+<li>Non-delegable duties imposed by law</li>
+<li>Negligent selection of an incompetent/unqualified contractor (employer's own negligence)</li>
+<li>Work affecting a public highway creating danger/obstruction</li>
+<li>Strict liability situations — can't escape by appointing a contractor</li>
+</ul></div></details>
+<details><summary>Case: Honeywill & Stein v Larkin Bros (1934)</summary><div class="body case"><b>Facts:</b> Contractor hired for flash photography in a cinema negligently caused a fire.<br><b>Principle:</b> Example of extra-hazardous work — an exception to the general independent-contractor rule.</div></details>
+
+<h3>Employee vs Independent Contractor</h3>
+<table><tr><th>Basis</th><th>Employee/Servant</th><th>Independent Contractor</th></tr>
+<tr><td>Control</td><td>Employer controls WHAT & HOW</td><td>Employer controls only result</td></tr>
+<tr><td>General liability</td><td>Employer generally liable in course of employment</td><td>Employer generally NOT vicariously liable</td></tr>
+<tr><td>Exceptions</td><td>Course/frolic rules</td><td>Extra-hazardous work, non-delegable duties, negligent selection, highway work</td></tr>
+</table>
+
+<div class="core"><b class="tag">MOTOR VEHICLES ACT NOTE</b>Under the MV Act 1988, a vehicle owner may be vicariously liable for negligent driving by a person driving with the owner's consent even if not technically an employee (detailed in Unit V).</div>
+
+<div class="mnem">📌 VICARIOUS LIABILITY MAP: Master–Servant + course of employment → liable (Limpus) · frolic of own → not liable (Joel) · Principal–Agent within authority → liable · Partners, ordinary firm business → liable · State employee official course → liable (Vidhyawati) · Loaned servant → control decides (Mersey Docks) · Independent contractor → generally not liable, exceptions apply (Honeywill).</div>
+
+<h2 id="traps">Common Exam Traps</h2>
+<div class="trap">❌ Volenti: never equate <b>knowledge</b> with <b>consent</b>.</div>
+<div class="trap">❌ Act of God: human agency (e.g. riots) is <b>not</b> an Act of God.</div>
+<div class="trap">❌ Private defence: <b>proportionality</b> is essential — don't skip it.</div>
+<div class="trap">❌ Contributory negligence: don't write "no compensation" — modern law <b>apportions</b> damages.</div>
+<div class="trap">❌ Course of employment: disobedience alone doesn't end liability if still doing the authorised job.</div>
+<div class="trap">❌ Frolic of own: look for abandonment of employer's business for a personal purpose.</div>
+<div class="trap">❌ Independent contractor: learn the exceptions — never write "employer is never liable".</div>
+<div class="trap">❌ Statutory authority: statutory permission never excuses negligence.</div>
+
+<h2 id="quiz">Self-Test — Recall Check</h2>
+<div id="qs"></div>
+<div class="progress">Score: <span id="score">0</span> / 12</div>
+
+<h2 id="sheet">UNIT II — Study Memory Sheet</h2>
+<div class="core"><b class="tag">GENERAL DEFENCES</b>Volenti→knowledge+voluntary consent (Hall; fails on mere knowledge/compulsion–Smith; rescue–Haynes) · Contributory Negligence→apportioned (Davies) · Act of God→NUH (Nichols) · Private Defence→imminent+proportionate (Bird) · Necessity→lesser harm (Leigh) · Statutory Authority→authorised+no negligence (Vaughan) · Inevitable Accident→unavoidable (Stanley) · Mistake→generally no defence.</div>
+<div class="core"><b class="tag">VICARIOUS LIABILITY</b>Respondeat superior = let the master answer · Qui facit per alium facit per se = acts through another, acts himself · Control test: WHAT+HOW=employee, result only=contractor · Course of employment (Limpus)=liable · Frolic (Joel)=not liable · Conductor drives (Beard)=outside employment · State driver (Vidhyawati)=State liable · Loaned servant (Mersey Docks)=control decides · Independent contractor=generally not liable, exceptions matter.</div>
+
+<footer>Unit II complete · General Defences & Vicarious Liability · send Unit III next</footer>
+</div>
+
+<script>
+const QUIZ=[
+["What is volenti non fit injuria?","'To one who is willing, no injury is done' — plaintiff's free & voluntary acceptance of a known risk bars recovery"],
+["Why is knowledge not the same as consent?","One can know of a risk yet not freely/voluntarily accept it (e.g. economic compulsion — Smith v Baker)"],
+["What is the Last Opportunity Rule (Davies v Mann)?","Even if plaintiff was initially negligent, whoever had the LAST chance to avoid the accident and failed to take it is liable"],
+["3 essentials of Act of God?","Natural cause + Unforeseeable/extraordinary + Humans cannot guard against it (NUH)"],
+["Act of God vs Inevitable Accident — key difference?","Act of God = purely natural forces, no human agency; Inevitable Accident = may involve a human/mechanical element"],
+["Why did private defence fail in Bird v Holbrook?","The spring-gun force used was disproportionate to the threat (a trespasser after tulips)"],
+["What is necessity as a defence?","Causing a lesser harm to prevent a greater, imminent harm, given proportionality and reasonable belief"],
+["Statutory Authority — absolute vs conditional?","Absolute/mandatory: statute commands the act, no choice; Conditional/permissive: statute permits but reasonable care still required"],
+["Is mistake generally a defence in tort?","No — an honest mistake of fact does not excuse interference with another's legal right"],
+["What is the Control Test?","If employer controls WHAT and HOW the work is done → servant/employee; if only the result → independent contractor"],
+["Course of employment vs frolic of own?","Course of employment = still doing employer's work (even if wrongly) → employer liable (Limpus); Frolic = abandoning employer's business for personal purpose → not liable (Joel)"],
+["Why is Vidhyawati important?","It established that the Indian State can be held vicariously liable for a government servant's tort committed in the course of official duty"]
+];
+const box=document.getElementById('qs');
+let score=0;
+QUIZ.forEach((q,i)=>{
+  const d=document.createElement('div');d.className='qbox';
+  d.innerHTML=`<b>Q${i+1}.</b> ${q[0]}<br><button data-i="${i}">Reveal Answer</button><div class="ans" id="a${i}">${q[1]}</div>`;
+  box.appendChild(d);
+});
+box.addEventListener('click',e=>{
+  if(e.target.tagName==='BUTTON'){
+    const i=e.target.dataset.i, a=document.getElementById('a'+i);
+    if(!a.classList.contains('show')){a.classList.add('show');score++;document.getElementById('score').textContent=score;e.target.disabled=true;e.target.style.opacity=.5;}
+  }
+});
+</script>
+</body>
+</html>
