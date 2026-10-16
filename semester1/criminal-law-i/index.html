@@ -12,6 +12,42 @@
 .unitgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}.unitcard{display:block;border:1px solid #e2e8f0;border-radius:10px;padding:14px;text-decoration:none;color:#172554;background:#f8fafc}.unitcard strong{display:block}.unitcard span{font-size:12px;color:#64748b}
 .qa{border:1px solid #e2e8f0;border-radius:11px;margin:13px 0;overflow:hidden}.qtitle{padding:14px 16px;background:#f8fafc;display:flex;justify-content:space-between;align-items:center;gap:12px}.qtitle h3{font-size:17px;line-height:1.4;margin:0;color:#172554}.qtitle button{border:1px solid #cbd5e1;background:white;padding:7px 10px;border-radius:7px;color:#1d4ed8;font-weight:bold;cursor:pointer;white-space:nowrap}.answer{padding:16px 18px}.answer h4{margin:16px 0 4px;color:#172554}.answer h4:first-child{margin-top:0}.answer p{margin:7px 0}.answer ul{padding-left:22px}.answer li{margin:5px 0}.answer.hidden{display:none}.label{font-size:11px;font-weight:bold;color:#1d4ed8;letter-spacing:.03em}.coming{background:#f8fafc;border:1px dashed #cbd5e1;border-radius:10px;padding:15px;color:#475569}.footer{text-align:center;color:#64748b;font-size:13px;padding:25px}
 @media print{.topnav,.back,.qtitle button{display:none}.panel{box-shadow:none;break-inside:avoid}.answer.hidden{display:block}}
+
+/* Enhanced study dashboard */
+:root{--ink:#172554;--blue:#2563eb;--mint:#0f766e;--paper:#f8fafc}
+body{background:linear-gradient(180deg,#eef4ff 0,#f8fafc 340px,#f5f7fb 100%)}
+.header{position:relative;overflow:hidden;background:radial-gradient(circle at 85% 10%,#3b82f6 0,transparent 28%),linear-gradient(125deg,#111c4e,#1d4ed8 72%,#0f766e);padding:38px 18px 42px}
+.header:after{content:"";position:absolute;width:230px;height:230px;border:1px solid #ffffff22;border-radius:50%;right:-55px;bottom:-150px;box-shadow:0 0 0 28px #ffffff08,0 0 0 58px #ffffff06}
+.header h1{letter-spacing:-.6px}.header p{max-width:650px;margin:8px auto 0}
+.container{max-width:1120px}
+.study-tools{display:grid;grid-template-columns:minmax(220px,1fr) auto auto;gap:10px;align-items:center;margin:18px 0}
+.study-tools input{width:100%;min-width:0;border:1px solid #cbd5e1;border-radius:10px;padding:12px 14px;font:inherit;background:white;outline:none}
+.study-tools input:focus{border-color:#2563eb;box-shadow:0 0 0 3px #2563eb20}
+.toolbtn{border:1px solid #bfdbfe;border-radius:10px;background:white;color:#1d4ed8;padding:11px 13px;font-weight:700;cursor:pointer}
+.toolbtn:hover{background:#eff6ff}
+.progress-wrap{background:#e2e8f0;border-radius:999px;height:9px;overflow:hidden;margin-top:8px}
+.progress-fill{height:100%;width:0;background:linear-gradient(90deg,#2563eb,#0d9488);transition:width .25s}
+.progress-meta{display:flex;justify-content:space-between;gap:10px;font-size:13px;color:#64748b;margin-top:7px}
+.unitcard{transition:transform .18s,box-shadow .18s,border-color .18s;background:linear-gradient(145deg,#fff,#f8fbff)}
+.unitcard:hover{transform:translateY(-2px);box-shadow:0 8px 20px #1e40af12;border-color:#93c5fd}
+.panel{box-shadow:0 8px 25px #0f172a08;border-color:#e5eaf2}
+.qa{background:white;transition:border-color .18s,box-shadow .18s}
+.qa:hover{border-color:#bfdbfe;box-shadow:0 5px 16px #0f172a08}
+.qtitle{background:linear-gradient(90deg,#f8fafc,#fff);align-items:flex-start}
+.qtitle h3{font-size:16px}
+.qtitle button{flex-shrink:0}
+.answer{font-size:15px}
+.answer h4{border-left:3px solid #93c5fd;padding-left:9px}
+.revise-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 16px;border-top:1px solid #eef2f7;background:#fbfdff}
+.revise-btn{border:1px solid #cbd5e1;background:white;border-radius:8px;padding:7px 10px;cursor:pointer;color:#475569;font-weight:700;font-size:12px}
+.revise-btn.done{background:#ecfdf5;border-color:#86efac;color:#166534}
+.qa.is-revised{border-color:#86efac}
+.qa.is-revised .qtitle{background:#f0fdf4}
+.label{display:inline-block;background:#dbeafe;color:#1d4ed8;padding:3px 7px;border-radius:5px;margin-bottom:6px}
+.hidden-by-search{display:none!important}
+@media(max-width:650px){.study-tools{grid-template-columns:1fr 1fr}.study-tools input{grid-column:1/-1}.toolbtn{font-size:13px}.qtitle{display:block}.qtitle button{margin-top:10px}.panel{padding:17px}}
+@media print{body{background:white}.study-tools,.revise-row,.progress-wrap,.progress-meta{display:none!important}.qa{break-inside:avoid}.answer.hidden{display:block}}
+
 </style></head>
 <body>
 <div class="header"><div>⚖️ KSLU · 3-Year LL.B. · Semester I</div><h1>Criminal Law – I</h1><p>Bharatiya Nyaya Sanhita, 2023 (BNS)</p></div>
@@ -20,15 +56,26 @@
 <nav class="topnav" aria-label="Jump to unit">
 <a href="#unit1">Unit I</a><a href="#unit2">Unit II</a><a href="#unit3">Unit III</a><a href="#unit4">Unit IV</a><a href="#unit5">Unit V</a><a href="#revision">Revision guide</a>
 </nav>
+<div class="study-tools" aria-label="Study controls">
+<input id="questionSearch" type="search" placeholder="🔎 Search questions or topics (e.g., abetment, murder, theft)" aria-label="Search questions">
+<button class="toolbtn" type="button" onclick="setAllAnswers(true)">＋ Expand all answers</button>
+<button class="toolbtn" type="button" onclick="setAllAnswers(false)">－ Collapse all answers</button>
+</div>
+<section class="panel" id="studyProgressPanel">
+<h2>🎯 Your revision progress</h2>
+<p class="muted">Mark each question as revised after you can explain it without looking. Your progress is saved in this browser on this device.</p>
+<div class="progress-wrap"><div class="progress-fill" id="progressFill"></div></div>
+<div class="progress-meta"><span id="progressText">0 of 30 questions revised</span><span id="progressPercent">0%</span></div>
+</section>
 <section class="panel"><h2>Study by unit</h2><p class="muted">Choose a unit below or scroll through the questions and answers on this page. Answers are written in simple English for exam preparation and organised around the published KSLU 3-year LL.B. syllabus.</p>
 <div class="unitgrid">
-<a class="unitcard" href="#unit1"><strong>Unit I</strong><span>General principles · 4 answers available</span></a>
+<a class="unitcard" href="#unit1"><strong>Unit I</strong><span>General principles · 4 exam answers</span></a>
 <a class="unitcard" href="#unit2"><strong>Unit II</strong><span>Abetment, conspiracy, attempt; women and children</span></a>
 <a class="unitcard" href="#unit3"><strong>Unit III</strong><span>Offences against the human body</span></a>
 <a class="unitcard" href="#unit4"><strong>Unit IV</strong><span>State, elections, public tranquillity and justice</span></a>
 <a class="unitcard" href="#unit5"><strong>Unit V</strong><span>Property offences and reputation-related offences</span></a>
 </div>
-<div class="notice"><strong>Important:</strong> The page is being built unit by unit. Unit I contains four starting answers. Units II–V now contain additional exam-style answers. Confirm the exact syllabus topics and verify section wording in the current Bare Act before final memorisation. Confirm exact unit placement against the official KSLU syllabus for your programme and admission batch.</div>
+<div class="notice"><strong>Important:</strong> This page includes 30 expandable exam-style answers across all five units. Confirm the exact syllabus topics and verify section wording in the current Bare Act before final memorisation. Confirm exact unit placement against the official KSLU syllabus for your programme and admission batch.</div>
 </section>
 
 <section class="panel" id="unit1"><h2>Unit I — General Principles</h2><p class="muted">BNS framework, kinds of punishment, actus reus and mens rea, mistake of fact and law, and general exceptions. Confirm the exact syllabus topics before final revision.</p>
@@ -42,7 +89,7 @@
 <h4>6. Community service</h4><p>Community service requires an offender to perform prescribed work for the benefit of the community without remuneration. It is recognised as a punishment under the BNS.</p>
 <h4>Solitary confinement</h4><p>Solitary confinement is not listed as a separate principal punishment under Section 4. The BNS provides for it in Sections 11 and 12, subject to statutory restrictions and limits.</p>
 <h4>Conclusion</h4><p>Section 4 recognises death, life imprisonment, rigorous or simple imprisonment, forfeiture of property, fine and community service. The appropriate punishment depends on the offence, statutory provision and circumstances of the case.</p>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q1</span><button type="button" class="revise-btn" data-question="1" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 
 <div class="qa"><div class="qtitle"><div><div class="label">QUESTION 2 · LONG ANSWER / SHORT NOTE</div><h3>Explain actus reus and mens rea as essential elements of a crime.</h3></div><button onclick="toggleAnswer(this)">Hide answer</button></div><div class="answer">
 <h4>Introduction</h4><p>A crime is an act or omission prohibited by law and punishable by the State. In many offences, criminal liability depends on two important elements: <em>actus reus</em> and <em>mens rea</em>.</p>
@@ -52,7 +99,7 @@
 <h4>4. Importance</h4><p>Mens rea helps distinguish an intentional or knowing offence from an innocent mistake or accident. The prosecution must prove the elements required by law, subject to applicable legal rules.</p>
 <h4>Conclusion</h4><p><em>Actus reus</em> refers to the prohibited external element, while <em>mens rea</em> refers to the required mental element.</p>
 <div class="notice"><strong>Easy memory aid:</strong> Actus reus = what the person did or failed to do. Mens rea = the state of mind required by the offence.</div>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q2</span><button type="button" class="revise-btn" data-question="2" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 
 <div class="qa"><div class="qtitle"><div><div class="label">QUESTION 3 · LONG ANSWER</div><h3>Explain the maxim “Ignorantia facti excusat, ignorantia juris non excusat” with reference to the BNS.</h3></div><button onclick="toggleAnswer(this)">Hide answer</button></div><div class="answer">
 <h4>Introduction</h4><p>The maxim means <strong>ignorance of fact may excuse, but ignorance of law does not excuse</strong>. A genuine mistake about facts may, in appropriate circumstances, affect criminal responsibility. A person generally cannot escape liability merely by claiming not to know the law.</p>
@@ -61,7 +108,7 @@
 <h4>3. Difference</h4><ul><li><strong>Mistake of fact:</strong> concerns an incorrect belief about facts; it may provide a defence if statutory conditions are satisfied.</li><li><strong>Mistake of law:</strong> concerns ignorance or misunderstanding of law; it generally does not excuse criminal liability.</li></ul>
 <h4>Conclusion</h4><p>The maxim distinguishes factual mistakes from mistakes about the law. Section 14 provides a specific protection for certain acts done under a qualifying mistake of fact.</p>
 <div class="notice"><strong>Exam tip:</strong> Do not write that every mistake of fact is a defence. State the conditions of Section 14 and apply them to the problem.</div>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q3</span><button type="button" class="revise-btn" data-question="3" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 
 <div class="qa"><div class="qtitle"><div><div class="label">QUESTION 4 · LONG ANSWER</div><h3>Explain the general exceptions under the Bharatiya Nyaya Sanhita, 2023.</h3></div><button onclick="toggleAnswer(this)">Hide answer</button></div><div class="answer">
 <h4>Introduction</h4><p>General exceptions are legal circumstances in which an act that might otherwise appear to be an offence is not treated as criminal under the applicable law. The general exceptions in the BNS are contained in Sections 14–44.</p>
@@ -80,7 +127,7 @@
 <p><strong>12. Private defence — Sections 34–44:</strong> The BNS recognises the right to defend one's own body, another person's body and property in prescribed circumstances. The right is subject to statutory limits and does not authorise unlimited force.</p>
 <h4>Importance and conclusion</h4><p>General exceptions define circumstances in which criminal liability may not arise. The accused's conduct, intention, knowledge and surrounding circumstances must be assessed under the relevant BNS provision.</p>
 <div class="notice"><strong>Exam tip:</strong> For a long answer, explain the exceptions most relevant to the question. For a problem question, identify the section, state its conditions, apply them to the facts and conclude.</div>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q4</span><button type="button" class="revise-btn" data-question="4" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 </section>
 
 
@@ -94,7 +141,7 @@
 <h4>Example</h4><p>A intentionally urges B to commit an offence. Even if B refuses, A may still be liable for abetment by instigation if the statutory ingredients are proved.</p>
 <h4>Conclusion</h4><p>Abetment is a form of secondary criminal liability. The prosecution must establish the legally recognised form of abetment and the required mental element, not merely that the accused knew the principal offender.</p>
 <div class="notice"><strong>Remember:</strong> Section 45 defines abetment; Section 46 explains who is an abettor. Punishment provisions follow in Sections 49 onwards.</div>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q5</span><button type="button" class="revise-btn" data-question="5" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 
 <div class="qa"><div class="qtitle"><div><div class="label">QUESTION 6 · LONG ANSWER / DISTINCTION</div><h3>Distinguish abetment by conspiracy from criminal conspiracy.</h3></div><button onclick="toggleAnswer(this)">Hide answer</button></div><div class="answer">
 <h4>Introduction</h4><p>The BNS recognises both abetment by conspiracy and the separate offence of criminal conspiracy. They are related, but their legal ingredients are not identical.</p>
@@ -102,7 +149,7 @@
 <h4>Criminal conspiracy — Section 61</h4><p>Criminal conspiracy involves an agreement between two or more persons to do an illegal act, or to do a legal act by illegal means. Where the agreement is to commit an offence, the agreement itself is generally sufficient; for other illegal objects, the statute requires an act beyond the agreement in the circumstances specified by Section 61.</p>
 <h4>Key differences</h4><ul><li><strong>Legal character:</strong> abetment by conspiracy is one method of abetment; criminal conspiracy is a separate offence.</li><li><strong>Act in pursuance:</strong> abetment by conspiracy requires an act or illegal omission in pursuance of the conspiracy and to carry it out. For a conspiracy to commit an offence, Section 61 generally treats the agreement itself as sufficient.</li><li><strong>Focus:</strong> abetment by conspiracy is linked to abetting a particular thing; criminal conspiracy focuses on the unlawful agreement.</li><li><strong>Proof:</strong> both may be proved through circumstances, but the prosecution must establish the ingredients of the specific offence charged.</li></ul>
 <h4>Conclusion</h4><p>Do not treat the two concepts as interchangeable. In an exam answer, state Section 45 for abetment by conspiracy and Section 61 for criminal conspiracy, then compare their ingredients.</p>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q6</span><button type="button" class="revise-btn" data-question="6" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 
 <div class="qa"><div class="qtitle"><div><div class="label">QUESTION 7 · LONG ANSWER</div><h3>Explain attempt to commit an offence and the tests used to distinguish preparation from attempt.</h3></div><button onclick="toggleAnswer(this)">Hide answer</button></div><div class="answer">
 <h4>Introduction</h4><p>Attempt is a stage of crime between preparation and completion. The offence may remain incomplete, but the accused has moved far enough towards committing it to attract criminal liability.</p>
@@ -111,7 +158,7 @@
 <h4>Common tests used by courts</h4><ul><li><strong>Proximity test:</strong> how close was the accused's act to completing the offence?</li><li><strong>Unequivocality test:</strong> do the acts clearly show the criminal intention, rather than an innocent purpose?</li><li><strong>Substantial-step approach:</strong> has the accused taken a significant step towards carrying out the offence? This is a useful explanatory approach, not a replacement for the governing Indian statutory test.</li></ul>
 <h4>Illustration</h4><p>Buying tools with an intention to break into a building may be preparation. Breaking a lock and entering to steal may amount to attempt or a completed offence depending on the facts and applicable provision.</p>
 <h4>Conclusion</h4><p>Attempt requires both the required mental element and conduct that has progressed beyond mere preparation. The court assesses the entire sequence of acts and the relevant offence definition.</p>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q7</span><button type="button" class="revise-btn" data-question="7" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 
 <div class="qa"><div class="qtitle"><div><div class="label">QUESTION 8 · LONG ANSWER</div><h3>Explain rape under the BNS and briefly discuss related sexual offences.</h3></div><button onclick="toggleAnswer(this)">Hide answer</button></div><div class="answer">
 <h4>Introduction</h4><p>The BNS contains provisions addressing rape and other sexual offences in Sections 63–73. These offences protect bodily autonomy and sexual integrity. In an exam, use the statutory definition and avoid relying only on a general description.</p>
@@ -121,25 +168,25 @@
 <h4>Importance of consent and evidence</h4><p>The prosecution must establish the elements of the offence charged. Courts consider the evidence as a whole and apply the relevant criminal procedure and evidence law. Personal assumptions or stereotypes should not replace legal analysis.</p>
 <h4>Conclusion</h4><p>The BNS distinguishes rape from other sexual offences and prescribes different provisions for different circumstances. A good answer should define the offence under Section 63, discuss the relevant punishment section and apply the correct subsection to the facts.</p>
 <div class="notice"><strong>Study caution:</strong> This is a topic summary, not a substitute for learning the full statutory definition and exceptions from the current Bare Act.</div>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q8</span><button type="button" class="revise-btn" data-question="8" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 
 <div class="qa"><div class="qtitle"><div><div class="label">QUESTION 9 · LONG ANSWER / SHORT NOTE</div><h3>Explain dowry death and cruelty by a husband or his relatives under the BNS.</h3></div><button onclick="toggleAnswer(this)">Hide answer</button></div><div class="answer">
 <h4>Dowry death — Section 80</h4><p>Section 80 addresses a woman's death caused by burns, bodily injury or otherwise than under normal circumstances within seven years of marriage, where it is shown that soon before her death she was subjected by her husband or a relative of her husband to cruelty or harassment in connection with a demand for dowry. Where the statutory conditions are satisfied, the death is treated as dowry death and the person responsible is liable to the punishment prescribed by the section.</p>
 <h4>Cruelty — Sections 85 and 86</h4><p>Section 85 penalises a husband or relative of a husband who subjects a woman to cruelty. Section 86 defines cruelty for this purpose. It includes wilful conduct likely to drive the woman to suicide or cause grave injury or danger to life, limb or health, and harassment aimed at coercing her or her relatives to meet an unlawful demand for property or valuable security.</p>
 <h4>Difference</h4><ul><li><strong>Dowry death:</strong> requires the death and the specific statutory circumstances, including the connection to dowry-related cruelty or harassment soon before death.</li><li><strong>Cruelty:</strong> may be committed even when the woman has not died; the prosecution must prove the conduct defined by Section 86.</li></ul>
 <h4>Conclusion</h4><p>Sections 80, 85 and 86 address serious forms of abuse connected with marriage. The precise statutory ingredients and evidence must be considered separately for each offence.</p>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q9</span><button type="button" class="revise-btn" data-question="9" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 <div class="qa"><div class="qtitle"><div><div class="label">QUESTION 25 · SHORT NOTE / LONG ANSWER</div><h3>Explain sexual harassment, stalking and assault against women under the BNS.</h3></div><button onclick="toggleAnswer(this)">Hide answer</button></div><div class="answer">
 <h4>Relevant provisions</h4><p>The BNS addresses assault or criminal force against a woman with intent to outrage her modesty in Section 74, sexual harassment in Section 75, assault or criminal force with intent to disrobe in Section 76, voyeurism in Section 77, stalking in Section 78, and words, gestures or acts intended to insult the modesty of a woman in Section 79.</p>
 <h4>Key concepts</h4><ul><li><strong>Sexual harassment:</strong> Section 75 specifies conduct such as unwelcome physical contact and advances, demands or requests for sexual favours, showing pornography against a woman's will, and sexually coloured remarks, subject to the provision's terms.</li><li><strong>Voyeurism:</strong> Section 77 deals with watching or capturing a woman engaging in a private act in circumstances where she would ordinarily expect privacy, as defined by law.</li><li><strong>Stalking:</strong> Section 78 addresses specified repeated following/contact or monitoring of a woman's use of the internet, email or other electronic communication, subject to statutory exceptions.</li></ul>
 <h4>Conclusion</h4><p>These provisions address different conduct and have separate ingredients. In an exam answer, identify the conduct, intent or knowledge required, and the specific section instead of treating all harassment as one offence.</p>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q25</span><button type="button" class="revise-btn" data-question="25" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 <div class="qa"><div class="qtitle"><div><div class="label">QUESTION 26 · SHORT NOTE</div><h3>Explain selected offences against children under the BNS.</h3></div><button onclick="toggleAnswer(this)">Hide answer</button></div><div class="answer">
 <h4>Introduction</h4><p>The BNS contains specific offences to protect children. The KSLU syllabus highlights selected offences against children, including provisions in Sections 91–97 and related provisions within the chapter on offences against women and children.</p>
 <h4>Examples</h4><ul><li>Section 93 addresses exposure and abandonment of a child under twelve by a parent or person having care of the child.</li><li>Section 95 addresses hiring, employing or engaging a child to commit an offence.</li><li>Section 96 addresses procuration of a child.</li><li>Sections 97–99 address specified forms of kidnapping and the buying or selling of a child for prostitution or related purposes.</li></ul>
 <h4>Importance</h4><p>These provisions aim to protect children from abandonment, exploitation, criminal recruitment, kidnapping and sexual exploitation. The exact age, intent and conduct requirements vary by section.</p>
 <h4>Conclusion</h4><p>For an exam, learn the particular child offence specified in the question and state the precise statutory elements. Avoid combining different child-protection offences into one definition.</p>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q26</span><button type="button" class="revise-btn" data-question="26" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 
 </section>
 
@@ -153,7 +200,7 @@
 <h4>Important distinction</h4><ul><li><strong>Degree of intention/knowledge:</strong> murder involves the higher degree described in Section 101; culpable homicide is the broader category.</li><li><strong>Probability of death:</strong> the degree of likelihood and the nature of the injury are important to the statutory test.</li><li><strong>Exceptions:</strong> conduct that would otherwise fall within murder may be reduced to culpable homicide not amounting to murder if a statutory exception applies.</li><li><strong>Punishment:</strong> Section 103 deals with punishment for murder; Section 105 deals with culpable homicide not amounting to murder.</li></ul>
 <h4>Illustration</h4><p>If A intentionally inflicts a fatal injury in circumstances meeting Section 101 and no exception applies, the offence may be murder. If the facts fall within a statutory exception, the offence may instead be culpable homicide not amounting to murder.</p>
 <h4>Conclusion</h4><p>Every murder is culpable homicide, but every culpable homicide is not murder. A correct answer compares Sections 100 and 101 and then considers any applicable exception.</p>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q10</span><button type="button" class="revise-btn" data-question="10" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 
 <div class="qa"><div class="qtitle"><div><div class="label">QUESTION 11 · LONG ANSWER</div><h3>Explain causing death by negligence and distinguish it from murder and culpable homicide.</h3></div><button onclick="toggleAnswer(this)">Hide answer</button></div><div class="answer">
 <h4>Introduction</h4><p>Death may result not only from an intentional act but also from a rash or negligent act. The BNS addresses causing death by negligence in Section 106, subject to the applicable statutory wording and any amendments or commencement qualifications.</p>
@@ -162,14 +209,14 @@
 <h4>Causation</h4><p>The prosecution must establish that the accused's act or omission was legally connected to the death. A mere unfortunate outcome does not by itself prove criminal negligence.</p>
 <h4>Conclusion</h4><p>Section 106 should be applied according to its exact wording and the facts. The key question is whether the death resulted from the level of rashness or negligence required by law, rather than the intention or knowledge required for homicide.</p>
 <div class="notice"><strong>Exam note:</strong> Section 106 has had a special commencement qualification concerning sub-section (2). Check the current official position before writing about that sub-section.</div>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q11</span><button type="button" class="revise-btn" data-question="11" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 
 <div class="qa"><div class="qtitle"><div><div class="label">QUESTION 12 · LONG ANSWER / SHORT NOTE</div><h3>Explain hurt and grievous hurt under the BNS.</h3></div><button onclick="toggleAnswer(this)">Hide answer</button></div><div class="answer">
 <h4>Hurt — Sections 114–115</h4><p>Section 114 defines hurt as causing bodily pain, disease or infirmity to a person. Section 115 deals with voluntarily causing hurt, where the act is done with the intention of causing hurt or with the knowledge that hurt is likely, and hurt is caused.</p>
 <h4>Grievous hurt — Sections 116–117</h4><p>Section 116 lists the kinds of injury treated as grievous hurt. These include specified serious injuries such as emasculation, permanent loss of sight or hearing, loss or impairment of a member or joint, permanent disfiguration of the head or face, fracture or dislocation of a bone or tooth, and other injuries meeting the statutory definition.</p><p>Section 117 addresses voluntarily causing grievous hurt. The punishment depends on the exact facts and the relevant provision.</p>
 <h4>Difference</h4><ul><li><strong>Hurt:</strong> bodily pain, disease or infirmity.</li><li><strong>Grievous hurt:</strong> injury falling within one of the categories specifically listed by the BNS.</li><li><strong>Proof:</strong> medical evidence may be important, but the legal classification must match the statutory definition.</li></ul>
 <h4>Conclusion</h4><p>The distinction between hurt and grievous hurt affects the applicable offence and punishment. An answer should define each term, identify the relevant sections and explain the seriousness of the injury in light of the statute.</p>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q12</span><button type="button" class="revise-btn" data-question="12" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 
 <div class="qa"><div class="qtitle"><div><div class="label">QUESTION 13 · DISTINCTION</div><h3>Distinguish wrongful restraint from wrongful confinement.</h3></div><button onclick="toggleAnswer(this)">Hide answer</button></div><div class="answer">
 <h4>Wrongful restraint — Section 126</h4><p>Wrongful restraint involves voluntarily obstructing a person so as to prevent that person from proceeding in a direction in which they have a right to proceed, subject to the statutory exceptions.</p>
@@ -177,7 +224,7 @@
 <h4>Difference</h4><ul><li>Restraint blocks a person's movement in a particular direction.</li><li>Confinement prevents the person from going beyond specified limits.</li><li>Confinement is therefore a more complete restriction of movement.</li></ul>
 <h4>Example</h4><p>Blocking a person's path so that they cannot proceed along a particular road may amount to wrongful restraint. Locking a person inside a room and preventing them from leaving may amount to wrongful confinement.</p>
 <h4>Conclusion</h4><p>Both offences protect freedom of movement. The main distinction is whether the obstruction is directional or confines the person within defined limits.</p>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q13</span><button type="button" class="revise-btn" data-question="13" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 
 <div class="qa"><div class="qtitle"><div><div class="label">QUESTION 14 · LONG ANSWER</div><h3>Explain organised crime and terrorist acts under the BNS.</h3></div><button onclick="toggleAnswer(this)">Hide answer</button></div><div class="answer">
 <h4>Organised crime — Section 111</h4><p>Section 111 addresses continuing unlawful activity by a person or group acting as part of an organised crime syndicate, using unlawful means such as violence, intimidation, coercion or other methods specified by the section, for material or other benefits. The definition contains specific statutory requirements, including the relevant pattern of activity and the required prior charge-sheet/cognizance conditions. Each element must be checked in the current Bare Act.</p>
@@ -185,18 +232,18 @@
 <h4>Terrorist act — Section 113</h4><p>Section 113 addresses acts committed with the intent and consequences described by the section, including acts threatening the unity, integrity, sovereignty, security or economic security of India, or intended to strike terror, where the statutory requirements are met.</p>
 <h4>Importance</h4><p>These provisions target serious organised or terror-related conduct that may affect public safety and national security. They have detailed definitions and serious penalties, so a student should avoid relying on broad everyday meanings alone.</p>
 <h4>Conclusion</h4><p>Sections 111, 112 and 113 deal with different but related categories of serious criminal activity. In an exam, define each separately and identify the exact statutory ingredients rather than treating them as interchangeable.</p>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q14</span><button type="button" class="revise-btn" data-question="14" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 <div class="qa"><div class="qtitle"><div><div class="label">QUESTION 27 · LONG ANSWER</div><h3>Explain kidnapping and abduction and distinguish between them.</h3></div><button onclick="toggleAnswer(this)">Hide answer</button></div><div class="answer">
 <h4>Kidnapping — Section 137</h4><p>The BNS recognises kidnapping from India and kidnapping from lawful guardianship. The statutory definition includes taking or enticing a child or a person of unsound mind out of the keeping of the lawful guardian without the guardian's consent, subject to the age and other requirements in the section.</p>
 <h4>Abduction — Section 138</h4><p>Abduction involves compelling a person by force, or inducing a person by deceitful means, to go from any place. It is defined by the means used to cause the movement and is not limited to children.</p>
 <h4>Difference</h4><ul><li>Kidnapping from lawful guardianship is defined by the person's age/status, taking or enticing, and absence of guardian consent.</li><li>Abduction involves force or deceitful inducement to move a person.</li><li>Kidnapping is complete when the statutory act occurs; abduction often becomes punishable when linked with a further criminal purpose or a specific offence provision.</li></ul>
 <h4>Conclusion</h4><p>Kidnapping and abduction are distinct statutory concepts. The prosecution must establish the elements of the particular form charged and any additional purpose required by the applicable section.</p>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q27</span><button type="button" class="revise-btn" data-question="27" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 <div class="qa"><div class="qtitle"><div><div class="label">QUESTION 28 · SHORT NOTE</div><h3>Explain abetment of suicide under the BNS.</h3></div><button onclick="toggleAnswer(this)">Hide answer</button></div><div class="answer">
 <h4>Relevant provisions</h4><p>Section 108 deals with abetment of suicide. Section 107 deals with abetment of suicide by a child or a person of unsound mind, a delirious person or a person in a state of intoxication, in the circumstances specified by that section.</p>
 <h4>Principle</h4><p>Abetment must be established according to the legal definition of abetment and the evidence in the case. Mere disagreement, ordinary quarrels or the fact that a person died by suicide do not automatically establish criminal abetment. The prosecution must prove the required instigation, conspiracy or intentional aid and the relevant mental element.</p>
 <h4>Conclusion</h4><p>Distinguish Section 107 from Section 108 and apply the statutory requirements to the facts. Avoid drawing a conclusion solely from the tragic outcome.</p>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q28</span><button type="button" class="revise-btn" data-question="28" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 
 </section>
 
@@ -208,7 +255,7 @@
 <h4>Examples of offences</h4><ul><li><strong>Section 147:</strong> waging, attempting to wage, or abetting the waging of war against the Government of India.</li><li><strong>Sections 148–150:</strong> certain conspiracies, collection of arms and concealment connected with waging war.</li><li><strong>Section 151:</strong> assaulting the President, Governor or another specified constitutional authority with the intent described by the section.</li><li><strong>Section 152:</strong> acts endangering the sovereignty, unity and integrity of India, as defined by the provision.</li><li><strong>Sections 153–158:</strong> specified offences involving war against a foreign State at peace with India and certain prisoners of State or war.</li></ul>
 <h4>Section 152</h4><p>Section 152 addresses acts that purposely or knowingly excite or attempt to excite secession, armed rebellion, subversive activities, separatist activities, or otherwise endanger the sovereignty, unity and integrity of India, or encourage such acts, as stated in the section. The exact statutory wording and its explanation should be read carefully. Lawful criticism of government measures does not automatically amount to this offence; the statutory elements must be proved.</p>
 <h4>Conclusion</h4><p>Offences against the State protect national security and constitutional order. An exam answer should identify the relevant section and distinguish the elements of the particular offence rather than making a general statement that all criticism is criminal.</p>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q15</span><button type="button" class="revise-btn" data-question="15" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 
 <div class="qa"><div class="qtitle"><div><div class="label">QUESTION 16 · LONG ANSWER</div><h3>Explain unlawful assembly, rioting and affray.</h3></div><button onclick="toggleAnswer(this)">Hide answer</button></div><div class="answer">
 <h4>Unlawful assembly — Section 189</h4><p>An assembly of five or more persons becomes unlawful when its common object falls within one of the categories specified by Section 189, such as resisting lawful authority or committing certain offences. The common object and the statutory conditions must be proved.</p>
@@ -217,7 +264,7 @@
 <h4>Affray — Section 194</h4><p>Affray involves two or more persons fighting in a public place and disturbing public peace, as required by the section.</p>
 <h4>Difference</h4><ul><li>Unlawful assembly focuses on the number of persons and an unlawful common object.</li><li>Rioting requires force or violence in the statutory circumstances.</li><li>Affray focuses on fighting between persons in a public place that disturbs public peace.</li></ul>
 <h4>Conclusion</h4><p>These offences protect public order. A good answer should distinguish common object, force or violence, and public fighting, and apply the correct section to the facts.</p>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q16</span><button type="button" class="revise-btn" data-question="16" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 
 <div class="qa"><div class="qtitle"><div><div class="label">QUESTION 17 · LONG ANSWER / SHORT NOTE</div><h3>Explain false evidence and fabricating false evidence under the BNS.</h3></div><button onclick="toggleAnswer(this)">Hide answer</button></div><div class="answer">
 <h4>Introduction</h4><p>The justice system depends on truthful evidence. The BNS contains offences dealing with false evidence and related conduct in the provisions on offences against public justice.</p>
@@ -226,14 +273,14 @@
 <h4>Related conduct</h4><p>The BNS also deals with using evidence known to be false, destruction or concealment of evidence and harbouring an offender in specified circumstances. The exact offence and punishment depend on the relevant section and the nature of the proceeding.</p>
 <h4>Importance</h4><p>False evidence can lead to wrongful conviction, acquittal or an incorrect judicial decision. These offences protect the integrity of courts and public justice.</p>
 <h4>Conclusion</h4><p>In an exam answer, distinguish a false statement by a person giving evidence from the deliberate creation of false material intended to mislead a decision-maker. Then identify the applicable section and its mental element.</p>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q17</span><button type="button" class="revise-btn" data-question="17" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 
 <div class="qa"><div class="qtitle"><div><div class="label">QUESTION 18 · LONG ANSWER</div><h3>Explain public nuisance and briefly distinguish it from private nuisance.</h3></div><button onclick="toggleAnswer(this)">Hide answer</button></div><div class="answer">
 <h4>Public nuisance</h4><p>The BNS provisions on public health, safety, convenience, decency and morals include public nuisance. In general terms, public nuisance involves an act or illegal omission causing common injury, danger or annoyance to the public or to people in general who use a public right. The statutory definition and relevant section must be applied to the facts.</p>
 <h4>Examples</h4><p>Examples may include obstructing a public way or creating a condition that endangers or seriously inconveniences the public, depending on the facts and the relevant provision.</p>
 <h4>Public nuisance and private nuisance</h4><ul><li><strong>Public nuisance:</strong> affects the public or a section of the public in the manner recognised by law.</li><li><strong>Private nuisance:</strong> is generally a civil wrong involving substantial and unreasonable interference with a person's use or enjoyment of land.</li></ul>
 <h4>Conclusion</h4><p>Public nuisance protects community interests such as health, safety and convenience. Students should use the BNS section for criminal liability and avoid importing civil tort principles without explaining the difference.</p>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q18</span><button type="button" class="revise-btn" data-question="18" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 
 <div class="qa"><div class="qtitle"><div><div class="label">QUESTION 19 · DISTINCTION</div><h3>Distinguish mischief, criminal trespass and forgery.</h3></div><button onclick="toggleAnswer(this)">Hide answer</button></div><div class="answer">
 <h4>Mischief</h4><p>Mischief under Section 324 involves intentionally or knowingly causing wrongful loss or damage to the public or any person by destroying property or changing property or its situation so as to destroy or diminish its value or utility, or affect it injuriously, as specified by the section.</p>
@@ -241,18 +288,18 @@
 <h4>Forgery</h4><p>Forgery is addressed in Section 335 and related provisions. It generally involves making a false document or electronic record with the intention or knowledge specified by law, such as causing damage, supporting a claim, inducing a person to part with property, or committing fraud.</p>
 <h4>Key difference</h4><ul><li>Mischief concerns damage to property or its value/utility.</li><li>Criminal trespass concerns unlawful entry or remaining on property with a specified intent.</li><li>Forgery concerns making a false document or electronic record with the required fraudulent or other statutory intent.</li></ul>
 <h4>Conclusion</h4><p>Although one incident may involve more than one offence, each offence has separate ingredients. Apply the relevant section and mental element to the facts.</p>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q19</span><button type="button" class="revise-btn" data-question="19" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 <div class="qa"><div class="qtitle"><div><div class="label">QUESTION 29 · SHORT NOTE / LONG ANSWER</div><h3>Explain bribery and undue influence at elections under the BNS.</h3></div><button onclick="toggleAnswer(this)">Hide answer</button></div><div class="answer">
 <h4>Relevant provisions</h4><p>The BNS provisions relating to elections appear in Sections 169–177. Section 169 defines relevant election terms. Sections 170 and 171 address bribery and undue influence at elections, while Sections 173 and 174 prescribe punishment for bribery and undue influence/personation, as specified by the Act.</p>
 <h4>Bribery</h4><p>Election bribery generally involves giving, offering, promising, accepting or obtaining gratification in connection with the exercise of an electoral right, in the circumstances described by the statute. The statutory definition and exceptions must be checked.</p>
 <h4>Undue influence</h4><p>Undue influence involves voluntary interference or attempted interference with the free exercise of an electoral right through the methods specified by the law. Threats, coercion or certain forms of improper pressure may be relevant, depending on the provision.</p>
 <h4>Conclusion</h4><p>These provisions protect free and fair elections. A good answer defines the prohibited conduct, identifies the relevant BNS sections and explains how the conduct interferes with a person's free electoral choice.</p>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q29</span><button type="button" class="revise-btn" data-question="29" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 <div class="qa"><div class="qtitle"><div><div class="label">QUESTION 30 · SHORT NOTE</div><h3>Explain offences relating to counterfeit currency and government stamps.</h3></div><button onclick="toggleAnswer(this)">Hide answer</button></div><div class="answer">
 <h4>Relevant provisions</h4><p>The BNS deals with offences relating to coin, currency-notes, bank-notes and government stamps in Sections 178–188. These include counterfeiting, using counterfeit items as genuine, possessing them in specified circumstances, and making or possessing instruments or materials for counterfeiting.</p>
 <h4>Legal principle</h4><p>The relevant offence may depend on whether the accused made the counterfeit item, used it as genuine, possessed it with the required knowledge or intention, or dealt with tools or materials for counterfeiting. Each offence has its own ingredients.</p>
 <h4>Conclusion</h4><p>These offences protect the integrity of currency and government stamps. In an exam, avoid treating mere possession and knowingly using a counterfeit item as the same offence; identify the exact conduct and section.</p>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q30</span><button type="button" class="revise-btn" data-question="30" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 
 </section>
 
@@ -267,7 +314,7 @@
 <h4>Dacoity — Section 310</h4><p>Dacoity occurs when five or more persons conjointly commit or attempt to commit robbery, or are present and aid it, as described by the section.</p>
 <h4>Quick comparison</h4><ul><li>Theft: dishonest taking without consent.</li><li>Snatching: sudden or forcible seizure from a person or their possession.</li><li>Extortion: delivery induced by fear of injury.</li><li>Robbery: theft or extortion with the specified immediate violence or fear.</li><li>Dacoity: robbery involving five or more persons acting conjointly.</li></ul>
 <h4>Conclusion</h4><p>These offences differ in the way property is taken, the role of fear or force, and the number of participants. The exact statutory ingredients must be applied carefully.</p>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q20</span><button type="button" class="revise-btn" data-question="20" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 
 <div class="qa"><div class="qtitle"><div><div class="label">QUESTION 21 · LONG ANSWER / DISTINCTION</div><h3>Distinguish criminal misappropriation, criminal breach of trust and receiving stolen property.</h3></div><button onclick="toggleAnswer(this)">Hide answer</button></div><div class="answer">
 <h4>Criminal misappropriation — Section 314</h4><p>Criminal misappropriation involves dishonestly misappropriating or converting movable property to one's own use. The key issue is dishonest conversion of property.</p>
@@ -275,7 +322,7 @@
 <h4>Receiving stolen property — Section 317</h4><p>This offence concerns dishonestly receiving or retaining property knowing or having reason to believe it is stolen property, subject to the statutory definition and exceptions.</p>
 <h4>Differences</h4><ul><li><strong>Entrustment:</strong> central to criminal breach of trust; not a necessary element of criminal misappropriation.</li><li><strong>Conversion:</strong> criminal misappropriation focuses on dishonest conversion of movable property to one's own use.</li><li><strong>Knowledge:</strong> receiving stolen property requires the legally specified knowledge or reason to believe the property is stolen.</li></ul>
 <h4>Conclusion</h4><p>The offences protect property in different situations: dishonest conversion, abuse of entrusted property, and dishonest receipt or retention of stolen property.</p>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q21</span><button type="button" class="revise-btn" data-question="21" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 
 <div class="qa"><div class="qtitle"><div><div class="label">QUESTION 22 · LONG ANSWER</div><h3>Explain cheating under the BNS and distinguish it from a mere breach of contract.</h3></div><button onclick="toggleAnswer(this)">Hide answer</button></div><div class="answer">
 <h4>Cheating — Section 318</h4><p>Cheating involves deceiving a person and fraudulently or dishonestly inducing that person to deliver property or consent to its retention, or intentionally inducing the person to do or omit something that they would not otherwise do or omit, where the act or omission causes or is likely to cause the specified harm to body, mind, reputation or property.</p>
@@ -283,21 +330,21 @@
 <h4>Cheating and breach of contract</h4><p>A breach of contract occurs when a party fails to perform a contractual obligation. That failure alone does not prove cheating. For cheating, the required deception and mental element must be established. If dishonest intention existed from the beginning and induced the transaction, that may support a cheating charge; later non-performance by itself is not conclusive proof.</p>
 <h4>Example</h4><p>If A obtains money by knowingly making a false representation about a material fact and intends to deceive B, the facts may amount to cheating if the statutory ingredients are satisfied. If A honestly intended to perform but later could not perform the contract, the matter may be only a civil breach unless additional evidence establishes the offence.</p>
 <h4>Conclusion</h4><p>Cheating requires the ingredients in Section 318. A student should not equate every broken promise or unpaid debt with a criminal offence.</p>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q22</span><button type="button" class="revise-btn" data-question="22" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 
 <div class="qa"><div class="qtitle"><div><div class="label">QUESTION 23 · LONG ANSWER / SHORT NOTE</div><h3>Explain criminal intimidation and defamation under the BNS.</h3></div><button onclick="toggleAnswer(this)">Hide answer</button></div><div class="answer">
 <h4>Criminal intimidation — Section 351</h4><p>Criminal intimidation generally involves threatening another person with injury to their person, reputation or property, or to the person or reputation of someone in whom they are interested, with the intent to cause alarm or to cause the person to do an act they are not legally bound to do, or omit an act they are legally entitled to do, as specified by Section 351.</p>
 <h4>Defamation — Section 356</h4><p>Defamation involves making or publishing an imputation concerning a person with the intention of harming, or knowing or having reason to believe that it will harm, that person's reputation, subject to the statutory definition and exceptions. The BNS includes exceptions that must be considered before concluding that a statement is criminal defamation.</p>
 <h4>Difference</h4><ul><li>Criminal intimidation focuses on a threat and the intention to cause alarm or compel conduct.</li><li>Defamation focuses on an imputation that harms reputation and the required mental element.</li><li>A threat may exist without a defamatory imputation; a defamatory imputation need not contain a threat.</li></ul>
 <h4>Conclusion</h4><p>Both offences have detailed statutory ingredients and exceptions. In a problem question, identify the words or conduct, the intention or knowledge, and the relevant statutory conditions.</p>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q23</span><button type="button" class="revise-btn" data-question="23" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 
 <div class="qa"><div class="qtitle"><div><div class="label">QUESTION 24 · LONG ANSWER / SHORT NOTE</div><h3>Explain dishonest intention in property offences and the importance of consent.</h3></div><button onclick="toggleAnswer(this)">Hide answer</button></div><div class="answer">
 <h4>Dishonesty</h4><p>Dishonesty is an important mental element in offences such as theft, extortion, misappropriation and breach of trust. The BNS definition links dishonesty to intention to cause wrongful gain to one person or wrongful loss to another.</p>
 <h4>Consent</h4><p>Consent is particularly important to theft, which involves moving property out of a person's possession without consent, and to other property offences whose definitions involve delivery or retention of property. However, consent obtained through legally relevant deception or fear may not have the effect the accused claims.</p>
 <h4>Application</h4><p>In a problem question, identify who possessed the property, whether the accused had permission, whether property was moved or delivered, what the accused intended, and whether the statutory elements of the specific offence are met.</p>
 <h4>Conclusion</h4><p>Dishonest intention and consent often distinguish a criminal property offence from a lawful transaction or civil dispute. They must be assessed using the exact definition in the BNS.</p>
-</div></div>
+</div><div class="revise-row"><span class="muted">Revision check · Q24</span><button type="button" class="revise-btn" data-question="24" onclick="toggleRevised(this)">✓ Mark revised</button></div></div>
 </section>
 
 <section class="panel" id="revision"><h2>Revision guide</h2><ul><li>Learn the definition and statutory ingredients of each offence.</li><li>Use the correct BNS section; do not copy old IPC section numbers into a BNS answer.</li><li>For case law, state the case name and the principle relevant to the question.</li><li>For problem questions: issue → rule/section → apply facts → conclusion.</li><li>For long answers: introduction → statutory provisions → explanation → case law/examples → conclusion.</li></ul><p><a href="../index.html">← Back to Semester I</a></p></section>
@@ -305,5 +352,13 @@
 <div class="footer">KSLU 3-Year LL.B. · Semester I · Criminal Law–I (BNS)</div>
 <script>
 function toggleAnswer(btn){const answer=btn.closest(".qa").querySelector(".answer");const hidden=answer.classList.toggle("hidden");btn.textContent=hidden?"Show answer":"Hide answer";}
+function setAllAnswers(show){document.querySelectorAll(".qa").forEach(q=>{const a=q.querySelector(".answer");const b=q.querySelector(".qtitle button");if(!a||!b)return;a.classList.toggle("hidden",!show);b.textContent=show?"Hide answer":"Show answer";});}
+const progressKey="kslu-criminal-law-i-revised-v1";
+function getRevised(){try{return JSON.parse(localStorage.getItem(progressKey)||"[]")}catch(e){return []}}
+function saveRevised(items){try{localStorage.setItem(progressKey,JSON.stringify(items))}catch(e){}}
+function toggleRevised(btn){const id=String(btn.dataset.question);let items=getRevised();if(items.includes(id)){items=items.filter(x=>x!==id)}else{items.push(id)}saveRevised(items);renderProgress();}
+function renderProgress(){const items=getRevised();document.querySelectorAll(".revise-btn").forEach(btn=>{const done=items.includes(String(btn.dataset.question));btn.classList.toggle("done",done);btn.textContent=done?"✓ Revised":"✓ Mark revised";btn.closest(".qa").classList.toggle("is-revised",done)});const total=document.querySelectorAll(".qa").length;const count=document.querySelectorAll(".revise-btn.done").length;const pct=total?Math.round(count/total*100):0;const fill=document.getElementById("progressFill");if(fill)fill.style.width=pct+"%";const txt=document.getElementById("progressText");if(txt)txt.textContent=count+" of "+total+" questions revised";const percent=document.getElementById("progressPercent");if(percent)percent.textContent=pct+"%";}
+const searchBox=document.getElementById("questionSearch");if(searchBox){searchBox.addEventListener("input",()=>{const q=searchBox.value.trim().toLowerCase();document.querySelectorAll(".qa").forEach(card=>{card.classList.toggle("hidden-by-search",!card.innerText.toLowerCase().includes(q))});document.querySelectorAll("section[id^='unit']").forEach(section=>{const cards=section.querySelectorAll(".qa");section.style.display=Array.from(cards).some(card=>!card.classList.contains("hidden-by-search"))?"":"none";});});}
+renderProgress();
 </script>
 </body></html>
