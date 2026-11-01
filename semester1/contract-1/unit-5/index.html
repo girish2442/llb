@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contract I – Unit 5 Master Study Guide | KSLU LL.B. Sem 1</title>
+  <style>
+    :root {
+      --navy: #142d68;
+      --blue: #2459a9;
+      --bg: #f3f6fb;
+      --card: #ffffff;
+      --text: #1d2737;
+      --muted: #667085;
+      --line: #dce3ef;
+      --gold: #f4c95d;
+      --green: #24784b;
+      --alert-bg: #ebf8ff;
+      --alert-border: #3182ce;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .hero {
+      background: linear-gradient(125deg, #10265b, #1f4f97);
+      color: #fff;
+      padding: 32px 20px 25px;
+    }
+    .wrap { max-width: 1080px; margin: auto; }
+    .eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #cbd9f5;
+      font-weight: 800;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.15;
+      margin: 8px 0;
+    }
+    .hero p {
+      max-width: 800px;
+      color: #e1e9f8;
+      margin: 10px 0 18px;
+    }
+    .stats { display: flex; flex-wrap: wrap; gap: 10px; }
+    .stat {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+    }
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      padding: 12px 16px;
+    }
+    .tools {
+      max-width: 1080px;
+      margin: auto;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .tools input[type="search"] {
+      flex: 1;
+      min-width: 220px;
+      padding: 11px 13px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font: inherit;
+    }
+    .btn, .filter {
+      border: 1px solid #cbd5e1;
+      background: #fff;
+      color: #20365e;
+      border-radius: 99px;
+      padding: 9px 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn:hover, .filter:hover { background: #edf3ff; }
+    .filter.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+    
+    main { max-width: 1080px; margin: 24px auto; padding: 0 16px 50px; }
+    
+    .notice {
+      background: #fff8df;
+      border: 1px solid #f0d98b;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+    }
+    .progress {
+      background: #e6ebf4;
+      border-radius: 99px;
+      height: 8px;
+      overflow: hidden;
+      margin: 10px 0 0;
+    }
+    .progress div { height: 100%; width: 0%; background: #278455; transition: width 0.2s; }
+    .small { font-size: 0.88rem; color: var(--muted); margin-top: 4px; }
+
+    /* Visual Concept Maps */
+    .visual-gallery {
+      margin: 24px 0 30px;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+    }
+    .visual-gallery h2 { margin-top: 0; color: var(--navy); font-size: 1.3rem; }
+    .flowchart-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+      margin-top: 15px;
+    }
+    .flowchart-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .flowchart-card h4 { margin: 0 0 10px 0; color: var(--blue); font-size: 1rem; }
+    .diagram-step {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--blue);
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      font-size: 0.88rem;
+    }
+
+    /* Q&A Cards */
+    .qa {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      margin: 16px 0;
+      padding: 20px;
+      box-shadow: 0 3px 12px rgba(24, 53, 101, 0.05);
+      scroll-margin-top: 90px;
+    }
+    .qtop { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+    .qid {
+      background: #e7eefc;
+      color: #16376f;
+      border-radius: 7px;
+      font-size: 0.8rem;
+      font-weight: 900;
+      padding: 3px 7px;
+      margin-right: 8px;
+    }
+    .unitlabel { color: var(--muted); font-size: 0.82rem; font-weight: 700; }
+    .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .tag {
+      font-size: 0.72rem;
+      line-height: 1.5;
+      padding: 3px 7px;
+      border-radius: 6px;
+      background: #eef2f7;
+      color: #475467;
+      font-weight: 800;
+    }
+    .tag.hot { background: #fff0cf; color: #875300; }
+    .tag.mid { background: #e5f4eb; color: #20623e; }
+    
+    .qa h3 { font-size: 1.15rem; line-height: 1.4; margin: 10px 0 6px; color: var(--navy); }
+    .source { color: var(--muted); font-size: 0.86rem; margin: 0 0 10px; }
+    
+    .qa details { border-top: 1px solid #edf0f5; margin-top: 12px; padding-top: 12px; }
+    .qa summary { cursor: pointer; color: #17478e; font-weight: 800; padding: 4px 0; }
+    
+    .answer { padding: 10px 0 4px; }
+    .answer h4 { margin: 12px 0 4px; color: #2d3748; font-size: 0.98rem; }
+    .answer table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 0.92rem; }
+    .answer th, .answer td { border: 1px solid var(--line); padding: 10px; text-align: left; }
+    .answer th { background: #eef3fb; color: var(--navy); }
+    
+    .formula-box {
+      background-color: var(--alert-bg);
+      border-left: 4px solid var(--alert-border);
+      padding: 10px 14px;
+      margin: 12px 0;
+      font-weight: bold;
+      border-radius: 0 8px 8px 0;
+    }
+    .writing-tip {
+      background: #f1f6ff;
+      border-left: 3px solid var(--blue);
+      padding: 10px 12px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 15px;
+      font-size: 0.92rem;
+    }
+    
+    .done { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 0.88rem; margin-top: 14px; cursor: pointer; }
+    .done input { width: 16px; height: 16px; }
+    
+    .empty { display: none; text-align: center; padding: 35px; background: #fff; border-radius: 12px; color: var(--muted); }
+    footer { background: #10265b; color: #e1e9f8; padding: 25px; text-align: center; font-size: 0.9rem; margin-top: 40px; }
+
+    @media print {
+      .toolbar, .notice, .done, .btn, .filter { display: none !important; }
+      body { background: #fff; font-size: 11pt; }
+      .hero { background: #fff; color: #000; padding: 0; }
+      .eyebrow, .hero p { color: #333; }
+      .qa { break-inside: avoid; box-shadow: none; border: 1px solid #bbb; margin: 10px 0; }
+      .qa details { display: block; }
+      .qa summary { display: none; }
+      .qa details .answer { display: block !important; }
+      footer { background: #fff; color: #000; }
+    }
+  </style>
+</head>
+<body>
+<nav class="site-nav" style="background:#fff;border-bottom:1px solid #dce3ef;padding:10px 16px;font:600 14px system-ui;position:sticky;top:0;z-index:150">
+<div style="max-width:1080px;margin:auto;display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+<a href="../index.html" style="color:#17478e;text-decoration:none">← All Contract–I Units</a>
+<a href="../unit-1/index.html" style="color:#17478e;text-decoration:none">Unit 1</a> <a href="../unit-2/index.html" style="color:#17478e;text-decoration:none">Unit 2</a> <a href="../unit-3/index.html" style="color:#17478e;text-decoration:none">Unit 3</a> <a href="../unit-4/index.html" style="color:#17478e;text-decoration:none">Unit 4</a> <a href="../unit-5/index.html" style="color:#17478e;text-decoration:none">Unit 5</a>
+</div></nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">KSLU · LL.B. Semester I · Contract Law I</div>
+    <h1>Unit 5 Exam Study Master</h1>
+    <p>Comprehensive study guide covering The Specific Relief Act, 1963 (as amended by the 2018 Amendment Act): Specific Performance, Injunctions, Property Recovery, Declarations, and Cancellation of Instruments.</p>
+    <div class="stats">
+      <span class="stat">Unit 5 SRA Focus</span>
+      <span class="stat">7 Comprehensive Questions</span>
+      <span class="stat">Post-2018 Statutory Provisions</span>
+      <span class="stat">Interactive Progress Tracker</span>
+    </div>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="tools">
+    <input id="search" type="search" placeholder="Search section (e.g. Sec 10, Sec 14, Sec 34), topic (e.g. Injunction)...">
+    <button class="filter active" data-filter="all">All Questions</button>
+    <button class="filter" data-filter="HIGH">High Priority</button>
+    <button class="filter" data-filter="PROB">Problem Scenarios</button>
+    <button class="btn" id="expand">Expand All</button>
+    <button class="btn" id="collapse">Collapse All</button>
+    <button class="btn" onclick="window.print()">Print Notes</button>
+  </div>
+</div>
+
+<main>
+  <div class="notice">
+    <b>CRITICAL EXAM AMENDMENT NOTE:</b> Under the <b>Specific Relief (Amendment) Act, 2018</b>, Specific Performance under <b>Section 10</b> is no longer discretionary! Specific performance is now a <b>MANDATORY GENERAL RULE</b> enforced by courts, subject only to statutory exceptions in Sections 11(2), 14, and 16.
+    <div class="progress"><div id="bar"></div></div>
+    <div class="small" id="progressText">0 of 7 questions marked revised</div>
+  </div>
+
+  <!-- Visual Concept Maps -->
+  <section class="visual-gallery">
+    <h2>Unit 5 Visual Concept Maps & Flowcharts</h2>
+    <div class="flowchart-grid">
+      <div class="flowchart-card">
+        <h4>1. Mandatory Specific Performance Framework (Sec 10)</h4>
+        <div class="diagram-step"><b>General Rule (Sec 10):</b> Court SHALL enforce specific performance of contracts.</div>
+        <div class="diagram-step"><b>Exclusions (Sec 14):</b> Substituted performance obtained (Sec 20), continuous supervision needed, personal qualifications, or determinable contract.</div>
+        <div class="diagram-step"><b>Personal Bars (Sec 16):</b> Plaintiff obtained substituted performance, or failed to prove readiness & willingness.</div>
+      </div>
+      <div class="flowchart-card">
+        <h4>2. Types of Injunctions (Sec 36–42)</h4>
+        <div class="diagram-step"><b>Temporary Injunction (Sec 37(1)):</b> Interlocutory order granted at any stage of suit (governed by CPC Order 39).</div>
+        <div class="diagram-step"><b>Perpetual Injunction (Sec 37(2) & 38):</b> Granted by final decree to prevent breach of an obligation/right.</div>
+        <div class="diagram-step"><b>Mandatory Injunction (Sec 39):</b> Compels performance of affirmative acts to prevent breach.</div>
+      </div>
+      <div class="flowchart-card">
+        <h4>3. Recovery of Property (Sec 5–8)</h4>
+        <div class="diagram-step"><b>Sec 5 & 6 (Immovable):</b> Title suit under CPC (Sec 5) vs. Summary possessory suit within 6 months of dispossession (Sec 6).</div>
+        <div class="diagram-step"><b>Sec 7 & 8 (Movable):</b> Recovery of specific movable property under CPC (Sec 7) vs. Direct delivery compelled against non-owner in possession (Sec 8).</div>
+      </div>
+    </div>
+  </section>
+
+  <div id="questionArea">
+
+    <!-- Q1 -->
+    <article class="qa" data-priority="HIGH" data-tags="ESSAY" data-search="specific performance section 10 2018 amendment mandatory rule section 14 section 16 readiness and willingness substituted performance section 20">
+      <div class="qtop">
+        <div><span class="qid">Q01</span><span class="unitlabel">UNIT V · Specific Relief Act, 1963</span></div>
+        <div class="tags"><span class="tag hot">REPEATED / HIGH PRIORITY</span><span class="tag">10 marks</span></div>
+      </div>
+      <h3>Explain the contracts which can be specifically enforced under Section 10 of the Specific Relief Act, 1963. Highlight the changes introduced by the 2018 Amendment Act.</h3>
+      <p class="source">Past papers: Mar/Apr 2024; May 2025 Re-exam; Jan/Feb 2026</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Fundamental Shift by 2018 Amendment Act</h4>
+          <p>Prior to the 2018 Amendment Act, specific performance was a <i>discretionary remedy</i> granted by courts under old Section 20. The <b>Specific Relief (Amendment) Act, 2018</b> replaced this with a mandatory statutory rule to promote ease of doing business and contractual sanctity in India.</p>
+
+          <div class="formula-box">
+            Amended Section 10: "The specific performance of a contract SHALL be enforced by the court subject to the provisions contained in sub-section (2) of section 11, section 14 and section 16."
+          </div>
+
+          <h4>2. Contracts Which CANNOT Be Specifically Enforced [Section 14]</h4>
+          <p>Under amended Section 14, the following contracts cannot be specifically enforced:</p>
+          <ol>
+            <li><b>Where Substituted Performance Has Been Obtained [Sec 14(a)]:</b> Where the plaintiff has obtained substituted performance of the contract under Section 20.</li>
+            <li><b>Contracts Involving Continuous Duty:</b> Where the contract involves the performance of a continuous duty which the court cannot supervise.</li>
+            <li><b>Personal Qualifications:</b> Where the contract is so dependent on the personal qualifications of the parties that the court cannot enforce specific performance of its material terms (e.g., contracts to paint, sing, or marry).</li>
+            <li><b>Determinable Contracts:</b> Where the contract is in its nature determinable (i.e., can be terminated at will by either party).</li>
+          </ol>
+
+          <h4>3. Personal Bars to Relief [Section 16]</h4>
+          <p>Specific performance of a contract cannot be enforced in favor of a person:</p>
+          <ol>
+            <li>Who has obtained <b>substituted performance</b> under Section 20.</li>
+            <li>Who has become incapable of performing, or violates any essential term, or acts in fraud of the contract.</li>
+            <li>Who fails to prove that he has <b>performed or has always been ready and willing</b> to perform the essential terms of the contract (*Readiness and Willingness* test).</li>
+          </ol>
+
+          <h4>4. Substituted Performance [Section 20]</h4>
+          <p>Where a contract is broken, the party suffering breach has the option of obtaining <b>substituted performance</b> by a third party or by his own agency and recovering the expenses and costs incurred from the party committing breach, provided he gives a <b>30 days' written notice</b> calling upon the breaching party to perform.</p>
+
+          <div class="writing-tip"><b>Exam Writing Tip:</b> Always emphasize that specific performance is now a *mandatory right* under Section 10, not discretionary, and cite the 2018 Amendment Act.</div>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q1"> Mark as revised</label>
+    </article>
+
+    <!-- Q2 -->
+    <article class="qa" data-priority="HIGH" data-tags="ESSAY" data-search="injunction definition types temporary perpetual mandatory section 36 section 37 section 38 section 39 section 41 refusal when refused cpc order 39">
+      <div class="qtop">
+        <div><span class="qid">Q02</span><span class="unitlabel">UNIT V · Specific Relief Act, 1963</span></div>
+        <div class="tags"><span class="tag hot">REPEATED / HIGH PRIORITY</span><span class="tag">10 marks</span></div>
+      </div>
+      <h3>Define Injunction. Explain the various types of injunctions and state the grounds on which an injunction may be refused under Section 41.</h3>
+      <p class="source">Past papers: Mar/Apr 2024; May 2025 Re-exam; June/July 2025; Jan/Feb 2026</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Definition and Nature of Injunction</h4>
+          <p>An <b>Injunction</b> is a judicial order or process whereby a party is required to do, or to refrain from doing, a particular act. It is a form of <i>preventive relief</i> granted at the discretion of the court under Part III of the Specific Relief Act, 1963.</p>
+
+          <h4>2. Types of Injunctions</h4>
+          <ol>
+            <li><b>Temporary (Interlocutory) Injunction [Section 37(1)]:</b>
+              <ul>
+                <li>Granted at any stage of a suit to preserve the status quo until the disposal of the suit or further orders.</li>
+                <li>Governed procedurally by <b>Order XXXIX Rules 1 & 2 of the Code of Civil Procedure, 1908 (CPC)</b>.</li>
+                <li><i>Three Golden Principles:</i> (1) Prima facie case; (2) Balance of convenience in favor of applicant; (3) Irreparable injury if injunction refused.</li>
+              </ul>
+            </li>
+            <li><b>Perpetual (Permanent) Injunction [Section 37(2) & 38]:</b>
+              <ul>
+                <li>Granted only by a final decree made at the hearing and upon the merits of the suit. The defendant is perpetually enjoined from asserting a right or committing an act.</li>
+                <li>Granted under Section 38 where the defendant invades or threatens to invade the plaintiff's right to, or enjoyment of, property (e.g., where defendant is trustee, or damages afford no adequate relief).</li>
+              </ul>
+            </li>
+            <li><b>Mandatory Injunction [Section 39]:</b>
+              <ul>
+                <li>To prevent the breach of an obligation, where it is necessary to compel the performance of certain acts which the court is capable of enforcing, the court may grant an injunction to prevent the breach and compel performance of the requisite acts.</li>
+              </ul>
+            </li>
+          </ol>
+
+          <h4>3. When Injunction Must Be Refused [Section 41]</h4>
+          <p>An injunction cannot be granted under Section 41 in the following cases:</p>
+          <ul>
+            <li>To restrain any person from prosecuting a judicial proceeding pending at the institution of the suit (unless necessary to prevent multiplicity).</li>
+            <li>To restrain any person from instituting or prosecuting any proceeding in a court not subordinate to that from which the injunction is sought.</li>
+            <li>To restrain any person from applying to any legislative body.</li>
+            <li>To restrain any person from instituting or prosecuting any criminal matter.</li>
+            <li>To prevent the breach of a contract the performance of which would not be specifically enforced.</li>
+            <li>Where equally efficacious relief can certainly be obtained by any other usual mode of proceeding.</li>
+            <li>When the conduct of the plaintiff or his agents has been such as to disentitle him to the assistance of the court (*He who comes to Equity must come with clean hands*).</li>
+          </ul>
+
+          <div class="writing-tip"><b>Exam Writing Tip:</b> Structure into three types (Temporary, Perpetual, Mandatory) and cite Section 41 refusal grounds along with the 3 golden rules under Order 39 CPC.</div>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q2"> Mark as revised</label>
+    </article>
+
+    <!-- Q3 -->
+    <article class="qa" data-priority="HIGH" data-tags="ESSAY" data-search="recovery of property immovable movable section 5 section 6 section 7 section 8 summary suit 6 months dispossession cpc">
+      <div class="qtop">
+        <div><span class="qid">Q03</span><span class="unitlabel">UNIT V · Specific Relief Act, 1963</span></div>
+        <div class="tags"><span class="tag hot">REPEATED / HIGH PRIORITY</span><span class="tag">10 marks</span></div>
+      </div>
+      <h3>Explain the statutory provisions relating to the Recovery of Possession of Specific Immovable and Movable Property under Sections 5 to 8 of the Specific Relief Act.</h3>
+      <p class="source">Past papers: Mar/Apr 2024; June/July 2025; May 2025 Re-exam</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Recovery of Specific Immovable Property [Sections 5 & 6]</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Provision</th>
+                <th>Section 5 (Title-Based Recovery)</th>
+                <th>Section 6 (Possessory Summary Suit)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Basis of Suit</b></td>
+                <td>Based on ownership/title to the immovable property.</td>
+                <td>Based on previous possession and unlawful dispossession.</td>
+              </tr>
+              <tr>
+                <td><b>Limitation Period</b></td>
+                <td>12 Years under the Limitation Act, 1963.</td>
+                <td><b>6 Months</b> from the date of dispossession.</td>
+              </tr>
+              <tr>
+                <td><b>Title Requirement</b></td>
+                <td>Plaintiff MUST prove title/ownership.</td>
+                <td>Title is IRRELEVANT; plaintiff only proves previous possession.</td>
+              </tr>
+              <tr>
+                <td><b>Against Govt?</b></td>
+                <td>Suit lies against anyone, including Govt.</td>
+                <td>No suit under Sec 6 lies against the <b>Government</b>.</td>
+              </tr>
+              <tr>
+                <td><b>Appeal / Review</b></td>
+                <td>Appeal and review lie against decree.</td>
+                <td><b>No appeal or review</b> lies against any order/decree under Sec 6.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4>2. Recovery of Specific Movable Property [Sections 7 & 8]</h4>
+          <ul>
+            <li><b>Recovery of Specific Movable Property [Section 7]:</b> A person entitled to the possession of specific movable property may recover it in the manner provided by the Code of Civil Procedure, 1908 (e.g., by a trustee, bailee, or owner).</li>
+            <li><b>Liability of Person in Possession Not as Owner to Deliver [Section 8]:</b> Any person having possession or control of a particular article of movable property, of which he is not the owner, may be compelled specifically to deliver it to the person entitled to immediate possession, in the following cases:
+              <ol>
+                <li>When the thing claimed is held by the defendant as trustee or agent of the plaintiff.</li>
+                <li>When compensation in money would not afford adequate relief for loss of the thing claimed (e.g., unique heirlooms, rare antiques).</li>
+                <li>When it would be extremely difficult to ascertain the actual damage caused by its loss.</li>
+                <li>When the possession of the thing claimed has been wrongfully transferred from the plaintiff.</li>
+              </ol>
+            </li>
+          </ul>
+
+          <div class="writing-tip"><b>Exam Writing Tip:</b> Draw a clear comparison table between Section 5 and Section 6 to highlight the 6-month limitation rule and immunity of Government under Sec 6.</div>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q3"> Mark as revised</label>
+    </article>
+
+    <!-- Q4 -->
+    <article class="qa" data-priority="HIGH" data-tags="SHORT" data-search="cancellation of instruments section 31 section 32 section 33 apprehension serious injury void voidable">
+      <div class="qtop">
+        <div><span class="qid">Q04</span><span class="unitlabel">UNIT V · Specific Relief Act, 1963</span></div>
+        <div class="tags"><span class="tag hot">REPEATED / HIGH PRIORITY</span><span class="tag">6 marks</span></div>
+      </div>
+      <h3>Write a short note on Cancellation of Instruments under Sections 31 to 33 of the Specific Relief Act.</h3>
+      <p class="source">Past papers: Mar/Apr 2024; May 2025 Re-exam</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Statutory Provision [Section 31]</h4>
+          <p>Under Section 31(1): Any person against whom a written instrument is void or voidable, and who has reasonable apprehension that such instrument, if left outstanding, may cause him serious injury, may sue to have it adjudged void or voidable; and the court may, in its discretion, so adjudge it and order it to be delivered up and cancelled.</p>
+
+          <h4>2. Essential Conditions for Cancellation</h4>
+          <ol>
+            <li>The instrument must be <b>void or voidable</b> against the plaintiff.</li>
+            <li>The plaintiff must have a <b>reasonable apprehension of serious injury</b> if the document remains outstanding.</li>
+            <li>The document must be delivered up to the court for cancellation.</li>
+          </ol>
+
+          <h4>3. Partial Cancellation & Restitution [Sections 32 & 33]</h4>
+          <ul>
+            <li><b>Partial Cancellation [Sec 32]:</b> Where an instrument is evidence of different rights or obligations, the court may, in a proper case, cancel it in part and allow the residue to stand.</li>
+            <li><b>Power to Require Benefit to be Restored [Sec 33]:</b> On adjudging cancellation, the court may require the party to whom such relief is granted to restore any benefit received or make compensation to the other party (*He who seeks equity must do equity*).</li>
+          </ul>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q4"> Mark as revised</label>
+    </article>
+
+    <!-- Q5 -->
+    <article class="qa" data-priority="MED" data-tags="SHORT" data-search="declaratory decrees section 34 section 35 legal character right to property bare declaration bar proviso">
+      <div class="qtop">
+        <div><span class="qid">Q05</span><span class="unitlabel">UNIT V · Specific Relief Act, 1963</span></div>
+        <div class="tags"><span class="tag mid">IMPORTANT</span><span class="tag">6 marks</span></div>
+      </div>
+      <h3>Explain Declaratory Decrees under Section 34 and the Proviso barring a bare declaration.</h3>
+      <p class="source">Past paper: May 2025 Re-exam Short Note</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Statutory Provision [Section 34]</h4>
+          <p>Under Section 34: Any person entitled to any <b>legal character</b>, or to any <b>right as to any property</b>, may institute a suit against any person denying, or interested to deny, his title to such character or right; and the court may in its discretion make therein a declaration that he is so entitled.</p>
+
+          <h4>2. The Proviso Barring Bare Declaration (Crucial Rule)</h4>
+          <div class="formula-box">
+            Proviso to Section 34: "Provided that no court shall make any such declaration where the plaintiff, being able to seek further relief than a mere declaration of title, omits to do so."
+          </div>
+
+          <h4>3. Principle of the Proviso</h4>
+          <p>If a plaintiff is out of possession of land and sues ONLY for a declaration of title without asking for possession (further relief), the suit is barred by the Proviso. The law discourages multiplicity of suits; the plaintiff must claim all consequential reliefs available.</p>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q5"> Mark as revised</label>
+    </article>
+
+    <!-- Q6 -->
+    <article class="qa" data-priority="MED" data-tags="SHORT" data-search="rectification of instruments section 26 mutual mistake fraud real intention">
+      <div class="qtop">
+        <div><span class="qid">Q06</span><span class="unitlabel">UNIT V · Specific Relief Act, 1963</span></div>
+        <div class="tags"><span class="tag mid">IMPORTANT</span><span class="tag">6 marks</span></div>
+      </div>
+      <h3>Write a short note on Rectification of Instruments under Section 26.</h3>
+      <p class="source">Past paper: Mar/Apr 2024 Short Note</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Statutory Rule [Section 26]</h4>
+          <p>When, through <b>fraud</b> or a <b>mutual mistake</b> of the parties, a contract or other instrument in writing does not express their real intention, either party or his representative in interest may institute a suit to have the instrument rectified.</p>
+
+          <h4>2. Key Requirements for Rectification</h4>
+          <ol>
+            <li>There must be a valid agreement prior to the written instrument.</li>
+            <li>The written instrument fails to express the real intention of the parties.</li>
+            <li>The error arose due to <b>fraud</b> or <b>MUTUAL mistake</b> (unilateral mistake is not a ground for rectification).</li>
+          </ol>
+
+          <h4>3. Discretion of Court</h4>
+          <p>If the court finds that the instrument does not express the real intention through fraud/mutual mistake, it may in its discretion rectify the instrument so as to express that intention, so far as this can be done without prejudice to rights acquired by third persons in good faith for value.</p>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q6"> Mark as revised</label>
+    </article>
+
+    <!-- Q7 (Problem) -->
+    <article class="qa" data-priority="HIGH" data-tags="PROB" data-search="problem dispossessed house without consent suit within 5 months section 6 summary remedy title irrelevant">
+      <div class="qtop">
+        <div><span class="qid">Q07</span><span class="unitlabel">UNIT V · Specific Relief Act, 1963</span></div>
+        <div class="tags"><span class="tag hot">PROBLEM SCENARIO</span><span class="tag">6 marks</span></div>
+      </div>
+      <h3>Problem: A is in peaceful possession of a house. B forcibly dispossesses A without A's consent and without following due process of law. 5 months after dispossession, A files a suit against B under Section 6 of SRA to recover possession. B pleads that B is the true owner of the house. Decide.</h3>
+      <p class="source">Standard Section 6 Problem Scenario</p>
+      <details>
+        <summary>Study IRAC Solution</summary>
+        <div class="answer">
+          <h4>1. Issue</h4>
+          <p>Whether B (the true owner) can defend a summary possessory suit under Section 6 of the Specific Relief Act by pleading title/ownership against a dispossessed tenant.</p>
+
+          <h4>2. Rule of Law</h4>
+          <ul>
+            <li>Under <b>Section 6</b> of the Specific Relief Act, 1963, if any person is dispossessed without his consent of immovable property otherwise than in due course of law, he may recover possession by suit instituted <b>within 6 months</b> from dispossession.</li>
+            <li>Section 6 provides a summary remedy to discourage forcible dispossession. In a Section 6 suit, <b>title/ownership is completely IRRELEVANT</b>. Even a true owner cannot forcibly dispossess a peaceful possessor.</li>
+          </ul>
+
+          <h4>3. Application to Facts</h4>
+          <p>A was in peaceful possession and was forcibly dispossessed by B without consent or legal process. A instituted the suit within 5 months (well within the 6-month statutory deadline). B's plea of title/ownership is inadmissible in a Section 6 summary proceeding.</p>
+
+          <h4>4. Conclusion</h4>
+          <p>A will succeed in recovering possession under Section 6. B's defense of title is rejected; B must hand over possession and can only claim property back later by filing a separate title suit under Section 5.</p>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q7"> Mark as revised</label>
+    </article>
+
+  </div>
+
+  <div id="empty" class="empty">No questions match your search. Try another keyword or filter.</div>
+
+<section class="visual-gallery" id="syllabus-additions">
+<h2>Additional syllabus coverage — do not skip these topics</h2>
+<p>These questions are added to close syllabus gaps identified during the audit. They are <b>not labelled as repeated past-paper questions</b>. Study them alongside the original questions above.</p>
+<article class="qa supplemental" data-priority="MED" data-tags="SUPP" data-search="explain rescission of contracts under sections 27 to 30 of the specific relief act syllabus addition">
+<div class="qtop"><div><span class="qid">S5-01</span><span class="unitlabel">UNIT 5 · Syllabus-completion addition</span></div><div class="tags"><span class="tag mid">SYLLABUS ADDITION</span><span class="tag">10 marks</span></div></div>
+<h3>Explain rescission of contracts under Sections 27 to 30 of the Specific Relief Act</h3><details><summary>Study model answer</summary><div class="answer"><p><b>Section 27:</b> Rescission may be adjudged where a contract is voidable or terminable by the plaintiff, or where the contract is unlawful for causes not apparent on its face and the defendant is more to blame, subject to statutory conditions.</p><p><b>Section 28:</b> The provision deals with rescission in certain cases of contracts for sale or lease of immovable property where a decree for specific performance has been made and the purchaser or lessee fails to pay the required purchase money or other sum within the period allowed by the decree.</p><p><b>Section 29:</b> An interested person may sue to have a contract rescinded where the contract is voidable or terminable by the plaintiff and the plaintiff may obtain relief under the Act.</p><p><b>Section 30:</b> On adjudging rescission, the court may require the party receiving relief to restore benefits or make compensation, as justice requires.</p><p><b>Conclusion:</b> Rescission sets aside the contractual relationship; distinguish it from cancellation of a written instrument under Sections 31–33.</p></div></details></article><article class="qa supplemental" data-priority="MED" data-tags="SUPP" data-search="explain substituted performance and compensation under sections 20 and 21 of the specific relief act syllabus addition">
+<div class="qtop"><div><span class="qid">S5-02</span><span class="unitlabel">UNIT 5 · Syllabus-completion addition</span></div><div class="tags"><span class="tag mid">SYLLABUS ADDITION</span><span class="tag">6 marks</span></div></div>
+<h3>Explain substituted performance and compensation under Sections 20 and 21 of the Specific Relief Act</h3><details><summary>Study model answer</summary><div class="answer"><p><b>Section 20 — substituted performance:</b> Where a party suffers non-performance, the party may, after giving written notice of at least thirty days calling upon the defaulting party to perform, obtain performance through a third party or by its own agency and recover expenses and costs in accordance with the section. The statutory conditions must be followed.</p><p>A party who has obtained substituted performance is not entitled to claim specific performance of the same contract, though compensation may remain available as permitted by the Act.</p><p><b>Section 21:</b> In a suit for specific performance, the plaintiff may also claim compensation for breach, in addition to or in substitution for specific performance, in the circumstances provided by the section.</p><p><b>Conclusion:</b> Check the notice requirement and distinguish substituted performance from a decree compelling the original promisor to perform.</p></div></details></article><article class="qa supplemental" data-priority="MED" data-tags="SUPP" data-search="explain the personal bars to specific performance under section 16 and contracts not specifically enforceable under section 14 syllabus addition">
+<div class="qtop"><div><span class="qid">S5-03</span><span class="unitlabel">UNIT 5 · Syllabus-completion addition</span></div><div class="tags"><span class="tag mid">SYLLABUS ADDITION</span><span class="tag">10 marks</span></div></div>
+<h3>Explain the personal bars to specific performance under Section 16 and contracts not specifically enforceable under Section 14</h3><details><summary>Study model answer</summary><div class="answer"><p><b>Section 14:</b> The Act identifies categories of contracts not specifically enforceable, including contracts where substituted performance has been obtained; contracts involving continuous duties which the court cannot supervise; contracts dependent on personal qualifications; and contracts which are in their nature determinable. Apply the current amended text carefully.</p><p><b>Section 16:</b> Specific performance is barred in favour of a person who has obtained substituted performance, who has become incapable of performing or violates essential terms, who acts fraudulently or subverts the relation intended by the contract, or who fails to prove performance or continuous readiness and willingness as required by the section.</p><p><b>Exam method:</b> Start with amended Section 10, then test exclusions under Section 14 and personal bars under Section 16. Do not rely on pre-2018 statements that specific performance is simply discretionary in every case.</p><p><b>Conclusion:</b> Specific performance is governed by the amended statutory framework and remains subject to exclusions and personal bars.</p></div></details></article>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    Contract Law I · Unit 5 Exam Master Study Guide · KSLU LL.B. Semester I
+  </div>
+</footer>
+
+<script>
+  // Search & Filter Logic
+  const searchInput = document.getElementById('search');
+  const cards = Array.from(document.querySelectorAll('.qa'));
+  const filters = Array.from(document.querySelectorAll('.filter'));
+  const emptyState = document.getElementById('empty');
+  let currentFilter = 'all';
+
+  function filterCards() {
+    const term = searchInput.value.trim().toLowerCase();
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const searchData = (card.dataset.search || '') + ' ' + card.innerText.toLowerCase();
+      const matchesSearch = !term || searchData.includes(term);
+      
+      let matchesFilter = true;
+      if (currentFilter === 'HIGH') matchesFilter = card.dataset.priority === 'HIGH';
+      if (currentFilter === 'PROB') matchesFilter = card.dataset.tags === 'PROB';
+
+      const show = matchesSearch && matchesFilter;
+      card.style.display = show ? 'block' : 'none';
+      if (show) visibleCount++;
+    });
+
+    emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+  }
+
+  searchInput.addEventListener('input', filterCards);
+
+  filters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filters.forEach(f => f.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      filterCards();
+    });
+  });
+
+  // Expand / Collapse details
+  document.getElementById('expand').onclick = () => cards.forEach(c => { if(c.style.display !== 'none') c.querySelector('details').open = true; });
+  document.getElementById('collapse').onclick = () => cards.forEach(c => c.querySelector('details').open = false);
+
+  // LocalStorage Progress Tracker
+  const checkboxes = Array.from(document.querySelectorAll('.revised'));
+  const storageKey = 'kslu_contract_unit5_progress';
+
+  function updateProgress() {
+    const checkedCount = checkboxes.filter(c => c.checked).length;
+    document.getElementById('bar').style.width = (checkedCount / checkboxes.length * 100) + '%';
+    document.getElementById('progressText').textContent = `${checkedCount} of ${checkboxes.length} questions marked revised`;
+  }
+
+  try {
+    const savedState = JSON.parse(localStorage.getItem(storageKey) || '{}');
+    checkboxes.forEach(cb => {
+      cb.checked = !!savedState[cb.dataset.id];
+      cb.addEventListener('change', () => {
+        const state = {};
+        checkboxes.forEach(x => state[x.dataset.id] = x.checked);
+        localStorage.setItem(storageKey, JSON.stringify(state));
+        updateProgress();
+      });
+    });
+  } catch(e) {
+    checkboxes.forEach(cb => cb.addEventListener('change', updateProgress));
+  }
+
+  updateProgress();
+</script>
+
+</body>
+</html>
