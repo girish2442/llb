@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contract I – Unit 1 Master Study Guide | KSLU LL.B. Sem 1</title>
+  <style>
+    :root {
+      --navy: #142d68;
+      --blue: #2459a9;
+      --bg: #f3f6fb;
+      --card: #ffffff;
+      --text: #1d2737;
+      --muted: #667085;
+      --line: #dce3ef;
+      --gold: #f4c95d;
+      --green: #24784b;
+      --alert-bg: #ebf8ff;
+      --alert-border: #3182ce;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .hero {
+      background: linear-gradient(125deg, #10265b, #1f4f97);
+      color: #fff;
+      padding: 32px 20px 25px;
+    }
+    .wrap { max-width: 1080px; margin: auto; }
+    .eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #cbd9f5;
+      font-weight: 800;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.15;
+      margin: 8px 0;
+    }
+    .hero p {
+      max-width: 800px;
+      color: #e1e9f8;
+      margin: 10px 0 18px;
+    }
+    .stats { display: flex; flex-wrap: wrap; gap: 10px; }
+    .stat {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+    }
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      padding: 12px 16px;
+    }
+    .tools {
+      max-width: 1080px;
+      margin: auto;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .tools input[type="search"] {
+      flex: 1;
+      min-width: 220px;
+      padding: 11px 13px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font: inherit;
+    }
+    .btn, .filter {
+      border: 1px solid #cbd5e1;
+      background: #fff;
+      color: #20365e;
+      border-radius: 9px;
+      padding: 9px 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn:hover, .filter:hover { background: #edf3ff; }
+    .filter.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+    
+    main { max-width: 1080px; margin: 24px auto; padding: 0 16px 50px; }
+    
+    .notice {
+      background: #fff8df;
+      border: 1px solid #f0d98b;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+    }
+    .progress {
+      background: #e6ebf4;
+      border-radius: 99px;
+      height: 8px;
+      overflow: hidden;
+      margin: 10px 0 0;
+    }
+    .progress div { height: 100%; width: 0%; background: #278455; transition: width 0.2s; }
+    .small { font-size: 0.88rem; color: var(--muted); margin-top: 4px; }
+
+    /* Concept Maps / Visual Flowcharts */
+    .visual-gallery {
+      margin: 24px 0 30px;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+    }
+    .visual-gallery h2 { margin-top: 0; color: var(--navy); font-size: 1.3rem; }
+    .flowchart-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+      margin-top: 15px;
+    }
+    .flowchart-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .flowchart-card h4 { margin: 0 0 10px 0; color: var(--blue); font-size: 1rem; }
+    .diagram-step {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--blue);
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      font-size: 0.88rem;
+    }
+
+    /* Q&A Cards */
+    .qa {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      margin: 16px 0;
+      padding: 20px;
+      box-shadow: 0 3px 12px rgba(24, 53, 101, 0.05);
+      scroll-margin-top: 90px;
+    }
+    .qtop { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+    .qid {
+      background: #e7eefc;
+      color: #16376f;
+      border-radius: 7px;
+      font-size: 0.8rem;
+      font-weight: 900;
+      padding: 3px 7px;
+      margin-right: 8px;
+    }
+    .unitlabel { color: var(--muted); font-size: 0.82rem; font-weight: 700; }
+    .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .tag {
+      font-size: 0.72rem;
+      line-height: 1.5;
+      padding: 3px 7px;
+      border-radius: 6px;
+      background: #eef2f7;
+      color: #475467;
+      font-weight: 800;
+    }
+    .tag.hot { background: #fff0cf; color: #875300; }
+    .tag.mid { background: #e5f4eb; color: #20623e; }
+    
+    .qa h3 { font-size: 1.15rem; line-height: 1.4; margin: 10px 0 6px; color: var(--navy); }
+    .source { color: var(--muted); font-size: 0.86rem; margin: 0 0 10px; }
+    
+    .qa details { border-top: 1px solid #edf0f5; margin-top: 12px; padding-top: 12px; }
+    .qa summary { cursor: pointer; color: #17478e; font-weight: 800; padding: 4px 0; }
+    
+    .answer { padding: 10px 0 4px; }
+    .answer h4 { margin: 12px 0 4px; color: #2d3748; font-size: 0.98rem; }
+    .answer table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 0.92rem; }
+    .answer th, .answer td { border: 1px solid var(--line); padding: 10px; text-align: left; }
+    .answer th { background: #eef3fb; color: var(--navy); }
+    
+    .formula-box {
+      background-color: var(--alert-bg);
+      border-left: 4px solid var(--alert-border);
+      padding: 10px 14px;
+      margin: 12px 0;
+      font-weight: bold;
+      border-radius: 0 8px 8px 0;
+    }
+    .writing-tip {
+      background: #f1f6ff;
+      border-left: 3px solid var(--blue);
+      padding: 10px 12px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 15px;
+      font-size: 0.92rem;
+    }
+    
+    .done { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 0.88rem; margin-top: 14px; cursor: pointer; }
+    .done input { width: 16px; height: 16px; }
+    
+    .empty { display: none; text-align: center; padding: 35px; background: #fff; border-radius: 12px; color: var(--muted); }
+    footer { background: #10265b; color: #e1e9f8; padding: 25px; text-align: center; font-size: 0.9rem; margin-top: 40px; }
+
+    @media print {
+      .toolbar, .notice, .done, .btn, .filter { display: none !important; }
+      body { background: #fff; font-size: 11pt; }
+      .hero { background: #fff; color: #000; padding: 0; }
+      .eyebrow, .hero p { color: #333; }
+      .qa { break-inside: avoid; box-shadow: none; border: 1px solid #bbb; margin: 10px 0; }
+      .qa details { display: block; }
+      .qa summary { display: none; }
+      .qa details .answer { display: block !important; }
+      footer { background: #fff; color: #000; }
+    }
+  </style>
+</head>
+<body>
+<nav class="site-nav" style="background:#fff;border-bottom:1px solid #dce3ef;padding:10px 16px;font:600 14px system-ui;position:sticky;top:0;z-index:150">
+<div style="max-width:1080px;margin:auto;display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+<a href="../index.html" style="color:#17478e;text-decoration:none">← All Contract–I Units</a>
+<a href="../unit-1/index.html" style="color:#17478e;text-decoration:none">Unit 1</a> <a href="../unit-2/index.html" style="color:#17478e;text-decoration:none">Unit 2</a> <a href="../unit-3/index.html" style="color:#17478e;text-decoration:none">Unit 3</a> <a href="../unit-4/index.html" style="color:#17478e;text-decoration:none">Unit 4</a> <a href="../unit-5/index.html" style="color:#17478e;text-decoration:none">Unit 5</a>
+</div></nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">KSLU · LL.B. Semester I · Contract Law I</div>
+    <h1>Unit 1 Exam Study Master</h1>
+    <p>Comprehensive revision guide covering statutory definitions, legal rules, landmark case ratios, and IRAC problem solutions for Unit 1 (Introduction & Formation of Contract).</p>
+    <div class="stats">
+      <span class="stat">Unit 1 Focus</span>
+      <span class="stat">8 Comprehensive Questions</span>
+      <span class="stat">10-Mark & 6-Mark Formats</span>
+      <span class="stat">Interactive Progress Tracker</span>
+    </div>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="tools">
+    <input id="search" type="search" placeholder="Search section, case (e.g. Carlill), or keyword...">
+    <button class="filter active" data-filter="all">All Questions</button>
+    <button class="filter" data-filter="HIGH">High Priority</button>
+    <button class="filter" data-filter="PROB">Problem Scenarios</button>
+    <button class="btn" id="expand">Expand All</button>
+    <button class="btn" id="collapse">Collapse All</button>
+    <button class="btn" onclick="window.print()">Print Notes</button>
+  </div>
+</div>
+
+<main>
+  <div class="notice">
+    <b>Exam Study Strategy:</b> For 10-mark essay questions, follow the structure: <i>Statutory Definitions → Essential Legal Rules → Landmark Case Ratios → Exception/Nuance → Conclusion</i>. For 6-mark problem questions, apply the <b>IRAC</b> method (Issue, Rule, Application, Conclusion).
+    <div class="progress"><div id="bar"></div></div>
+    <div class="small" id="progressText">0 of 8 questions marked revised</div>
+  </div>
+
+  <!-- Visual Concept Maps -->
+  <section class="visual-gallery">
+    <h2>Unit 1 Visual Concept Maps & Flowcharts</h2>
+    <div class="flowchart-grid">
+      <div class="flowchart-card">
+        <h4>1. Communication of Acceptance (Sec 4)</h4>
+        <div class="diagram-step"><b>Against Offeror:</b> Complete as soon as letter is posted / put in transmission.</div>
+        <div class="diagram-step"><b>Against Acceptor:</b> Complete only when letter reaches offeror's knowledge.</div>
+      </div>
+      <div class="flowchart-card">
+        <h4>2. Offer vs. Counter-Offer vs. Cross-Offer</h4>
+        <div class="diagram-step"><b>Offer:</b> Party A proposes terms to Party B.</div>
+        <div class="diagram-step"><b>Counter-Offer:</b> Party B modifies terms. (Destroys original offer - <i>Hyde v. Wrench</i>)</div>
+        <div class="diagram-step"><b>Cross-Offer:</b> Party A & B send identical offers in ignorance of each other. (No contract - <i>Tinn v. Hoffmann</i>)</div>
+      </div>
+      <div class="flowchart-card">
+        <h4>3. Offer vs. Invitation to Offer</h4>
+        <div class="diagram-step"><b>Invitation to Offer:</b> Displays goods / catalog. (Invites an offer)</div>
+        <div class="diagram-step"><b>Offer Made:</b> Customer brings item to cashier register.</div>
+        <div class="diagram-step"><b>Acceptance:</b> Cashier accepts payment (*Boots Cash Chemists*).</div>
+      </div>
+    </div>
+  </section>
+
+  <div id="questionArea">
+
+    <!-- Q1 -->
+    <article class="qa" data-priority="HIGH" data-tags="ESSAY" data-search="all contracts are agreements but all agreements are not contracts section 10 essentials balfour">
+      <div class="qtop">
+        <div><span class="qid">Q01</span><span class="unitlabel">UNIT I · Introduction & Formation</span></div>
+        <div class="tags"><span class="tag hot">REPEATED / HIGH PRIORITY</span><span class="tag">10 marks</span></div>
+      </div>
+      <h3>"All contracts are agreements, but all agreements are not necessarily contracts." Discuss in light of the essentials under Section 10.</h3>
+      <p class="source">Repeated Past Exam Question (KSLU / Standard Indian Syllabi)</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Introduction</h4>
+          <p>The law of contract in India is codified under <b>The Indian Contract Act, 1872</b>. The preamble notes that it defines and amends certain parts of the law relating to contracts. The genesis of every contract lies in an agreement, but not every agreement transforms into a legally binding contract.</p>
+
+          <h4>2. Statutory Definitions</h4>
+          <ul>
+            <li><b>Agreement [Section 2(e)]:</b> <i>"Every promise and every set of promises, forming the consideration for each other, is an agreement."</i></li>
+            <li><b>Contract [Section 2(h)]:</b> <i>"An agreement enforceable by law is a contract."</i></li>
+          </ul>
+
+          <div class="formula-box">
+            Agreement = Proposal / Offer + Acceptance<br>
+            Contract = Agreement + Enforceability by Law (Section 10)
+          </div>
+
+          <h4>3. Why "All Contracts are Agreements"</h4>
+          <p>A contract cannot exist in isolation. It requires an initial proposal made by one party and its unconditional acceptance by another. Thus, an agreement is the foundational element (<i>genus</i>) of which a contract is a legally enforceable subset (<i>species</i>).</p>
+
+          <h4>4. Why "All Agreements are NOT Contracts"</h4>
+          <p>An agreement remains a mere agreement unless it fulfills all essential requirements prescribed under <b>Section 10</b>:</p>
+          <ol>
+            <li><b>Offer and Unconditional Acceptance:</b> There must be a lawful offer and corresponding acceptance.</li>
+            <li><b>Intention to Create Legal Relations:</b> Social, domestic, or family arrangements do not intend legal obligations.</li>
+            <li><b>Capacity of Parties (Section 11):</b> Parties must be majors, of sound mind, and not disqualified by law.</li>
+            <li><b>Free Consent (Section 13 & 14):</b> Consent must not be vitiated by coercion, undue influence, fraud, misrepresentation, or mistake.</li>
+            <li><b>Lawful Consideration & Object (Section 23):</b> Consideration (*quid pro quo*) and object must be lawful and not opposed to public policy.</li>
+            <li><b>Not Expressly Declared Void:</b> Must not fall under expressly barred categories (e.g., Sections 26–30).</li>
+          </ol>
+
+          <h4>5. Landmark Case Law</h4>
+          <p><b>Balfour v. Balfour (1919 2 KB 571):</b> A husband promised to pay his wife a monthly allowance while he lived abroad. He failed to remit payment. The English Court of Appeal held that domestic agreements between spouses are not contracts because parties do not intend to create legal relations.</p>
+
+          <h4>6. Conclusion</h4>
+          <p>Agreement is the wider term, while contract is the narrower legal outcome. Only agreements that satisfy Section 10 mature into enforceable contracts.</p>
+          <div class="writing-tip"><b>Exam Writing Tip:</b> Structure your answer using the clear headings above. Be sure to quote Section 2(e), Section 2(h), and Section 10, and cite <i>Balfour v. Balfour</i>.</div>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q1"> Mark as revised</label>
+    </article>
+
+    <!-- Q2 -->
+    <article class="qa" data-priority="HIGH" data-tags="ESSAY" data-search="define proposal offer essentials valid offer lapse of offer section 2a section 6 carlill lalman shukla">
+      <div class="qtop">
+        <div><span class="qid">Q02</span><span class="unitlabel">UNIT I · Introduction & Formation</span></div>
+        <div class="tags"><span class="tag hot">REPEATED / HIGH PRIORITY</span><span class="tag">10 marks</span></div>
+      </div>
+      <h3>Define proposal (offer). Explain the essentials of a valid proposal and the circumstances under which an offer lapses.</h3>
+      <p class="source">Past papers: Mar/Apr 2024; Jan/May 2025 Re-exam; Jan/Feb 2026</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Statutory Definition [Section 2(a)]</h4>
+          <p><i>"When one person signifies to another his willingness to do or to abstain from doing anything, with a view to obtaining the assent of that other to such act or abstinence, he is said to make a proposal."</i></p>
+
+          <h4>2. Essential Rules of a Valid Offer</h4>
+          <ol>
+            <li><b>Intention to Create Legal Obligations:</b> Social or domestic invitations are not valid offers.</li>
+            <li><b>Terms Must be Certain and Definite:</b> Ambiguous terms invalidate an offer (Section 29).</li>
+            <li><b>Must be Communicated:</b> An offer is effective only when it comes to the offeree's knowledge (<b>Lalman Shukla v. Gauri Dutt</b>).</li>
+            <li><b>May be Specific or General:</b> Can be made to a specific person or to the public at large (<b>Carlill v. Carbolic Smoke Ball Co.</b>).</li>
+            <li><b>Distinguished from Invitation to Offer:</b> Price displays or catalogues invite offers rather than making them (<b>Pharmaceutical Society v. Boots</b>).</li>
+          </ol>
+
+          <h4>3. Circumstances Under Which an Offer Lapses (Section 6)</h4>
+          <ul>
+            <li><b>By Notice of Revocation:</b> Communicated by the offeror before acceptance is complete against them.</li>
+            <li><b>By Lapse of Time:</b> On expiry of the prescribed time, or after a reasonable time if none is fixed (<b>Ramsgate Victoria Hotel v. Montefiore</b>).</li>
+            <li><b>Failure to Fulfill Condition Precedent:</b> Where acceptance is conditional upon a prior act.</li>
+            <li><b>Death or Insanity of Offeror:</b> If known to the offeree before making acceptance.</li>
+            <li><b>Counter-offer (case-law principle):</b> A counter-offer ordinarily rejects the original offer and makes a new offer (<b>Hyde v. Wrench</b>). This is not separately listed as a mode in Section 6.</li>
+          </ul>
+
+          <h4>4. Landmark Cases</h4>
+          <ul>
+            <li><b>Lalman Shukla v. Gauri Dutt (1913):</b> Performance without knowledge of an offer does not create acceptance or entitlement to a reward.</li>
+            <li><b>Carlill v. Carbolic Smoke Ball Co. (1893):</b> Performance of conditions in a general reward offer constitutes valid acceptance without prior notification.</li>
+          </ul>
+
+          <h4>5. Conclusion</h4>
+          <p>A valid offer must be communicated, definite, and intended to obtain assent. It remains open until accepted or it lapses or is revoked under the Act. A counter-offer is treated as rejection under case law, not as a separately enumerated Section 6 mode.</p>
+          <div class="writing-tip"><b>Exam Writing Tip:</b> Ensure you clearly distinguish Section 2(a) (making a proposal) from Section 6 (revocation/lapse).</div>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q2"> Mark as revised</label>
+    </article>
+
+    <!-- Q3 -->
+    <article class="qa" data-priority="HIGH" data-tags="ESSAY" data-search="rules of acceptance communication revocation section 4 section 5 entores felthouse bindley">
+      <div class="qtop">
+        <div><span class="qid">Q03</span><span class="unitlabel">UNIT I · Introduction & Formation</span></div>
+        <div class="tags"><span class="tag hot">REPEATED / HIGH PRIORITY</span><span class="tag">10 marks</span></div>
+      </div>
+      <h3>Explain the statutory rules relating to Acceptance, its Communication, and Revocation under Sections 4 and 5 of the Indian Contract Act.</h3>
+      <p class="source">Past papers: June/July 2025; Mar/Apr 2024</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Definition of Acceptance [Section 2(b)]</h4>
+          <p><i>"When the person to whom the proposal is made signifies his assent thereto, the proposal is said to be accepted. A proposal, when accepted, becomes a promise."</i></p>
+
+          <h4>2. Essential Rules of Valid Acceptance</h4>
+          <ol>
+            <li><b>Must be Absolute and Unqualified (Section 7):</b> Must match the offer exactly without variation.</li>
+            <li><b>Must be Communicated:</b> Mental acceptance or mere silence is insufficient (<b>Felthouse v. Bindley</b>).</li>
+            <li><b>Prescribed Mode:</b> Must be made in the prescribed or reasonable manner (Section 7).</li>
+            <li><b>While Offer is Subsisting:</b> Acceptance cannot be made after lapse or rejection.</li>
+          </ol>
+
+          <h4>3. Communication Rules (Section 4)</h4>
+          <ul>
+            <li><b>Communication of Proposal:</b> Complete when it comes to the offeree's knowledge.</li>
+            <li><b>Communication of Acceptance:</b>
+              <ul>
+                <li><i>As against the Offeror:</i> Complete when put in transmission out of the acceptor's power.</li>
+                <li><i>As against the Acceptor:</i> Complete when it comes to the knowledge of the offeror.</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h4>4. Revocation Rules (Section 5)</h4>
+          <ul>
+            <li><b>Revocation of Offer:</b> May be revoked at any time before communication of acceptance is complete as against the proposer.</li>
+            <li><b>Revocation of Acceptance:</b> May be revoked at any time before communication of acceptance comes to the knowledge of the proposer.</li>
+          </ul>
+
+          <h4>5. Case Law Authorities</h4>
+          <ul>
+            <li><b>Felthouse v. Bindley (1862):</b> Silence cannot be imposed as acceptance by the offeror.</li>
+            <li><b>Entores Ltd. v. Miles Far East Corp (1955):</b> For instantaneous communications (telephone/telex), acceptance is complete only when actually received by the offeror.</li>
+          </ul>
+
+          <div class="writing-tip"><b>Exam Writing Tip:</b> Draw a quick timeline showing when acceptance is complete against Proposer vs Acceptor under Sec 4 to earn top marks.</div>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q3"> Mark as revised</label>
+    </article>
+
+    <!-- Q4 -->
+    <article class="qa" data-priority="HIGH" data-tags="SHORT" data-search="offer vs invitation to offer invitation to treat boots cash chemists harvey facey">
+      <div class="qtop">
+        <div><span class="qid">Q04</span><span class="unitlabel">UNIT I · Introduction & Formation</span></div>
+        <div class="tags"><span class="tag hot">REPEATED / HIGH PRIORITY</span><span class="tag">6 or 10 marks</span></div>
+      </div>
+      <h3>Distinguish an Offer from an Invitation to Offer (Invitation to Treat). Explain with case laws and examples.</h3>
+      <p class="source">Past papers: June/July 2025; May 2025 Re-exam</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Conceptual Distinction</h4>
+          <p>An <b>Offer</b> expresses final willingness to be legally bound upon acceptance. An <b>Invitation to Offer</b> invites another party to make an offer; the inviter retains discretion to accept or reject.</p>
+
+          <h4>2. Key Comparison Table</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Offer (Proposal)</th>
+                <th>Invitation to Offer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Definition</b></td>
+                <td>Final expression of willingness to contract on specified terms.</td>
+                <td>Act of circulating information to invite offers from others.</td>
+              </tr>
+              <tr>
+                <td><b>Legal Effect</b></td>
+                <td>Acceptance leads directly to a binding contract.</td>
+                <td>Response forms an offer; does not create a contract automatically.</td>
+              </tr>
+              <tr>
+                <td><b>Intention</b></td>
+                <td>Intends to get assent of offeree.</td>
+                <td>Intends to invite negotiations or bids.</td>
+              </tr>
+              <tr>
+                <td><b>Examples</b></td>
+                <td>"I will sell my car to you for ₹2,00,000."</td>
+                <td>Shop window displays, price tags, auction notices, prospectuses.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4>3. Leading Case Laws</h4>
+          <ul>
+            <li><b>Pharmaceutical Society of Great Britain v. Boots Cash Chemists (1953):</b> Displaying goods on self-service shelves with price tags is an invitation to offer. The customer makes the offer at the cash register.</li>
+            <li><b>Harvey v. Facey (1893):</b> Replying to a query stating the lowest cash price ("Lowest price £900") is a statement of information / invitation to treat, not an offer to sell.</li>
+          </ul>
+
+          <div class="writing-tip"><b>Exam Writing Tip:</b> Always mention shop displays, catalogues, and price quotations as standard invitations to treat.</div>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q4"> Mark as revised</label>
+    </article>
+
+    <!-- Q5 -->
+    <article class="qa" data-priority="HIGH" data-tags="SHORT" data-search="cross offer vs counter offer tinn v hoffmann hyde v wrench section 7">
+      <div class="qtop">
+        <div><span class="qid">Q05</span><span class="unitlabel">UNIT I · Introduction & Formation</span></div>
+        <div class="tags"><span class="tag hot">HIGH PRIORITY SHORT NOTE</span><span class="tag">6 marks</span></div>
+      </div>
+      <h3>Distinguish Cross-Offers from Counter-Offers with relevant case laws.</h3>
+      <p class="source">Core Syllabi Topic / Frequent Short Note</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Concepts Defined</h4>
+          <ul>
+            <li><b>Cross-Offer:</b> Occurs when two parties make identical offers to each other at the same time in ignorance of each other's proposal.</li>
+            <li><b>Counter-Offer:</b> Occurs when an offeree responds to an offer by altering terms or adding conditions, rather than accepting unconditionally.</li>
+          </ul>
+
+          <h4>2. Key Distinctions Table</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Cross-Offer</th>
+                <th>Counter-Offer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Knowledge of Offer</b></td>
+                <td>Neither party knows about the other's offer.</td>
+                <td>Offeree has full knowledge of the original offer.</td>
+              </tr>
+              <tr>
+                <td><b>Identity of Terms</b></td>
+                <td>Terms proposed by both are identical.</td>
+                <td>Terms are varied/modified by the offeree.</td>
+              </tr>
+              <tr>
+                <td><b>Original Offer</b></td>
+                <td>Both offers remain independent unaccepted proposals.</td>
+                <td>The original offer is permanently destroyed/rejected.</td>
+              </tr>
+              <tr>
+                <td><b>Resulting Contract</b></td>
+                <td><b>No contract</b> (Cross-offers do not equal acceptance).</td>
+                <td><b>No contract</b> (Unless original offeror accepts counter-offer).</td>
+              </tr>
+              <tr>
+                <td><b>Leading Case</b></td>
+                <td><b>Tinn v. Hoffmann & Co. (1873)</b></td>
+                <td><b>Hyde v. Wrench (1840)</b></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4>3. Case Authorities</h4>
+          <ul>
+            <li><b>Tinn v. Hoffmann & Co. (1873):</b> Identical offers crossing in the post do not constitute mutual acceptance or form a contract.</li>
+            <li><b>Hyde v. Wrench (1840):</b> Offeree offered £950 for a farm offered at £1,000. Held: The counter-offer destroyed the original £1,000 offer; it could not be revived later.</li>
+          </ul>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q5"> Mark as revised</label>
+    </article>
+
+    <!-- Q6 -->
+    <article class="qa" data-priority="MED" data-tags="SHORT" data-search="standing offer tender continuous offer great northern railway v witham">
+      <div class="qtop">
+        <div><span class="qid">Q06</span><span class="unitlabel">UNIT I · Introduction & Formation</span></div>
+        <div class="tags"><span class="tag mid">IMPORTANT</span><span class="tag">6 marks</span></div>
+      </div>
+      <h3>Explain the concept of a Standing Offer (Tender) and its legal effect.</h3>
+      <p class="source">Core Syllabi Topic / Commercial Law Application</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Definition and Meaning</h4>
+          <p>A <b>Standing Offer</b> (or Continuing Tender) is an offer that remains open for acceptance over a period of time, allowing a party to place periodic orders as and when required.</p>
+
+          <h4>2. Legal Principles Governing Tenders</h4>
+          <ol>
+            <li><b>Invitation to Tender:</b> An advertisement inviting tenders for goods/services is merely an <i>invitation to offer</i>.</li>
+            <li><b>Submission of Tender:</b> The tender submitted by a contractor constitutes a <b>Standing Offer</b>.</li>
+            <li><b>Placement of Order:</b> Each separate order placed by the buyer constitutes an individual <b>acceptance</b>, forming a separate contract for that specific order.</li>
+            <li><b>Revocation:</b> A standing offer can be revoked at any time regarding <i>future orders</i>, provided no order has already been placed before revocation is communicated.</li>
+          </ol>
+
+          <h4>3. Leading Case Law</h4>
+          <p><b>Great Northern Railway Co. v. Witham (1873 LR 9 CP 16):</b> Witham tendered to supply goods to the railway company for twelve months in such quantities as ordered. The company placed several orders which Witham fulfilled, but later refused to execute a fresh order. Held: Witham's tender was a standing offer. Once a specific order was placed, a binding contract was formed for that order.</p>
+
+          <div class="writing-tip"><b>Exam Writing Tip:</b> Emphasize that each individual order placed under a tender creates a separate, independent contract.</div>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q6"> Mark as revised</label>
+    </article>
+
+    <!-- Q7 (Problem 1) -->
+    <article class="qa" data-priority="HIGH" data-tags="PROB" data-search="problem reward missing dog general offer performance carlill lalman shukla">
+      <div class="qtop">
+        <div><span class="qid">Q07</span><span class="unitlabel">UNIT I · Introduction & Formation</span></div>
+        <div class="tags"><span class="tag hot">PROBLEM SCENARIO</span><span class="tag">6 marks</span></div>
+      </div>
+      <h3>Problem: A advertises a reward of ₹5,000 for anyone who finds his missing dog. B reads the advertisement, finds the dog, and returns it to A. A refuses to pay because B did not separately communicate acceptance prior to finding the dog. Advise B.</h3>
+      <p class="source">Past paper: Mar/Apr 2024, Unit I Problem</p>
+      <details>
+        <summary>Study IRAC Solution</summary>
+        <div class="answer">
+          <h4>1. Issue</h4>
+          <p>Whether performance of conditions in a general reward offer constitutes valid acceptance without separate prior notification to the offeror.</p>
+
+          <h4>2. Rule of Law</h4>
+          <ul>
+            <li>Under <b>Section 8</b> of the Indian Contract Act, performance of the conditions of a proposal constitutes acceptance of the proposal.</li>
+            <li>A <b>General Offer</b> can be accepted by anyone who has knowledge of the offer and performs the specified act (<b>Carlill v. Carbolic Smoke Ball Co.</b>).</li>
+            <li>Knowledge of the offer prior to performance is mandatory (<b>Lalman Shukla v. Gauri Dutt</b>).</li>
+          </ul>
+
+          <h4>3. Application to Facts</h4>
+          <p>In the present case, A's advertisement constitutes a valid general offer to the world at large. B read the advertisement before searching, thus satisfying the requirement of prior knowledge. By finding and returning the dog, B performed the condition invited by the proposal. Under Section 8, performance itself amounts to complete acceptance; no prior separate communication was legally required.</p>
+
+          <h4>4. Conclusion</h4>
+          <p>A's refusal is legally invalid. B is entitled to recover the ₹5,000 reward from A.</p>
+          <div class="writing-tip"><b>Exam Writing Tip:</b> Use the IRAC headers (Issue, Rule, Application, Conclusion) to maximize problem-solving marks.</div>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q7"> Mark as revised</label>
+    </article>
+
+    <!-- Q8 (Problem 2) -->
+    <article class="qa" data-priority="HIGH" data-tags="PROB" data-search="problem antique clock shop window price tag invitation to offer boots cash chemists">
+      <div class="qtop">
+        <div><span class="qid">Q08</span><span class="unitlabel">UNIT I · Introduction & Formation</span></div>
+        <div class="tags"><span class="tag hot">PROBLEM SCENARIO</span><span class="tag">6 marks</span></div>
+      </div>
+      <h3>Problem: A displays a rare antique clock in his shop window with a price tag of ₹10,000. B enters the shop, tenders ₹10,000 on the counter, and demands the clock. A refuses to sell. Can B sue A for breach of contract?</h3>
+      <p class="source">Standard Problem Scenario / Invitation to Treat</p>
+      <details>
+        <summary>Study IRAC Solution</summary>
+        <div class="answer">
+          <h4>1. Issue</h4>
+          <p>Whether displaying goods with price tags in a shop window is an offer or an invitation to offer.</p>
+
+          <h4>2. Rule of Law</h4>
+          <ul>
+            <li>Displaying goods with price tags in shop windows or shelves is an <b>Invitation to Offer</b> (invitation to treat), not a firm proposal.</li>
+            <li>The customer makes the actual offer to buy when tendering payment. The shopkeeper retains legal discretion to accept or reject the offer (<b>Pharmaceutical Society of GB v. Boots Cash Chemists</b>).</li>
+          </ul>
+
+          <h4>3. Application to Facts</h4>
+          <p>A's display of the antique clock with a price tag was merely an invitation to offer. When B tendered ₹10,000, B made an offer to purchase the clock. A exercised his legal right to decline B's offer. Because A never accepted B's offer, no binding contract was formed.</p>
+
+          <h4>4. Conclusion</h4>
+          <p>No, B cannot sue A for breach of contract, as no completed contract ever came into existence.</p>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q8"> Mark as revised</label>
+    </article>
+
+  </div>
+
+  <div id="empty" class="empty">No questions match your search. Try another keyword or filter.</div>
+
+<section class="visual-gallery" id="syllabus-additions">
+<h2>Additional syllabus coverage — do not skip these topics</h2>
+<p>These questions are added to close syllabus gaps identified during the audit. They are <b>not labelled as repeated past-paper questions</b>. Study them alongside the original questions above.</p>
+<article class="qa supplemental" data-priority="MED" data-tags="SUPP" data-search="sources and development of contract law in india syllabus addition">
+<div class="qtop"><div><span class="qid">S1-01</span><span class="unitlabel">UNIT 1 · Syllabus-completion addition</span></div><div class="tags"><span class="tag mid">SYLLABUS ADDITION</span><span class="tag">6 marks</span></div></div>
+<h3>Sources and development of contract law in India</h3><details><summary>Study model answer</summary><div class="answer"><p>Indian contract law is mainly codified in the <b>Indian Contract Act, 1872</b>. Its historical development reflects English common-law principles adapted to Indian conditions. Important sources include legislation, judicial precedents, and recognised customs or usages where legally applicable.</p><p><b>Legislation:</b> The Contract Act provides the principal statutory rules on formation, performance, breach and certain obligations resembling contracts. Other statutes may govern special transactions, electronic records, registration, stamping and consumer matters.</p><p><b>Judicial precedents:</b> Courts interpret statutory provisions and develop principles where the Act is not exhaustive. Decisions of the Supreme Court bind all courts in India under Article 141 of the Constitution.</p><p><b>Customs and usages:</b> A relevant trade usage may explain or supplement contractual terms if it is certain, reasonable, lawful and not inconsistent with statute.</p><p><b>Conclusion:</b> Contract law in India is primarily statutory, interpreted by courts and supplemented in appropriate cases by lawful usage.</p></div></details></article><article class="qa supplemental" data-priority="MED" data-tags="SUPP" data-search="explain electronic contracts and the legal recognition of electronic records and signatures syllabus addition">
+<div class="qtop"><div><span class="qid">S1-02</span><span class="unitlabel">UNIT 1 · Syllabus-completion addition</span></div><div class="tags"><span class="tag mid">SYLLABUS ADDITION</span><span class="tag">10 marks</span></div></div>
+<h3>Explain electronic contracts and the legal recognition of electronic records and signatures</h3><details><summary>Study model answer</summary><div class="answer"><p>An electronic contract (e-contract) is an agreement formed through electronic communication, such as email, a website, an app or an online platform. The ordinary requirements of the Indian Contract Act, 1872 continue to apply: offer, acceptance, lawful consideration and object, competent parties and free consent.</p><ol><li><b>Recognition:</b> The Information Technology Act, 2000 gives legal recognition to electronic records and electronic signatures, subject to its provisions.</li><li><b>Offer and acceptance:</b> Terms may be displayed online; a user may accept by clicking an acceptance button or completing the prescribed online process.</li><li><b>Attribution and dispatch/receipt:</b> The IT Act contains rules concerning attribution, acknowledgement, and the time and place of dispatch and receipt of electronic records.</li><li><b>Evidence:</b> Electronic records may be relevant evidence subject to the applicable evidentiary requirements.</li><li><b>Limitations:</b> Not every document or transaction is covered in the same way; statutory exclusions and special formalities must be checked.</li></ol><p><b>Conclusion:</b> Electronic form does not remove the need for a valid contract. The Contract Act and IT Act operate together.</p></div></details></article><article class="qa supplemental" data-priority="MED" data-tags="SUPP" data-search="explain communication and revocation of acceptance under sections 4 and 5 syllabus addition">
+<div class="qtop"><div><span class="qid">S1-03</span><span class="unitlabel">UNIT 1 · Syllabus-completion addition</span></div><div class="tags"><span class="tag mid">SYLLABUS ADDITION</span><span class="tag">6 marks</span></div></div>
+<h3>Explain communication and revocation of acceptance under Sections 4 and 5</h3><details><summary>Study model answer</summary><div class="answer"><p><b>Section 4:</b> Communication of acceptance is complete as against the proposer when it is put in a course of transmission to him so as to be out of the power of the acceptor; as against the acceptor, it is complete when it comes to the knowledge of the proposer.</p><p><b>Section 5:</b> A proposal may be revoked before communication of acceptance is complete as against the proposer, but not afterwards. An acceptance may be revoked before communication of acceptance is complete as against the acceptor, but not afterwards.</p><p><b>Example:</b> Where acceptance is properly posted, it may become complete against the proposer before it reaches him. The acceptor's power to revoke acceptance continues only until it comes to the proposer’s knowledge, subject to the statutory communication rules and the facts.</p><p><b>Conclusion:</b> Section 4 determines when communication is complete; Section 5 determines the time limits for revocation.</p></div></details></article>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    Contract Law I · Unit 1 Exam Master Study Guide · KSLU LL.B. Semester I
+  </div>
+</footer>
+
+<script>
+  // Search & Filter Logic
+  const searchInput = document.getElementById('search');
+  const cards = Array.from(document.querySelectorAll('.qa'));
+  const filters = Array.from(document.querySelectorAll('.filter'));
+  const emptyState = document.getElementById('empty');
+  let currentFilter = 'all';
+
+  function filterCards() {
+    const term = searchInput.value.trim().toLowerCase();
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const searchData = (card.dataset.search || '') + ' ' + card.innerText.toLowerCase();
+      const matchesSearch = !term || searchData.includes(term);
+      
+      let matchesFilter = true;
+      if (currentFilter === 'HIGH') matchesFilter = card.dataset.priority === 'HIGH';
+      if (currentFilter === 'PROB') matchesFilter = card.dataset.tags === 'PROB';
+
+      const show = matchesSearch && matchesFilter;
+      card.style.display = show ? 'block' : 'none';
+      if (show) visibleCount++;
+    });
+
+    emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+  }
+
+  searchInput.addEventListener('input', filterCards);
+
+  filters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filters.forEach(f => f.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      filterCards();
+    });
+  });
+
+  // Expand / Collapse details
+  document.getElementById('expand').onclick = () => cards.forEach(c => { if(c.style.display !== 'none') c.querySelector('details').open = true; });
+  document.getElementById('collapse').onclick = () => cards.forEach(c => c.querySelector('details').open = false);
+
+  // LocalStorage Progress Tracker
+  const checkboxes = Array.from(document.querySelectorAll('.revised'));
+  const storageKey = 'kslu_contract_unit1_progress';
+
+  function updateProgress() {
+    const checkedCount = checkboxes.filter(c => c.checked).length;
+    document.getElementById('bar').style.width = (checkedCount / checkboxes.length * 100) + '%';
+    document.getElementById('progressText').textContent = `${checkedCount} of ${checkboxes.length} questions marked revised`;
+  }
+
+  try {
+    const savedState = JSON.parse(localStorage.getItem(storageKey) || '{}');
+    checkboxes.forEach(cb => {
+      cb.checked = !!savedState[cb.dataset.id];
+      cb.addEventListener('change', () => {
+        const state = {};
+        checkboxes.forEach(x => state[x.dataset.id] = x.checked);
+        localStorage.setItem(storageKey, JSON.stringify(state));
+        updateProgress();
+      });
+    });
+  } catch(e) {
+    checkboxes.forEach(cb => cb.addEventListener('change', updateProgress));
+  }
+
+  updateProgress();
+</script>
+
+</body>
+</html>
