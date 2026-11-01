@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contract I – Unit 3 Master Study Guide | KSLU LL.B. Sem 1</title>
+  <style>
+    :root {
+      --navy: #142d68;
+      --blue: #2459a9;
+      --bg: #f3f6fb;
+      --card: #ffffff;
+      --text: #1d2737;
+      --muted: #667085;
+      --line: #dce3ef;
+      --gold: #f4c95d;
+      --green: #24784b;
+      --alert-bg: #ebf8ff;
+      --alert-border: #3182ce;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .hero {
+      background: linear-gradient(125deg, #10265b, #1f4f97);
+      color: #fff;
+      padding: 32px 20px 25px;
+    }
+    .wrap { max-width: 1080px; margin: auto; }
+    .eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #cbd9f5;
+      font-weight: 800;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.15;
+      margin: 8px 0;
+    }
+    .hero p {
+      max-width: 800px;
+      color: #e1e9f8;
+      margin: 10px 0 18px;
+    }
+    .stats { display: flex; flex-wrap: wrap; gap: 10px; }
+    .stat {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+    }
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      padding: 12px 16px;
+    }
+    .tools {
+      max-width: 1080px;
+      margin: auto;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .tools input[type="search"] {
+      flex: 1;
+      min-width: 220px;
+      padding: 11px 13px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font: inherit;
+    }
+    .btn, .filter {
+      border: 1px solid #cbd5e1;
+      background: #fff;
+      color: #20365e;
+      border-radius: 99px;
+      padding: 9px 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn:hover, .filter:hover { background: #edf3ff; }
+    .filter.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+    
+    main { max-width: 1080px; margin: 24px auto; padding: 0 16px 50px; }
+    
+    .notice {
+      background: #fff8df;
+      border: 1px solid #f0d98b;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+    }
+    .progress {
+      background: #e6ebf4;
+      border-radius: 99px;
+      height: 8px;
+      overflow: hidden;
+      margin: 10px 0 0;
+    }
+    .progress div { height: 100%; width: 0%; background: #278455; transition: width 0.2s; }
+    .small { font-size: 0.88rem; color: var(--muted); margin-top: 4px; }
+
+    /* Visual Concept Maps */
+    .visual-gallery {
+      margin: 24px 0 30px;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+    }
+    .visual-gallery h2 { margin-top: 0; color: var(--navy); font-size: 1.3rem; }
+    .flowchart-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+      margin-top: 15px;
+    }
+    .flowchart-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .flowchart-card h4 { margin: 0 0 10px 0; color: var(--blue); font-size: 1rem; }
+    .diagram-step {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--blue);
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      font-size: 0.88rem;
+    }
+
+    /* Q&A Cards */
+    .qa {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      margin: 16px 0;
+      padding: 20px;
+      box-shadow: 0 3px 12px rgba(24, 53, 101, 0.05);
+      scroll-margin-top: 90px;
+    }
+    .qtop { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+    .qid {
+      background: #e7eefc;
+      color: #16376f;
+      border-radius: 7px;
+      font-size: 0.8rem;
+      font-weight: 900;
+      padding: 3px 7px;
+      margin-right: 8px;
+    }
+    .unitlabel { color: var(--muted); font-size: 0.82rem; font-weight: 700; }
+    .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .tag {
+      font-size: 0.72rem;
+      line-height: 1.5;
+      padding: 3px 7px;
+      border-radius: 6px;
+      background: #eef2f7;
+      color: #475467;
+      font-weight: 800;
+    }
+    .tag.hot { background: #fff0cf; color: #875300; }
+    .tag.mid { background: #e5f4eb; color: #20623e; }
+    
+    .qa h3 { font-size: 1.15rem; line-height: 1.4; margin: 10px 0 6px; color: var(--navy); }
+    .source { color: var(--muted); font-size: 0.86rem; margin: 0 0 10px; }
+    
+    .qa details { border-top: 1px solid #edf0f5; margin-top: 12px; padding-top: 12px; }
+    .qa summary { cursor: pointer; color: #17478e; font-weight: 800; padding: 4px 0; }
+    
+    .answer { padding: 10px 0 4px; }
+    .answer h4 { margin: 12px 0 4px; color: #2d3748; font-size: 0.98rem; }
+    .answer table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 0.92rem; }
+    .answer th, .answer td { border: 1px solid var(--line); padding: 10px; text-align: left; }
+    .answer th { background: #eef3fb; color: var(--navy); }
+    
+    .formula-box {
+      background-color: var(--alert-bg);
+      border-left: 4px solid var(--alert-border);
+      padding: 10px 14px;
+      margin: 12px 0;
+      font-weight: bold;
+      border-radius: 0 8px 8px 0;
+    }
+    .writing-tip {
+      background: #f1f6ff;
+      border-left: 3px solid var(--blue);
+      padding: 10px 12px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 15px;
+      font-size: 0.92rem;
+    }
+    
+    .done { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 0.88rem; margin-top: 14px; cursor: pointer; }
+    .done input { width: 16px; height: 16px; }
+    
+    .empty { display: none; text-align: center; padding: 35px; background: #fff; border-radius: 12px; color: var(--muted); }
+    footer { background: #10265b; color: #e1e9f8; padding: 25px; text-align: center; font-size: 0.9rem; margin-top: 40px; }
+
+    @media print {
+      .toolbar, .notice, .done, .btn, .filter { display: none !important; }
+      body { background: #fff; font-size: 11pt; }
+      .hero { background: #fff; color: #000; padding: 0; }
+      .eyebrow, .hero p { color: #333; }
+      .qa { break-inside: avoid; box-shadow: none; border: 1px solid #bbb; margin: 10px 0; }
+      .qa details { display: block; }
+      .qa summary { display: none; }
+      .qa details .answer { display: block !important; }
+      footer { background: #fff; color: #000; }
+    }
+  </style>
+</head>
+<body>
+<nav class="site-nav" style="background:#fff;border-bottom:1px solid #dce3ef;padding:10px 16px;font:600 14px system-ui;position:sticky;top:0;z-index:150">
+<div style="max-width:1080px;margin:auto;display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+<a href="../index.html" style="color:#17478e;text-decoration:none">← All Contract–I Units</a>
+<a href="../unit-1/index.html" style="color:#17478e;text-decoration:none">Unit 1</a> <a href="../unit-2/index.html" style="color:#17478e;text-decoration:none">Unit 2</a> <a href="../unit-3/index.html" style="color:#17478e;text-decoration:none">Unit 3</a> <a href="../unit-4/index.html" style="color:#17478e;text-decoration:none">Unit 4</a> <a href="../unit-5/index.html" style="color:#17478e;text-decoration:none">Unit 5</a>
+</div></nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">KSLU · LL.B. Semester I · Contract Law I</div>
+    <h1>Unit 3 Exam Study Master</h1>
+    <p>Comprehensive study guide covering Void Agreements (Sec 23, 26-30), Contingent Contracts (Sec 31-36), Performance & Discharge of Contracts, Appropriation of Payments (Sec 59-61), and the Doctrine of Frustration (Sec 56).</p>
+    <div class="stats">
+      <span class="stat">Unit 3 Core Focus</span>
+      <span class="stat">8 Comprehensive Questions</span>
+      <span class="stat">10-Mark & 6-Mark Formats</span>
+      <span class="stat">Interactive Progress Tracker</span>
+    </div>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="tools">
+    <input id="search" type="search" placeholder="Search section (e.g. Sec 56, Sec 31), case (e.g. Taylor v Caldwell), or topic...">
+    <button class="filter active" data-filter="all">All Questions</button>
+    <button class="filter" data-filter="HIGH">High Priority</button>
+    <button class="filter" data-filter="PROB">Problem Scenarios</button>
+    <button class="btn" id="expand">Expand All</button>
+    <button class="btn" id="collapse">Collapse All</button>
+    <button class="btn" onclick="window.print()">Print Notes</button>
+  </div>
+</div>
+
+<main>
+  <div class="notice">
+    <b>Exam Study Strategy:</b> For Unit 3, master the rules governing <b>Contingent Contracts vs. Wagers</b> (Sec 30 vs 31), statutory modes of <b>Discharge</b>, Rules of <b>Appropriation</b> (Sec 59–61), and the narrow judicial application of <b>Frustration</b> under <b>Section 56</b> (*Satyabrata Ghose*, *Alopi Parshad*, *Energy Watchdog*).
+    <div class="progress"><div id="bar"></div></div>
+    <div class="small" id="progressText">0 of 8 questions marked revised</div>
+  </div>
+
+  <!-- Visual Concept Maps -->
+  <section class="visual-gallery">
+    <h2>Unit 3 Visual Concept Maps & Flowcharts</h2>
+    <div class="flowchart-grid">
+      <div class="flowchart-card">
+        <h4>1. Contingent Contracts vs. Wagering Agreements</h4>
+        <div class="diagram-step"><b>Contingent Contract (Sec 31):</b> Contract to do/not do something if a collateral event happens $\rightarrow$ VALID.</div>
+        <div class="diagram-step"><b>Wagering Agreement (Sec 30):</b> Mutual chances of gain/loss on an uncertain event with no real interest $\rightarrow$ VOID.</div>
+      </div>
+      <div class="flowchart-card">
+        <h4>2. Doctrine of Frustration / Impossibility (Sec 56)</h4>
+        <div class="diagram-step"><b>Initial Impossibility:</b> Void from inception (Sec 56, Para 1).</div>
+        <div class="diagram-step"><b>Supervening Impossibility:</b> Contract becomes VOID when performance becomes impossible or unlawful without fault (Sec 56, Para 2).</div>
+        <div class="diagram-step"><b>Commercial Hardship:</b> Price rise or difficult performance does NOT frustrate contract (<i>Alopi Parshad</i>).</div>
+      </div>
+      <div class="flowchart-card">
+        <h4>3. Appropriation of Payments (Sec 59–61)</h4>
+        <div class="diagram-step"><b>Step 1 (Sec 59):</b> Debtor expressly or impliedly indicates debt $\rightarrow$ Creditor MUST follow.</div>
+        <div class="diagram-step"><b>Step 2 (Sec 60):</b> If Debtor silent $\rightarrow$ Creditor may apply to any lawful debt (including time-barred).</div>
+        <div class="diagram-step"><b>Step 3 (Sec 61):</b> If neither appropriates $\rightarrow$ Applied in order of time (chronological).</div>
+      </div>
+    </div>
+  </section>
+
+  <div id="questionArea">
+
+    <!-- Q1 -->
+    <article class="qa" data-priority="HIGH" data-tags="ESSAY" data-search="contingent contract section 31 section 32 section 33 section 34 section 35 section 36 collateral event wager rules enforcement">
+      <div class="qtop">
+        <div><span class="qid">Q01</span><span class="unitlabel">UNIT III · Contingent Contracts</span></div>
+        <div class="tags"><span class="tag hot">REPEATED / HIGH PRIORITY</span><span class="tag">10 marks</span></div>
+      </div>
+      <h3>Define Contingent Contract under Section 31. Explain the legal rules governing the enforcement of contingent contracts under Sections 32 to 36.</h3>
+      <p class="source">Past papers: Mar/Apr 2024; Repeated Syllabus Core</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Definition of Contingent Contract [Section 31]</h4>
+          <p><i>"A 'contingent contract' is a contract to do or not to do something, if some event, collateral to such contract, does or does not happen."</i></p>
+
+          <div class="formula-box">
+            Essentials: (1) Performance depends on a future uncertain event; (2) The event must be collateral (subsidiary) to the contract; (3) The event must not be at the absolute discretion of the promisor.
+          </div>
+
+          <h4>2. Rules Governing Enforcement [Sections 32 to 36]</h4>
+          <ol>
+            <li><b>Enforcement on Happening of Event [Section 32]:</b>
+              <ul>
+                <li>Contracts contingent on the happening of an uncertain future event cannot be enforced until that event has happened.</li>
+                <li>If the event becomes impossible, the contract becomes <b>void</b>.</li>
+                <li><i>Example:</i> A contracts to pay B ₹10,000 if C's ship returns. The ship sinks. Contract becomes void.</li>
+              </ul>
+            </li>
+            <li><b>Enforcement on Non-Happening of Event [Section 33]:</b>
+              <ul>
+                <li>Contracts contingent on an event NOT happening can be enforced when the happening of that event becomes impossible, and not before.</li>
+              </ul>
+            </li>
+            <li><b>Event Dependent on Conduct of Living Person [Section 34]:</b>
+              <ul>
+                <li>If the collateral event is how a person will act at an unspecified time, the event is deemed impossible if that person does anything making it impossible for him to act so within any definite time.</li>
+                <li><i>Example:</i> A agrees to pay B a sum if B marries C. C marries D. The event is deemed impossible (even if D might die later).</li>
+              </ul>
+            </li>
+            <li><b>Contingent on Event Happening within Fixed Time [Section 35, Para 1]:</b>
+              <ul>
+                <li>Becomes void if the event does not happen within the specified time, or becomes impossible before time expires.</li>
+              </ul>
+            </li>
+            <li><b>Contingent on Event NOT Happening within Fixed Time [Section 35, Para 2]:</b>
+              <ul>
+                <li>Enforceable if time expires without the event happening, or if it becomes certain before time expires that the event will not happen.</li>
+              </ul>
+            </li>
+            <li><b>Agreements Contingent on Impossible Events [Section 36]:</b>
+              <ul>
+                <li>Agreements contingent on an impossible event are <b>void ab initio</b>, whether the impossibility of the event is known or not to the parties at the time when it is made.</li>
+                <li><i>Example:</i> A agrees to pay B ₹1,000 if two straight lines enclose a space. Void.</li>
+              </ul>
+            </li>
+          </ol>
+
+          <h4>3. Conclusion</h4>
+          <p>Contingent contracts are legally valid agreements whose performance is postponed until the collateral statutory condition is satisfied or fails under Sections 32–36.</p>
+          <div class="writing-tip"><b>Exam Writing Tip:</b> Systematically detail Sections 32, 33, 34, 35, and 36 with brief statutory illustrations for each section.</div>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q1"> Mark as revised</label>
+    </article>
+
+    <!-- Q2 -->
+    <article class="qa" data-priority="HIGH" data-tags="ESSAY" data-search="frustration doctrine section 56 impossibility taylor v caldwell satyabrata ghose alopi parshad energy watchdog force majeure commercial hardship">
+      <div class="qtop">
+        <div><span class="qid">Q02</span><span class="unitlabel">UNIT III · Discharge of Contract</span></div>
+        <div class="tags"><span class="tag hot">REPEATED / HIGH PRIORITY</span><span class="tag">10 marks</span></div>
+      </div>
+      <h3>Explain the Doctrine of Frustration (Supervening Impossibility) under Section 56 of the Indian Contract Act. Discuss leading Indian and English decisions.</h3>
+      <p class="source">Past papers: Mar/Apr 2024; May 2025 Re-exam; Repeated across papers</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Statutory Provision [Section 56]</h4>
+          <p>Section 56 codifies the law relating to impossibility of performance:</p>
+          <ul>
+            <li><b>Para 1 (Initial Impossibility):</b> An agreement to do an act impossible in itself is <b>void</b>.</li>
+            <li><b>Para 2 (Supervening Impossibility / Frustration):</b> A contract to do an act which, after the contract is made, becomes impossible or, by reason of some event which the promisor could not prevent, unlawful, becomes <b>void</b> when the act becomes impossible or unlawful.</li>
+          </ul>
+
+          <h4>2. Recognized Grounds of Frustration</h4>
+          <ol>
+            <li><b>Destruction of Subject Matter:</b> Where the specific subject matter necessary for performance is destroyed without fault (<b>Taylor v. Caldwell</b>).</li>
+            <li><b>Death or Personal Incapacity:</b> In contracts involving personal skill, qualifications, or confidence.</li>
+            <li><b>Change of Law or Government Intervention:</b> Where subsequent legislative changes render performance illegal.</li>
+            <li><b>Non-occurrence of Contemplated Event:</b> Where performance depends on the occurrence of a specific event that fails to take place (<b>Krell v. Henry</b>).</li>
+            <li><b>Outbreak of War:</b> Contracts with alien enemies or contracts rendered illegal by wartime restrictions.</li>
+          </ol>
+
+          <h4>3. Landmark Case Laws</h4>
+          <ul>
+            <li><b>Taylor v. Caldwell (1863 3 B&S 826):</b> Plaintiffs rented a music hall for concerts. Before the concert date, the hall burned down accidentally. Held: The contract was frustrated by destruction of the subject matter; defendants were excused.</li>
+            <li><b>Satyabrata Ghose v. Mugneeram Bangur & Co. (1954 AIR SC 44):</b> The Supreme Court held that Section 56 lays down a comprehensive positive rule of law. Impossibility under Sec 56 is not limited to physical impossibility, but includes commercial impracticability where an unforeseen event upsets the fundamental basis of the bargain.</li>
+            <li><b>Alopi Parshad & Sons Ltd. v. Union of India (1960 SC):</b> Performance does not become impossible merely because it becomes more expensive, difficult, or commercially burdensome due to unexpected price rises. Commercial hardship is NOT frustration.</li>
+            <li><b>Energy Watchdog v. CERC (2017 14 SCC 80):</b> The Supreme Court held that where a contract contains an express <i>Force Majeure</i> clause, the clause governs under Section 32; Section 56 applies only when the contract does not cover the event. A rise in coal prices due to foreign law change did not frustrate power purchase contracts.</li>
+          </ul>
+
+          <h4>4. Effect of Frustration [Section 65]</h4>
+          <p>When a contract becomes void under Section 56, any party who has received any advantage under such agreement is bound to restore it or make compensation for it to the person from whom he received it.</p>
+
+          <div class="writing-tip"><b>Exam Writing Tip:</b> Emphasize that *commercial hardship* or *price increase* does NOT equal frustration under <i>Alopi Parshad</i> and <i>Energy Watchdog</i>.</div>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q2"> Mark as revised</label>
+    </article>
+
+    <!-- Q3 -->
+    <article class="qa" data-priority="HIGH" data-tags="ESSAY" data-search="modes of discharge of contract performance agreement frustration lapse of time operation of law breach section 62 section 63">
+      <div class="qtop">
+        <div><span class="qid">Q03</span><span class="unitlabel">UNIT III · Discharge of Contract</span></div>
+        <div class="tags"><span class="tag hot">REPEATED / HIGH PRIORITY</span><span class="tag">10 marks</span></div>
+      </div>
+      <h3>Explain the various modes by which a Contract may be Discharged.</h3>
+      <p class="source">Past papers: May 2025 Re-exam; Core Syllabus Question</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Meaning of Discharge of Contract</h4>
+          <p>Discharge of contract means the termination of the contractual relationship between parties, whereby the rights and obligations created under the contract come to an end.</p>
+
+          <h4>2. Modes of Discharge</h4>
+          <ol>
+            <li><b>Discharge by Performance:</b>
+              <ul>
+                <li><b>Actual Performance:</b> When both parties fulfill their respective contractual promises (Section 37).</li>
+                <li><b>Attempted Performance / Tender (Section 38):</b> When the promisor offers to perform, but the promisee refuses to accept the valid tender.</li>
+              </ul>
+            </li>
+            <li><b>Discharge by Mutual Agreement [Sections 62 & 63]:</b>
+              <ul>
+                <li><b>Novation (Sec 62):</b> Substitution of a new contract in place of the old one, either between the same or new parties.</li>
+                <li><b>Rescission (Sec 62):</b> Cancellation of the contract by mutual agreement.</li>
+                <li><b>Alteration (Sec 62):</b> Material variation of contract terms with mutual consent.</li>
+                <li><b>Remission / Waiver (Sec 63):</b> Acceptance of a lesser fulfillment or waiving performance without fresh consideration.</li>
+              </ul>
+            </li>
+            <li><b>Discharge by Supervening Impossibility / Frustration [Section 56]:</b>
+              <ul>
+                <li>When performance becomes physically impossible or unlawful after formation without fault of either party.</li>
+              </ul>
+            </li>
+            <li><b>Discharge by Lapse of Time:</b>
+              <ul>
+                <li>Contracts must be performed within the period prescribed by the Limitation Act, 1963. If performance is not enforced within limitation, the legal remedy is barred.</li>
+              </ul>
+            </li>
+            <li><b>Discharge by Operation of Law:</b>
+              <ul>
+                <li>Includes discharge by death (in personal service contracts), insolvency, merger of inferior right into superior right, or unauthorized material alteration.</li>
+              </ul>
+            </li>
+            <li><b>Discharge by Breach of Contract:</b>
+              <ul>
+                <li><b>Actual Breach:</b> Refusal to perform on the due date or during performance.</li>
+                <li><b>Anticipatory Breach (Sec 39):</b> Refusal communicated prior to the due date.</li>
+              </ul>
+            </li>
+          </ol>
+
+          <div class="writing-tip"><b>Exam Writing Tip:</b> Clearly list all six modes of discharge, citing Sections 37, 38, 56, 62, and 63 to demonstrate complete statutory knowledge.</div>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q3"> Mark as revised</label>
+    </article>
+
+    <!-- Q4 -->
+    <article class="qa" data-priority="HIGH" data-tags="ESSAY" data-search="appropriation of payments debtor creditor section 59 section 60 section 61 clayton case time barred debt">
+      <div class="qtop">
+        <div><span class="qid">Q04</span><span class="unitlabel">UNIT III · Performance of Contracts</span></div>
+        <div class="tags"><span class="tag hot">REPEATED / HIGH PRIORITY</span><span class="tag">10 marks</span></div>
+      </div>
+      <h3>Explain the rules relating to Appropriation of Payments between Debtor and Creditor under Sections 59, 60, and 61 of the Indian Contract Act.</h3>
+      <p class="source">Past papers: June/July 2025; May 2025 Re-exam</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Concept of Appropriation of Payments</h4>
+          <p>When a debtor owes several distinct debts to the same creditor and makes a payment that is insufficient to satisfy all the debts, the question arises as to which specific debt the payment should be applied (appropriated). Chapter IV (Sections 59–61) lays down statutory rules modeled on the English rule in <b>Devaynes v. Noble (Clayton's Case)</b>.</p>
+
+          <h4>2. Statutory Rules [Sections 59 to 61]</h4>
+          <ol>
+            <li><b>Appropriation by Debtor's Express or Implied Intention [Section 59]:</b>
+              <ul>
+                <li>If a debtor owing several distinct debts makes a payment with an express indication, or under circumstances implying that the payment is to be applied to a specific debt, the creditor <b>MUST</b> apply it accordingly if he accepts the payment.</li>
+                <li><i>Rule:</i> The debtor has the first right to appropriate (*Solvitur in modum solventis*).</li>
+                <li><i>Example:</i> A owes B ₹1,000 (due Jan) and ₹2,000 (due March). A sends ₹1,000 specifying it is for the Jan debt. B must appropriate it to Jan debt.</li>
+              </ul>
+            </li>
+            <li><b>Appropriation by Creditor where Debtor Omits [Section 60]:</b>
+              <ul>
+                <li>If the debtor makes payment without indicating any appropriation, the creditor has the discretion to apply the payment to any lawful debt actually due and payable from the debtor.</li>
+                <li><b>Crucial Power:</b> The creditor may apply the payment even to a <b>time-barred debt</b> (a debt barred by the Law of Limitation). However, the creditor cannot apply it to an illegal or disputed debt.</li>
+              </ul>
+            </li>
+            <li><b>Appropriation by Operation of Law where Neither Party Appropriates [Section 61]:</b>
+              <ul>
+                <li>Where neither party makes any appropriation, the payment shall be applied in discharge of the debts <b>in order of time</b> (chronological order), whether they are time-barred or not.</li>
+                <li>If the debts are of equal standing/date, the payment shall be applied in discharge of each debt <b>proportionately</b>.</li>
+              </ul>
+            </li>
+          </ol>
+
+          <h4>3. Rule Regarding Interest and Principal</h4>
+          <p>Unless there is a contract to the contrary, payments made by a debtor are applied <b>first towards interest</b> due, and once interest is fully satisfied, the balance is applied towards principal reduction.</p>
+
+          <div class="writing-tip"><b>Exam Writing Tip:</b> Summarize as a 3-step priority: (1) Debtor's choice (Sec 59), (2) Creditor's choice (Sec 60), (3) Order of time (Sec 61). Mention Clayton's Case.</div>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q4"> Mark as revised</label>
+    </article>
+
+    <!-- Q5 -->
+    <article class="qa" data-priority="HIGH" data-tags="SHORT" data-search="wager vs contingent contract section 30 section 31 horse race difference table">
+      <div class="qtop">
+        <div><span class="qid">Q05</span><span class="unitlabel">UNIT III · Void Agreements</span></div>
+        <div class="tags"><span class="tag hot">REPEATED / HIGH PRIORITY</span><span class="tag">6 marks</span></div>
+      </div>
+      <h3>Distinguish between a Wagering Agreement (Section 30) and a Contingent Contract (Section 31).</h3>
+      <p class="source">Past papers: Mar/Apr 2024 Problem; Frequent Comparison</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Concepts Defined</h4>
+          <ul>
+            <li><b>Wagering Agreement [Sec 30]:</b> An agreement between two parties where one promises to pay money upon the determination of an uncertain event, in consideration of the other party promising to pay if the event turns out otherwise.</li>
+            <li><b>Contingent Contract [Sec 31]:</b> A contract to do or not to do something, if some event, collateral to such contract, does or does not happen.</li>
+          </ul>
+
+          <h4>2. Comparison Table</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Wagering Agreement (Sec 30)</th>
+                <th>Contingent Contract (Sec 31)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Legal Validity</b></td>
+                <td><b>VOID</b> ab initio (Section 30).</td>
+                <td><b>VALID</b> and enforceable under law.</td>
+              </tr>
+              <tr>
+                <td><b>Reciprocal Promises</b></td>
+                <td>Consists of mutual reciprocal promises to pay money.</td>
+                <td>May not contain reciprocal promises; performance depends on collateral condition.</td>
+              </tr>
+              <tr>
+                <td><b>Real Interest</b></td>
+                <td>Parties have NO real interest in the event except the win/stake.</td>
+                <td>Parties have a genuine commercial or real interest in the collateral event.</td>
+              </tr>
+              <tr>
+                <td><b>Nature of Event</b></td>
+                <td>Uncertain event is the SOLE determining factor of the wager.</td>
+                <td>Uncertain event is COLLATERAL (incidental) to the main contract.</td>
+              </tr>
+              <tr>
+                <td><b>Example</b></td>
+                <td>A and B bet ₹1,000 on whether it rains today.</td>
+                <td>Contract of Insurance (A insures his ship against sea damage).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q5"> Mark as revised</label>
+    </article>
+
+    <!-- Q6 -->
+    <article class="qa" data-priority="MED" data-tags="SHORT" data-search="agreements in restraint of trade section 27 sale of goodwill exceptions gujarat bottling">
+      <div class="qtop">
+        <div><span class="qid">Q06</span><span class="unitlabel">UNIT III · Void Agreements</span></div>
+        <div class="tags"><span class="tag mid">IMPORTANT</span><span class="tag">6 marks</span></div>
+      </div>
+      <h3>Explain Agreements in Restraint of Trade under Section 27 and state its exceptions.</h3>
+      <p class="source">Past papers: Core Syllabus Question</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Statutory Rule [Section 27]</h4>
+          <p>Under Section 27: <i>"Every agreement by which any one is restrained from exercising a lawful profession, trade or business of any kind, is to that extent void."</i></p>
+
+          <h4>2. General Principles</h4>
+          <p>Indian law is stricter than English law. Public policy favors free trade. Any agreement preventing a person from carrying on a lawful trade is void to the extent of restraint, regardless of whether the restraint is general or partial, reasonable or unreasonable (<b>Niranjan Shankar Golikari v. Century Spinning & Mfg Co.</b>).</p>
+
+          <h4>3. Exceptions to Section 27</h4>
+          <ol>
+            <li><b>Sale of Goodwill (Statutory Exception to Sec 27):</b> One who sells the goodwill of a business may agree with the buyer to refrain from carrying on a similar business within specified reasonable local limits.</li>
+            <li><b>Partnership Act Exceptions:</b>
+              <ul>
+                <li>Partner agreed not to carry on competing business while partner (Sec 11(2)).</li>
+                <li>Outgoing partner agreed not to carry on similar business within specified limits (Sec 36(2)).</li>
+                <li>Partners agreeing upon dissolution not to carry on similar business (Sec 54).</li>
+              </ul>
+            </li>
+            <li><b>Service Agreements / Negative Covenants during Employment:</b> Restraints during the subsistence of employment to prevent employee from serving rivals are VALID (<i>Niranjan Shankar Golikari</i>). Restraints operative *after* termination of employment are VOID.</li>
+            <li><b>Exclusive Dealing Agreements (Solus Agreements):</b> Agreements to purchase all requirements from one manufacturer are valid unless intended to create a monopoly (<b>Gujarat Bottling Co. Ltd. v. Coca Cola Co.</b>).</li>
+          </ol>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q6"> Mark as revised</label>
+    </article>
+
+    <!-- Q7 (Problem 1) -->
+    <article class="qa" data-priority="HIGH" data-tags="PROB" data-search="problem oil tin uncertainty section 29 void terms incapable of certainty">
+      <div class="qtop">
+        <div><span class="qid">Q07</span><span class="unitlabel">UNIT III · Void Agreements</span></div>
+        <div class="tags"><span class="tag hot">PROBLEM SCENARIO</span><span class="tag">6 marks</span></div>
+      </div>
+      <h3>Problem: A, who is a dealer dealing in all kinds of edible oil (coconut oil, mustard oil, groundnut oil), agrees to sell "100 tins of oil" to B without specifying the quality, price, or type of oil. Is this a valid contract?</h3>
+      <p class="source">Past paper: Mar/Apr 2024, Unit III Problem</p>
+      <details>
+        <summary>Study IRAC Solution</summary>
+        <div class="answer">
+          <h4>1. Issue</h4>
+          <p>Whether an agreement to sell "100 tins of oil" without specifying the description or type is void for uncertainty under Section 29.</p>
+
+          <h4>2. Rule of Law</h4>
+          <ul>
+            <li>Under <b>Section 29</b> of the Indian Contract Act: <i>"Agreements, the meaning of which is not certain, or capable of being made certain, are void."</i></li>
+            <li>If a dealer sells multiple varieties of a commodity, an agreement failing to specify which variety is sold remains uncertain unless trade usage makes it ascertainable.</li>
+          </ul>
+
+          <h4>3. Application to Facts</h4>
+          <p>A deals in various kinds of edible oils. There is nothing in the agreement to show which specific oil was intended (coconut, mustard, or groundnut oil). The terms are neither certain nor capable of being made certain from the contract itself.</p>
+
+          <h4>4. Conclusion</h4>
+          <p>The agreement is <b>VOID for uncertainty</b> under Section 29 of the Indian Contract Act.</p>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q7"> Mark as revised</label>
+    </article>
+
+    <!-- Q8 (Problem 2) -->
+    <article class="qa" data-priority="HIGH" data-tags="PROB" data-search="problem promise marry father death marriage another person section 34 section 31 disabled performance">
+      <div class="qtop">
+        <div><span class="qid">Q08</span><span class="unitlabel">UNIT III · Contingent Contracts</span></div>
+        <div class="tags"><span class="tag hot">PROBLEM SCENARIO</span><span class="tag">6 marks</span></div>
+      </div>
+      <h3>Problem: A promises to marry B upon the death of A's father. While A's father is still alive, A marries C. Can B sue A immediately for breach?</h3>
+      <p class="source">Past paper: June/July 2025 & Jan/Feb 2026 Variant</p>
+      <details>
+        <summary>Study IRAC Solution</summary>
+        <div class="answer">
+          <h4>1. Issue</h4>
+          <p>Whether A marrying C renders the contingent contract impossible under Section 34, entitling B to sue immediately for breach.</p>
+
+          <h4>2. Rule of Law</h4>
+          <ul>
+            <li>Under <b>Section 34</b>, if a contract is contingent upon how a person will act at an unspecified time, the event is deemed impossible if that person does an act making performance impossible.</li>
+            <li>Under <b>Section 39</b> (Anticipatory Breach), disabling oneself from performing a contract allows the other party to put an end to the contract immediately and sue for damages.</li>
+          </ul>
+
+          <h4>3. Application to Facts</h4>
+          <p>A's promise to marry B was contingent on his father's death. However, by marrying C while his father was alive, A voluntarily disabled himself from marrying B. Under Section 34, the event is deemed to have become impossible. This act also amounts to anticipatory breach under Section 39.</p>
+
+          <h4>4. Conclusion</h4>
+          <p>Yes, B can sue A immediately for damages for breach of contract; B does not have to wait until A's father dies.</p>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q8"> Mark as revised</label>
+    </article>
+
+  </div>
+
+  <div id="empty" class="empty">No questions match your search. Try another keyword or filter.</div>
+
+<section class="visual-gallery" id="syllabus-additions">
+<h2>Additional syllabus coverage — do not skip these topics</h2>
+<p>These questions are added to close syllabus gaps identified during the audit. They are <b>not labelled as repeated past-paper questions</b>. Study them alongside the original questions above.</p>
+<article class="qa supplemental" data-priority="MED" data-tags="SUPP" data-search="explain agreements opposed to public policy and the important categories of void agreements syllabus addition">
+<div class="qtop"><div><span class="qid">S3-01</span><span class="unitlabel">UNIT 3 · Syllabus-completion addition</span></div><div class="tags"><span class="tag mid">SYLLABUS ADDITION</span><span class="tag">10 marks</span></div></div>
+<h3>Explain agreements opposed to public policy and the important categories of void agreements</h3><details><summary>Study model answer</summary><div class="answer"><p><b>Section 23:</b> An agreement is void where its consideration or object is unlawful, including where it is opposed to public policy. Public policy is applied cautiously by courts and must be grounded in recognised legal principles.</p><p><b>Related void agreements:</b> Section 26 — restraint of marriage of an adult; Section 27 — restraint of trade, subject to the statutory exception relating to sale of goodwill; Section 28 — restraint of legal proceedings, subject to statutory exceptions; Section 29 — uncertainty; Section 30 — wagering agreements.</p><p><b>Distinction:</b> Do not treat every restraint as automatically falling under Section 23. Where a specific provision such as Sections 26–30 applies, discuss that provision directly.</p><p><b>Conclusion:</b> State the relevant statutory section, explain the public-policy concern, and identify whether the agreement is void wholly or to the prohibited extent.</p></div></details></article><article class="qa supplemental" data-priority="MED" data-tags="SUPP" data-search="explain performance and tender of performance under sections 37 and 38 syllabus addition">
+<div class="qtop"><div><span class="qid">S3-02</span><span class="unitlabel">UNIT 3 · Syllabus-completion addition</span></div><div class="tags"><span class="tag mid">SYLLABUS ADDITION</span><span class="tag">6 marks</span></div></div>
+<h3>Explain performance and tender of performance under Sections 37 and 38</h3><details><summary>Study model answer</summary><div class="answer"><p><b>Section 37:</b> Parties must perform or offer to perform their respective promises, unless performance is dispensed with or excused under the Act or another law.</p><p><b>Section 38:</b> Where a promisor makes a valid offer of performance and the promisee refuses to accept it, the promisor is not responsible for non-performance and does not lose rights under the contract, provided the statutory conditions are met.</p><p>A valid tender must be unconditional, made at a proper time and place, and give the promisee a reasonable opportunity to see that the promisor is able and willing to perform the whole promise.</p><p><b>Conclusion:</b> Distinguish actual performance from a valid offer to perform, and apply the statutory conditions to the facts.</p></div></details></article><article class="qa supplemental" data-priority="MED" data-tags="SUPP" data-search="explain discharge of contract by operation of law syllabus addition">
+<div class="qtop"><div><span class="qid">S3-03</span><span class="unitlabel">UNIT 3 · Syllabus-completion addition</span></div><div class="tags"><span class="tag mid">SYLLABUS ADDITION</span><span class="tag">6 marks</span></div></div>
+<h3>Explain discharge of contract by operation of law</h3><details><summary>Study model answer</summary><div class="answer"><p>A contract may be discharged by operation of law without a fresh agreement between the parties. Common examples include:</p><ol><li><b>Death:</b> Where the contract involves personal skill or qualification, death may discharge the obligation.</li><li><b>Insolvency:</b> Applicable insolvency law may affect or discharge contractual obligations.</li><li><b>Merger:</b> A lesser right may merge into a higher right when the same person acquires both.</li><li><b>Material alteration:</b> An unauthorised material alteration of a written contract may discharge the party not consenting, subject to the facts and law.</li><li><b>Limitation:</b> Expiry of the limitation period may bar the remedy, though it does not invariably extinguish the underlying right.</li></ol><p><b>Conclusion:</b> Explain the particular legal event and avoid saying every limitation bar automatically extinguishes the debt.</p></div></details></article>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    Contract Law I · Unit 3 Exam Master Study Guide · KSLU LL.B. Semester I
+  </div>
+</footer>
+
+<script>
+  // Search & Filter Logic
+  const searchInput = document.getElementById('search');
+  const cards = Array.from(document.querySelectorAll('.qa'));
+  const filters = Array.from(document.querySelectorAll('.filter'));
+  const emptyState = document.getElementById('empty');
+  let currentFilter = 'all';
+
+  function filterCards() {
+    const term = searchInput.value.trim().toLowerCase();
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const searchData = (card.dataset.search || '') + ' ' + card.innerText.toLowerCase();
+      const matchesSearch = !term || searchData.includes(term);
+      
+      let matchesFilter = true;
+      if (currentFilter === 'HIGH') matchesFilter = card.dataset.priority === 'HIGH';
+      if (currentFilter === 'PROB') matchesFilter = card.dataset.tags === 'PROB';
+
+      const show = matchesSearch && matchesFilter;
+      card.style.display = show ? 'block' : 'none';
+      if (show) visibleCount++;
+    });
+
+    emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+  }
+
+  searchInput.addEventListener('input', filterCards);
+
+  filters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filters.forEach(f => f.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      filterCards();
+    });
+  });
+
+  // Expand / Collapse details
+  document.getElementById('expand').onclick = () => cards.forEach(c => { if(c.style.display !== 'none') c.querySelector('details').open = true; });
+  document.getElementById('collapse').onclick = () => cards.forEach(c => c.querySelector('details').open = false);
+
+  // LocalStorage Progress Tracker
+  const checkboxes = Array.from(document.querySelectorAll('.revised'));
+  const storageKey = 'kslu_contract_unit3_progress';
+
+  function updateProgress() {
+    const checkedCount = checkboxes.filter(c => c.checked).length;
+    document.getElementById('bar').style.width = (checkedCount / checkboxes.length * 100) + '%';
+    document.getElementById('progressText').textContent = `${checkedCount} of ${checkboxes.length} questions marked revised`;
+  }
+
+  try {
+    const savedState = JSON.parse(localStorage.getItem(storageKey) || '{}');
+    checkboxes.forEach(cb => {
+      cb.checked = !!savedState[cb.dataset.id];
+      cb.addEventListener('change', () => {
+        const state = {};
+        checkboxes.forEach(x => state[x.dataset.id] = x.checked);
+        localStorage.setItem(storageKey, JSON.stringify(state));
+        updateProgress();
+      });
+    });
+  } catch(e) {
+    checkboxes.forEach(cb => cb.addEventListener('change', updateProgress));
+  }
+
+  updateProgress();
+</script>
+
+</body>
+</html>
