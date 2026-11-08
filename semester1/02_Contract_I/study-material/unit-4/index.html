@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contract I – Unit 4 Master Study Guide | KSLU LL.B. Sem 1</title>
+  <style>
+    :root {
+      --navy: #142d68;
+      --blue: #2459a9;
+      --bg: #f3f6fb;
+      --card: #ffffff;
+      --text: #1d2737;
+      --muted: #667085;
+      --line: #dce3ef;
+      --gold: #f4c95d;
+      --green: #24784b;
+      --alert-bg: #ebf8ff;
+      --alert-border: #3182ce;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .hero {
+      background: linear-gradient(125deg, #10265b, #1f4f97);
+      color: #fff;
+      padding: 32px 20px 25px;
+    }
+    .wrap { max-width: 1080px; margin: auto; }
+    .eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #cbd9f5;
+      font-weight: 800;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.15;
+      margin: 8px 0;
+    }
+    .hero p {
+      max-width: 800px;
+      color: #e1e9f8;
+      margin: 10px 0 18px;
+    }
+    .stats { display: flex; flex-wrap: wrap; gap: 10px; }
+    .stat {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+    }
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      padding: 12px 16px;
+    }
+    .tools {
+      max-width: 1080px;
+      margin: auto;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .tools input[type="search"] {
+      flex: 1;
+      min-width: 220px;
+      padding: 11px 13px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font: inherit;
+    }
+    .btn, .filter {
+      border: 1px solid #cbd5e1;
+      background: #fff;
+      color: #20365e;
+      border-radius: 99px;
+      padding: 9px 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn:hover, .filter:hover { background: #edf3ff; }
+    .filter.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+    
+    main { max-width: 1080px; margin: 24px auto; padding: 0 16px 50px; }
+    
+    .notice {
+      background: #fff8df;
+      border: 1px solid #f0d98b;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+    }
+    .progress {
+      background: #e6ebf4;
+      border-radius: 99px;
+      height: 8px;
+      overflow: hidden;
+      margin: 10px 0 0;
+    }
+    .progress div { height: 100%; width: 0%; background: #278455; transition: width 0.2s; }
+    .small { font-size: 0.88rem; color: var(--muted); margin-top: 4px; }
+
+    /* Visual Concept Maps */
+    .visual-gallery {
+      margin: 24px 0 30px;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+    }
+    .visual-gallery h2 { margin-top: 0; color: var(--navy); font-size: 1.3rem; }
+    .flowchart-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+      margin-top: 15px;
+    }
+    .flowchart-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .flowchart-card h4 { margin: 0 0 10px 0; color: var(--blue); font-size: 1rem; }
+    .diagram-step {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--blue);
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      font-size: 0.88rem;
+    }
+
+    /* Q&A Cards */
+    .qa {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      margin: 16px 0;
+      padding: 20px;
+      box-shadow: 0 3px 12px rgba(24, 53, 101, 0.05);
+      scroll-margin-top: 90px;
+    }
+    .qtop { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+    .qid {
+      background: #e7eefc;
+      color: #16376f;
+      border-radius: 7px;
+      font-size: 0.8rem;
+      font-weight: 900;
+      padding: 3px 7px;
+      margin-right: 8px;
+    }
+    .unitlabel { color: var(--muted); font-size: 0.82rem; font-weight: 700; }
+    .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .tag {
+      font-size: 0.72rem;
+      line-height: 1.5;
+      padding: 3px 7px;
+      border-radius: 6px;
+      background: #eef2f7;
+      color: #475467;
+      font-weight: 800;
+    }
+    .tag.hot { background: #fff0cf; color: #875300; }
+    .tag.mid { background: #e5f4eb; color: #20623e; }
+    
+    .qa h3 { font-size: 1.15rem; line-height: 1.4; margin: 10px 0 6px; color: var(--navy); }
+    .source { color: var(--muted); font-size: 0.86rem; margin: 0 0 10px; }
+    
+    .qa details { border-top: 1px solid #edf0f5; margin-top: 12px; padding-top: 12px; }
+    .qa summary { cursor: pointer; color: #17478e; font-weight: 800; padding: 4px 0; }
+    
+    .answer { padding: 10px 0 4px; }
+    .answer h4 { margin: 12px 0 4px; color: #2d3748; font-size: 0.98rem; }
+    .answer table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 0.92rem; }
+    .answer th, .answer td { border: 1px solid var(--line); padding: 10px; text-align: left; }
+    .answer th { background: #eef3fb; color: var(--navy); }
+    
+    .formula-box {
+      background-color: var(--alert-bg);
+      border-left: 4px solid var(--alert-border);
+      padding: 10px 14px;
+      margin: 12px 0;
+      font-weight: bold;
+      border-radius: 0 8px 8px 0;
+    }
+    .writing-tip {
+      background: #f1f6ff;
+      border-left: 3px solid var(--blue);
+      padding: 10px 12px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 15px;
+      font-size: 0.92rem;
+    }
+    
+    .done { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 0.88rem; margin-top: 14px; cursor: pointer; }
+    .done input { width: 16px; height: 16px; }
+    
+    .empty { display: none; text-align: center; padding: 35px; background: #fff; border-radius: 12px; color: var(--muted); }
+    footer { background: #10265b; color: #e1e9f8; padding: 25px; text-align: center; font-size: 0.9rem; margin-top: 40px; }
+
+    @media print {
+      .toolbar, .notice, .done, .btn, .filter { display: none !important; }
+      body { background: #fff; font-size: 11pt; }
+      .hero { background: #fff; color: #000; padding: 0; }
+      .eyebrow, .hero p { color: #333; }
+      .qa { break-inside: avoid; box-shadow: none; border: 1px solid #bbb; margin: 10px 0; }
+      .qa details { display: block; }
+      .qa summary { display: none; }
+      .qa details .answer { display: block !important; }
+      footer { background: #fff; color: #000; }
+    }
+  </style>
+</head>
+<body><div style="max-width:1080px;margin:12px auto;padding:0 16px"><a href="../../gallery/index.html" style="display:inline-block;background:#edf3ff;color:#17478e;padding:9px 13px;border-radius:9px;text-decoration:none;font-weight:700">← Visual Learning &amp; Revision Gallery</a></div>
+<nav class="site-nav" style="background:#fff;border-bottom:1px solid #dce3ef;padding:10px 16px;font:600 14px system-ui;position:sticky;top:0;z-index:150">
+<div style="max-width:1080px;margin:auto;display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+<a href="../index.html" style="color:#17478e;text-decoration:none">← All Contract–I Units</a>
+<a href="../unit-1/index.html" style="color:#17478e;text-decoration:none">Unit 1</a> <a href="../unit-2/index.html" style="color:#17478e;text-decoration:none">Unit 2</a> <a href="../unit-3/index.html" style="color:#17478e;text-decoration:none">Unit 3</a> <a href="../unit-4/index.html" style="color:#17478e;text-decoration:none">Unit 4</a> <a href="../unit-5/index.html" style="color:#17478e;text-decoration:none">Unit 5</a>
+</div></nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">KSLU · LL.B. Semester I · Contract Law I</div>
+    <h1>Unit 4 Exam Study Master</h1>
+    <p>Comprehensive study guide covering Breach of Contract, Remedies, Measurement of Damages under Section 73, Penalty vs Liquidated Damages (Section 74), and Quasi-Contractual Obligations (Sections 68–72).</p>
+    <div class="stats">
+      <span class="stat">Unit 4 Core Focus</span>
+      <span class="stat">8 Comprehensive Questions</span>
+      <span class="stat">10-Mark & 6-Mark Formats</span>
+      <span class="stat">Interactive Progress Tracker</span>
+    </div>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="tools">
+    <input id="search" type="search" placeholder="Search section (e.g. Sec 73, Sec 70), case (e.g. Hadley), or topic...">
+    <button class="filter active" data-filter="all">All Questions</button>
+    <button class="filter" data-filter="HIGH">High Priority</button>
+    <button class="filter" data-filter="PROB">Problem Scenarios</button>
+    <button class="btn" id="expand">Expand All</button>
+    <button class="btn" id="collapse">Collapse All</button>
+    <button class="btn" onclick="window.print()">Print Notes</button>
+  </div>
+</div>
+
+<main>
+  <div class="notice">
+    <b>Exam Study Strategy:</b> For Unit 4, master the statutory framework of Remedies (Damages under <b>Sec 73–75</b>, Quasi-Contracts under <b>Sec 68–72</b>) alongside landmark precedents: <b>Hadley v. Baxendale</b> (remoteness test), <b>Kailash Nath Associates v. DDA</b> (Section 74 penalty rule), and <b>State of W.B. v. B.K. Mondal</b> (Section 70 non-gratuitous acts).
+    <div class="progress"><div id="bar"></div></div>
+    <div class="small" id="progressText">0 of 8 questions marked revised</div>
+  </div>
+
+  <!-- Visual Concept Maps -->
+  <section class="visual-gallery">
+    <h2>Unit 4 Visual Concept Maps & Flowcharts</h2>
+    <div class="flowchart-grid">
+      <div class="flowchart-card">
+        <h4>1. Remedies for Breach of Contract</h4>
+        <div class="diagram-step"><b>Rescission (Sec 75):</b> Rightful termination of contract obligations.</div>
+        <div class="diagram-step"><b>Damages (Sec 73-74):</b> Financial compensation (General, Special, Liquidated).</div>
+        <div class="diagram-step"><b>Quantum Meruit:</b> Payment for work done ("as much as earned").</div>
+        <div class="diagram-step"><b>Equitable Remedies:</b> Specific Performance & Injunction (Specific Relief Act).</div>
+      </div>
+      <div class="flowchart-card">
+        <h4>2. Remoteness of Damages (Hadley v. Baxendale)</h4>
+        <div class="diagram-step"><b>Limb 1 (General Losses):</b> Arise naturally in usual course of things $\rightarrow$ ALWAYS Recoverable.</div>
+        <div class="diagram-step"><b>Limb 2 (Special Losses):</b> Arise from special circumstances $\rightarrow$ Recoverable ONLY if communicated at contract formation.</div>
+      </div>
+      <div class="flowchart-card">
+        <h4>3. Quasi-Contracts / Unjust Enrichment (Sec 68–72)</h4>
+        <div class="diagram-step"><b>Sec 68:</b> Necessaries supplied to incapable person/dependants.</div>
+        <div class="diagram-step"><b>Sec 69:</b> Reimbursement for payment made by interested person.</div>
+        <div class="diagram-step"><b>Sec 70:</b> Obligation to pay for non-gratuitous beneficial acts.</div>
+        <div class="diagram-step"><b>Sec 71 & 72:</b> Finder of goods liability & Money paid under mistake/coercion.</div>
+      </div>
+    </div>
+  </section>
+
+  <div id="questionArea">
+
+    <!-- Q1 -->
+    <article class="qa" data-priority="HIGH" data-tags="ESSAY" data-search="remedies for breach of contract damages rescission specific performance injunction quantum meruit section 73 section 75">
+      <div class="qtop">
+        <div><span class="qid">Q01</span><span class="unitlabel">UNIT IV · Remedies for Breach</span></div>
+        <div class="tags"><span class="tag hot">REPEATED / HIGH PRIORITY</span><span class="tag">10 marks</span></div>
+      </div>
+      <h3>Explain the various remedies available to an aggrieved party for breach of contract under Indian Law.</h3>
+      <p class="source">Past papers: Mar/Apr 2024; May 2025 Re-exam; Repeated across sessions</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Introduction</h4>
+          <p>A breach of contract occurs when a contracting party fails or refuses to perform their contractual obligation without lawful excuse. The law provides judicial remedies to place the aggrieved party, so far as money can do it, in the same financial position as if the contract had been performed (*restitutio in integrum*).</p>
+
+          <h4>2. Statutory & Judicial Remedies Available</h4>
+          <ol>
+            <li><b>Rescission of Contract [Section 75]:</b>
+              <ul>
+                <li>Rescission means setting aside or cancelling the contract obligations.</li>
+                <li>When one party breaches, the innocent party has the right to rescind the contract and is discharged from performing their remaining duties.</li>
+                <li>Under Section 75, a person who rightfully rescinds a contract is entitled to compensation for any damage sustained through non-fulfillment.</li>
+              </ul>
+            </li>
+            <li><b>Damages [Sections 73 & 74]:</b>
+              <ul>
+                <li>Damages are monetary compensation awarded for loss suffered due to breach.</li>
+                <li>Under Section 73, damages are recoverable for direct and natural losses, but NOT for remote or indirect losses (<b>Hadley v. Baxendale</b>).</li>
+                <li>Under Section 74, if a sum is named in the contract as liquidated damages or penalty, the court awards reasonable compensation not exceeding the named amount.</li>
+              </ul>
+            </li>
+            <li><b>Quantum Meruit ("As Much as Earned"):</b>
+              <ul>
+                <li>Where one party has performed part of the work under a contract and is prevented by the other party from completing it, or where a contract is discovered void after partial performance, the party can sue for the reasonable value of the work already done.</li>
+              </ul>
+            </li>
+            <li><b>Specific Performance (Specific Relief Act, 1963):</b>
+              <ul>
+                <li>A decree directing the breaching party to carry out their actual contractual promise. Under the amended Section 10 of SRA 1963, specific performance is generally mandatory subject to statutory exceptions in Sections 11(2), 14, and 16.</li>
+              </ul>
+            </li>
+            <li><b>Injunction (Specific Relief Act, 1963):</b>
+              <ul>
+                <li>A court order restraining a party from doing a wrongful act or breaching a negative covenant (Section 42 of SRA). It can be temporary or perpetual.</li>
+              </ul>
+            </li>
+          </ol>
+
+          <h4>3. Leading Case Laws</h4>
+          <ul>
+            <li><b>Hadley v. Baxendale (1854):</b> Formulated the fundamental remoteness rules governing entitlement to contractual damages.</li>
+            <li><b>Kailash Nath Associates v. DDA (2015):</b> Clarified that compensation under Section 74 is awarded only for actual damage or loss proved, unless compensation is impossible to assess.</li>
+          </ul>
+
+          <h4>4. Conclusion</h4>
+          <p>The innocent party can choose the appropriate remedy based on the nature of the breach—claiming damages for monetary loss, *quantum meruit* for partial performance, or equitable relief under the Specific Relief Act for specific execution.</p>
+          <div class="writing-tip"><b>Exam Writing Tip:</b> Structure your answer into five clear remedies (Rescission, Damages, Quantum Meruit, Specific Performance, Injunction) and cite relevant sections from both the Contract Act and Specific Relief Act.</div>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q1"> Mark as revised</label>
+    </article>
+
+    <!-- Q2 -->
+    <article class="qa" data-priority="HIGH" data-tags="ESSAY" data-search="measurement of damages section 73 hadley v baxendale remoteness general special damages victoria laundry mitigation">
+      <div class="qtop">
+        <div><span class="qid">Q02</span><span class="unitlabel">UNIT IV · Measurement of Damages</span></div>
+        <div class="tags"><span class="tag hot">REPEATED / HIGH PRIORITY</span><span class="tag">10 marks</span></div>
+      </div>
+      <h3>Explain the principles governing the measurement of damages for breach of contract. Discuss the rule in Hadley v. Baxendale and Section 73 of the Indian Contract Act.</h3>
+      <p class="source">Past papers: Mar/Apr 2024; May 2025 Re-exam; June/July 2025</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Statutory Provision [Section 73]</h4>
+          <p>Section 73 of the Indian Contract Act lays down the statutory foundation for damages:</p>
+          <div class="formula-box">
+            "When a contract has been broken, the party who suffers by such breach is entitled to receive from the party who has broken the contract, compensation for any loss or damage caused to him thereby, which naturally arose in the usual course of things from such breach, or which the parties knew, when they made the contract, to be likely to result from the breach of it. Such compensation is not to be given for any remote and indirect loss or damage sustained by reason of the breach."
+          </div>
+
+          <h4>2. The Rule in Hadley v. Baxendale (1854 9 Ex 341)</h4>
+          <ul>
+            <li><b>Facts:</b> Plaintiffs operated a steam flour mill at Gloucester. The crankshaft broke and was sent via defendant carriers (Baxendale) to Greenwich to serve as a pattern for a new shaft. Defendants negligently delayed delivery by several days, keeping the mill idle. Plaintiffs sued for loss of profits caused by the mill remaining closed. Defendants argued they did not know the mill was stopped for want of the shaft.</li>
+            <li><b>Rulings & Two Limbs:</b> The Court of Exchequer formulated the two limbs of remoteness:
+              <ol>
+                <li><b>Limb I (General / Ordinary Damages):</b> Losses that arise naturally in the usual course of things from the breach. These are presumed to be within the contemplation of parties and are ALWAYS recoverable.</li>
+                <li><b>Limb II (Special Damages):</b> Extraordinary losses arising from special circumstances. These are recoverable ONLY IF the special circumstances were expressly communicated to or known by the defendant at the time of contract formation.</li>
+              </ol>
+            </li>
+            <li><b>Outcome:</b> Held, the defendants were NOT liable for the lost mill profits because they were not informed that delay would keep the entire mill idle.</li>
+          </ul>
+
+          <h4>3. Core Principles Governing Measurement of Damages</h4>
+          <ol>
+            <li><b>Restitutio in Integrum:</b> Compensatory principle aimed at putting the injured party in the position they would have occupied had the contract been performed.</li>
+            <li><b>Direct vs Remote Losses:</b> Compensation is awarded for direct and natural losses; remote/indirect losses are excluded.</li>
+            <li><b>Duty to Mitigate Loss:</b> Explanation to Section 73 imposes a duty on the injured party to take all reasonable steps to mitigate/minimize the loss resulting from the breach. Failure to mitigate precludes recovery for avoidable losses.</li>
+            <li><b>Date of Breach Measurement:</b> Market price rule—damages for non-delivery/non-acceptance of goods are usually calculated as the difference between the contract price and the market price on the date fixed for performance.</li>
+          </ol>
+
+          <h4>4. Case Law Authorities</h4>
+          <ul>
+            <li><b>Victoria Laundry (Windsor) Ltd. v. Newman Industries Ltd. (1949):</b> Defendants delayed delivery of a boiler. Held: Plaintiffs could recover ordinary lost laundry profits (Limb 1), but NOT lucrative special government dyeing contracts (Limb 2) which were undisclosed to defendants.</li>
+            <li><b>Murlidhar Chiranjilal v. Harishchandra Dwarkadas (1962 SC):</b> The Supreme Court affirmed that under Section 73, market rate on the date of breach at the place of delivery determines quantum of damages.</li>
+          </ul>
+
+          <div class="writing-tip"><b>Exam Writing Tip:</b> Clearly lay down the two limbs of <i>Hadley v. Baxendale</i> and mention the statutory duty to mitigate loss stated in the Explanation to Section 73.</div>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q2"> Mark as revised</label>
+    </article>
+
+    <!-- Q3 -->
+    <article class="qa" data-priority="HIGH" data-tags="ESSAY" data-search="quasi contracts unjust enrichment sections 68 to 72 necessaries section 68 section 69 section 70 section 71 section 72 bk mondal kanhaiya lal">
+      <div class="qtop">
+        <div><span class="qid">Q03</span><span class="unitlabel">UNIT IV · Quasi-Contracts</span></div>
+        <div class="tags"><span class="tag hot">REPEATED / HIGH PRIORITY</span><span class="tag">10 marks</span></div>
+      </div>
+      <h3>Explain the concept of Quasi-Contracts. Detail the specific circumstances under which quasi-contractual liability arises under Sections 68 to 72 of the Indian Contract Act.</h3>
+      <p class="source">Past papers: June/July 2025; Repeated Syllabus Core</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Concept and Principle of Quasi-Contracts</h4>
+          <p>A <b>Quasi-Contract</b> (or "Certain Relations Resembling Those Created by Contract" under Chapter V of the Act) is not a true contract arising from offer and acceptance. It is a legal obligation imposed by law independently of the parties' agreement, based on the equitable doctrine of <b>Unjust Enrichment</b> formulated by Lord Mansfield: <i>"Nemo debet locupletari ex aliena jactura"</i> (No man ought to grow rich out of another person's loss).</p>
+
+          <h4>2. Statutory Circumstances [Sections 68 to 72]</h4>
+          <ol>
+            <li><b>Claim for Necessaries Supplied [Section 68]:</b>
+              <ul>
+                <li>If a person incapable of contracting (e.g., minor or person of unsound mind) or anyone whom they are legally bound to support is supplied with necessaries suited to their condition in life, the supplier is entitled to reimbursement from the <b>incapable person's property</b>.</li>
+                <li>No personal liability attaches to the incapable person.</li>
+              </ul>
+            </li>
+            <li><b>Reimbursement of Person Paying Money Due by Another [Section 69]:</b>
+              <ul>
+                <li>A person who is interested in the payment of money which another is bound by law to pay, and who therefore pays it, is entitled to be reimbursed by the other.</li>
+                <li><i>Essentials:</i> (a) Payment made was for protection of payer's own interest; (b) Another party was legally bound to pay; (c) Payment was not voluntary.</li>
+              </ul>
+            </li>
+            <li><b>Obligation of Person Enjoying Benefit of Non-Gratuitous Act [Section 70]:</b>
+              <ul>
+                <li>Where a person lawfully does anything for another person, or delivers anything to him, <b>not intending to do so gratuitously</b>, and such other person enjoys the benefit thereof, the enjoying party is bound to make compensation or restore the thing done/delivered.</li>
+                <li><i>Leading Case:</i> <b>State of West Bengal v. B.K. Mondal & Sons (1962 SC):</b> Government constructed buildings and enjoyed their use without formal execution of contract. Held liable under Section 70 to pay for non-gratuitous work.</li>
+              </ul>
+            </li>
+            <li><b>Responsibility of Finder of Goods [Section 71]:</b>
+              <ul>
+                <li>A person who finds goods belonging to another and takes them into his custody is subject to the same responsibility as a <b>bailee</b> (duty to take reasonable care and trace real owner).</li>
+              </ul>
+            </li>
+            <li><b>Liability of Person to Whom Money is Paid or Thing Delivered by Mistake or Coercion [Section 72]:</b>
+              <ul>
+                <li>A person to whom money has been paid, or anything delivered, by mistake or under coercion, must repay or return it.</li>
+                <li><i>Leading Case:</i> <b>Sales Tax Officer v. Kanhaiya Lal Mukund Lal Saraf (1959 SC):</b> Sales tax paid under mistake of law was held recoverable from the Government under Section 72.</li>
+              </ul>
+            </li>
+          </ol>
+
+          <h4>3. Conclusion</h4>
+          <p>Quasi-contracts prevent unfair financial gain where no actual agreement exists, constructing a statutory debt enforceable in law.</p>
+          <div class="writing-tip"><b>Exam Writing Tip:</b> Structure your answer cleanly by dedicating a numbered section to each statutory section (68 through 72) and citing <i>B.K. Mondal</i> for Sec 70 and <i>Kanhaiya Lal</i> for Sec 72.</div>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q3"> Mark as revised</label>
+    </article>
+
+    <!-- Q4 -->
+    <article class="qa" data-priority="HIGH" data-tags="SHORT" data-search="anticipatory breach section 39 repudiation options of promisee frost v knight">
+      <div class="qtop">
+        <div><span class="qid">Q04</span><span class="unitlabel">UNIT IV · Remedies for Breach</span></div>
+        <div class="tags"><span class="tag hot">REPEATED / HIGH PRIORITY</span><span class="tag">6 marks</span></div>
+      </div>
+      <h3>Write a short note on Anticipatory Breach of Contract under Section 39.</h3>
+      <p class="source">Past paper: Jan/Feb 2026 Short Note</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Statutory Definition [Section 39]</h4>
+          <p>Anticipatory breach occurs when a party to a contract refuses to perform, or disables himself from performing, his promise in its entirety <b>before the actual due date of performance</b> arrives.</p>
+          <p>Under Section 39: <i>"When a party to a contract has refused to perform, or disabled himself from performing, his promise in its entirety, the promisee may put an end to the contract, unless he has signified, by words or conduct, his acquiescence in its continuance."</i></p>
+
+          <h4>2. Modes of Anticipatory Breach</h4>
+          <ul>
+            <li><b>Express Renunciation:</b> Refusal communicated by words/writing before due date (e.g., "I will not deliver the goods next month").</li>
+            <li><b>Implied / Disabling Act:</b> Doing an act that renders performance impossible (e.g., Selling a unique horse to C after agreeing to sell it to B next week).</li>
+          </ul>
+
+          <h4>3. Options Available to the Injured Party</h4>
+          <ol>
+            <li><b>Rescind Immediately:</b> Treat the contract as rescinded right away and sue for damages for breach immediately without waiting for the due date (<b>Frost v. Knight</b>).</li>
+            <li><b>Affirm and Keep Contract Alive:</b> Treat the contract as subsisting, wait until the due date, and demand performance. <i>Risk:</i> If an intervening frustrating event occurs before the due date (e.g., war or illegality under Sec 56), the contract terminates naturally and the breaching party escapes liability (<b>Avery v. Bowden</b>).</li>
+          </ol>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q4"> Mark as revised</label>
+    </article>
+
+    <!-- Q5 -->
+    <article class="qa" data-priority="MED" data-tags="SHORT" data-search="quantum meruit as much as earned section 65 section 70 section 75 planche v colburn">
+      <div class="qtop">
+        <div><span class="qid">Q05</span><span class="unitlabel">UNIT IV · Remedies for Breach</span></div>
+        <div class="tags"><span class="tag mid">IMPORTANT</span><span class="tag">6 marks</span></div>
+      </div>
+      <h3>Write a short note on Quantum Meruit ("as much as earned") and when it can be claimed.</h3>
+      <p class="source">Past paper: Mar/Apr 2024 Short Note</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Meaning and Concept</h4>
+          <p><i>Quantum Meruit</i> literally means <b>"as much as he has earned"</b> or "reasonable value of services rendered". It is a claim for remuneration for work done when an exact price was not fixed or when complete performance was prevented by breach.</p>
+
+          <h4>2. When Quantum Meruit Can Be Claimed</h4>
+          <ol>
+            <li><b>Prevention of Performance by Breach:</b> Where one party performs part of an indivisible contract and is wrongfully prevented by the other party from completing it (<b>Planche v. Colburn</b>).</li>
+            <li><b>Contract Discovered Void / Void Contract [Sec 65]:</b> Where work has been done under an agreement which is subsequently discovered to be void.</li>
+            <li><b>Divisible Contract Partially Performed:</b> Where a party defaults after executing a divisible part of a contract, and the other party retains the benefit.</li>
+            <li><b>Non-Gratuitous Benefit Received [Sec 70]:</b> Where services/goods are rendered non-gratuitously and enjoyed by the recipient.</li>
+          </ol>
+
+          <h4>3. Landmark Case</h4>
+          <p><b>Planche v. Colburn (1831):</b> Author engaged to write a book for a series for £100. After he completed research and wrote part of the book, the publisher abandoned the series. Held: Author was entitled to recover reasonable compensation on <i>quantum meruit</i> for work executed.</p>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q5"> Mark as revised</label>
+    </article>
+
+    <!-- Q6 -->
+    <article class="qa" data-priority="HIGH" data-tags="SHORT" data-search="kinds of damages general special nominal liquidated damages penalty section 74 fateh chand kailash nath">
+      <div class="qtop">
+        <div><span class="qid">Q06</span><span class="unitlabel">UNIT IV · Measurement of Damages</span></div>
+        <div class="tags"><span class="tag hot">REPEATED / HIGH PRIORITY</span><span class="tag">6 marks</span></div>
+      </div>
+      <h3>Distinguish between General, Special, Nominal, and Liquidated Damages vs. Penalty under Section 74.</h3>
+      <p class="source">Past papers: May 2025 Re-exam; June/July 2025</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Types of Damages Defined</h4>
+          <ul>
+            <li><b>General Damages:</b> Losses arising naturally in the usual course of things under Limb 1 of <i>Hadley v. Baxendale</i>. Recoverable without special proof of notice.</li>
+            <li><b>Special Damages:</b> Exceptional losses resulting from special circumstances under Limb 2 of <i>Hadley v. Baxendale</i>. Recoverable ONLY IF special notice was given to the defendant at contract formation.</li>
+            <li><b>Nominal Damages:</b> Awarded when the plaintiff proves a legal breach of contract but has suffered no actual financial loss (e.g., ₹100 awarded to vindicate a legal right).</li>
+          </ul>
+
+          <h4>2. Liquidated Damages vs. Penalty [Section 74]</h4>
+          <ul>
+            <li><b>English Law Distinction:</b> Liquidated damages are a genuine pre-estimate of loss (recoverable); Penalty is an in-terrorem sum designed to penalize non-performance (unenforceable).</li>
+            <li><b>Indian Law Rule (Section 74):</b> Indian law <b>abolishes</b> the technical distinction between Liquidated Damages and Penalty. Under Section 74, if a sum is named in the contract as liquidated damages or penalty, the court awards <b>reasonable compensation</b> not exceeding the amount named.</li>
+          </ul>
+
+          <h4>3. Landmark Precedents on Section 74</h4>
+          <ul>
+            <li><b>Fateh Chand v. Balkishan Das (1963 SC):</b> The Supreme Court held that Section 74 cuts across English technicalities; the court awards reasonable compensation subject to the named maximum limit.</li>
+            <li><b>Kailash Nath Associates v. DDA (2015 SC):</b> Reaffirmed that compensation under Section 74 can be awarded only if actual damage or loss is proved, except in cases where proof of loss is impossible or difficult to ascertain.</li>
+          </ul>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q6"> Mark as revised</label>
+    </article>
+
+    <!-- Q7 (Problem 1) -->
+    <article class="qa" data-priority="HIGH" data-tags="PROB" data-search="problem delay delivery machine mill loss of profits special damages hadley v baxendale victoria laundry">
+      <div class="qtop">
+        <div><span class="qid">Q07</span><span class="unitlabel">UNIT IV · Measurement of Damages</span></div>
+        <div class="tags"><span class="tag hot">PROBLEM SCENARIO</span><span class="tag">6 marks</span></div>
+      </div>
+      <h3>Problem: A, a manufacturer, contracts with B, a carrier, to transport a crucial machine part to A's factory immediately. A does not inform B that the factory is completely stopped for want of this part. B delays delivery negligently by 10 days. A loses regular business profits and also loses a lucrative government contract. Can A recover these losses from B?</h3>
+      <p class="source">Past paper style: Hadley v. Baxendale Problem Pattern</p>
+      <details>
+        <summary>Study IRAC Solution</summary>
+        <div class="answer">
+          <h4>1. Issue</h4>
+          <p>Whether A can recover regular business profits and lucrative special contract losses from carrier B for delayed machinery delivery under Section 73.</p>
+
+          <h4>2. Rule of Law</h4>
+          <ul>
+            <li>Under <b>Section 73</b> and <b>Hadley v. Baxendale</b>, damages are recoverable for direct/natural losses (Limb I). Special losses (Limb II) are recoverable ONLY IF the special circumstances were communicated to the defendant at contract formation.</li>
+            <li>Remote and indirect losses are explicitly excluded under Section 73.</li>
+            <li><i>Victoria Laundry Ltd. v. Newman Industries:</i> Ordinary business losses are recoverable if natural; special high-profit contracts require specific advance notice.</li>
+          </ul>
+
+          <h4>3. Application to Facts</h4>
+          <p>A failed to inform B that the entire factory was shut down awaiting the machine part. Therefore, the total factory stoppage and the resulting regular profit losses were special circumstances not communicated to B. Furthermore, the lucrative government contract was a special profit under Limb II requiring express prior notice. Since B had no knowledge of these special circumstances at contract formation, both heads of loss are remote.</p>
+
+          <h4>4. Conclusion</h4>
+          <p>A CANNOT recover either the regular lost business profits or the lost government contract. A is entitled only to nominal damages or interest/market rate difference for late carriage.</p>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q7"> Mark as revised</label>
+    </article>
+
+    <!-- Q8 (Problem 2) -->
+    <article class="qa" data-priority="HIGH" data-tags="PROB" data-search="problem fruit box delivered room mistake consumed section 70 non gratuitous act compensation bk mondal">
+      <div class="qtop">
+        <div><span class="qid">Q08</span><span class="unitlabel">UNIT IV · Quasi-Contracts</span></div>
+        <div class="tags"><span class="tag hot">PROBLEM SCENARIO</span><span class="tag">6 marks</span></div>
+      </div>
+      <h3>Problem: A tradesman leaves a basket of premium fruits at B's house by mistake, intending it for C. B assumes it is a gift and consumes the fruits. Can A recover the value of the fruits from B?</h3>
+      <p class="source">Past paper: Mar/Apr 2024, Unit IV Problem</p>
+      <details>
+        <summary>Study IRAC Solution</summary>
+        <div class="answer">
+          <h4>1. Issue</h4>
+          <p>Whether B is bound to pay compensation to A for consuming goods delivered to B's residence by mistake, under Section 70 of the Indian Contract Act.</p>
+
+          <h4>2. Rule of Law</h4>
+          <ul>
+            <li>Under <b>Section 70</b> (Obligation of person enjoying benefit of non-gratuitous act): Where a person lawfully delivers anything to another, <i>not intending to do so gratuitously</i>, and the recipient enjoys the benefit thereof, the recipient is bound to make compensation for or restore the thing delivered.</li>
+            <li><i>Essentials:</i> (1) Act/delivery was done lawfully; (2) Delivery was non-gratuitous; (3) Recipient enjoyed the benefit.</li>
+          </ul>
+
+          <h4>3. Application to Facts</h4>
+          <p>A is a tradesman who delivered fruit non-gratuitously (in the ordinary course of trade). Although delivered to B by mistake, B did not return the goods but accepted and consumed them, enjoying the benefit. Under Section 70, B cannot retain an unearned benefit from a non-gratuitous delivery.</p>
+
+          <h4>4. Conclusion</h4>
+          <p>Yes, A can successfully recover the reasonable market value of the fruit basket from B under Section 70 as a quasi-contractual obligation.</p>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q8"> Mark as revised</label>
+    </article>
+
+  </div>
+
+  <div id="empty" class="empty">No questions match your search. Try another keyword or filter.</div>
+
+<section class="visual-gallery" id="syllabus-additions">
+<h2>Additional syllabus coverage — do not skip these topics</h2>
+<p>These questions are added to close syllabus gaps identified during the audit. They are <b>not labelled as repeated past-paper questions</b>. Study them alongside the original questions above.</p>
+<article class="qa supplemental" data-priority="MED" data-tags="SUPP" data-search="explain the principles governing mitigation and assessment of damages under sections 73 and 74 syllabus addition">
+<div class="qtop"><div><span class="qid">S4-01</span><span class="unitlabel">UNIT 4 · Syllabus-completion addition</span></div><div class="tags"><span class="tag mid">SYLLABUS ADDITION</span><span class="tag">10 marks</span></div></div>
+<h3>Explain the principles governing mitigation and assessment of damages under Sections 73 and 74</h3><details><summary>Study model answer</summary><div class="answer"><p><b>Section 73:</b> Compensation is available for loss or damage which naturally arose in the usual course of things from the breach, or which the parties knew, when making the contract, to be likely to result from the breach. Remote and indirect loss is not recoverable.</p><p><b>Remoteness:</b> The rule in <i>Hadley v Baxendale</i> distinguishes ordinary loss arising naturally from special loss arising from special circumstances communicated to the other party at contract formation.</p><p><b>Mitigation:</b> The injured party is expected to take reasonable steps to reduce avoidable loss. The party cannot recover loss that could reasonably have been avoided, but is not required to take unreasonable or extraordinary measures.</p><p><b>Section 74:</b> Where a sum is named or a penalty is stipulated, the court awards reasonable compensation not exceeding the amount stipulated. The named sum is not automatically payable in full in every case.</p><p><b>Conclusion:</b> Prove breach, causation, remoteness and the amount of reasonable loss; address mitigation and Section 74 where applicable.</p></div></details></article><article class="qa supplemental" data-priority="MED" data-tags="SUPP" data-search="explain the measure of compensation for breach where a sum is named in the contract under section 74 syllabus addition">
+<div class="qtop"><div><span class="qid">S4-02</span><span class="unitlabel">UNIT 4 · Syllabus-completion addition</span></div><div class="tags"><span class="tag mid">SYLLABUS ADDITION</span><span class="tag">6 marks</span></div></div>
+<h3>Explain the measure of compensation for breach where a sum is named in the contract under Section 74</h3><details><summary>Study model answer</summary><div class="answer"><p>Section 74 applies where a contract names a sum to be paid in case of breach or contains another stipulation by way of penalty. The party complaining of breach is entitled to reasonable compensation, whether or not actual loss is proved, but the compensation cannot exceed the amount named or the penalty stipulated.</p><p>The court determines what is reasonable in the circumstances. The named amount is a ceiling, not an automatic award. Where loss can be proved, evidence of loss is relevant; where proof is difficult, the court may consider the circumstances and legitimate interest protected by the clause.</p><p><b>Case:</b> <i>Fateh Chand v Balkishan Das</i> is a leading Supreme Court authority on reasonable compensation under Section 74.</p><p><b>Conclusion:</b> State the ceiling and emphasise that only reasonable compensation is recoverable.</p></div></details></article>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    Contract Law I · Unit 4 Exam Master Study Guide · KSLU LL.B. Semester I
+  </div>
+</footer>
+
+<script>
+  // Search & Filter Logic
+  const searchInput = document.getElementById('search');
+  const cards = Array.from(document.querySelectorAll('.qa'));
+  const filters = Array.from(document.querySelectorAll('.filter'));
+  const emptyState = document.getElementById('empty');
+  let currentFilter = 'all';
+
+  function filterCards() {
+    const term = searchInput.value.trim().toLowerCase();
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const searchData = (card.dataset.search || '') + ' ' + card.innerText.toLowerCase();
+      const matchesSearch = !term || searchData.includes(term);
+      
+      let matchesFilter = true;
+      if (currentFilter === 'HIGH') matchesFilter = card.dataset.priority === 'HIGH';
+      if (currentFilter === 'PROB') matchesFilter = card.dataset.tags === 'PROB';
+
+      const show = matchesSearch && matchesFilter;
+      card.style.display = show ? 'block' : 'none';
+      if (show) visibleCount++;
+    });
+
+    emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+  }
+
+  searchInput.addEventListener('input', filterCards);
+
+  filters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filters.forEach(f => f.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      filterCards();
+    });
+  });
+
+  // Expand / Collapse details
+  document.getElementById('expand').onclick = () => cards.forEach(c => { if(c.style.display !== 'none') c.querySelector('details').open = true; });
+  document.getElementById('collapse').onclick = () => cards.forEach(c => c.querySelector('details').open = false);
+
+  // LocalStorage Progress Tracker
+  const checkboxes = Array.from(document.querySelectorAll('.revised'));
+  const storageKey = 'kslu_contract_unit4_progress';
+
+  function updateProgress() {
+    const checkedCount = checkboxes.filter(c => c.checked).length;
+    document.getElementById('bar').style.width = (checkedCount / checkboxes.length * 100) + '%';
+    document.getElementById('progressText').textContent = `${checkedCount} of ${checkboxes.length} questions marked revised`;
+  }
+
+  try {
+    const savedState = JSON.parse(localStorage.getItem(storageKey) || '{}');
+    checkboxes.forEach(cb => {
+      cb.checked = !!savedState[cb.dataset.id];
+      cb.addEventListener('change', () => {
+        const state = {};
+        checkboxes.forEach(x => state[x.dataset.id] = x.checked);
+        localStorage.setItem(storageKey, JSON.stringify(state));
+        updateProgress();
+      });
+    });
+  } catch(e) {
+    checkboxes.forEach(cb => cb.addEventListener('change', updateProgress));
+  }
+
+  updateProgress();
+</script>
+
+</body>
+</html>
+```
+
+### Summary of What's Generated:
+* File Name: `contract1_unit4.html`
+* Core Topics Covered: Remedies for Breach (Rescission, Damages, Quantum Meruit, Specific Performance, Injunctions), Remoteness Rules under Section 73 & *Hadley v. Baxendale*, Liquidated Damages vs Penalty under Section 74 (*Kailash Nath Associates*), Anticipatory Breach (Section 39), and Quasi-Contracts (Sections 68–72: *B.K. Mondal*, *Kanhaiya Lal*).
+* IRAC Problem Scenarios: Delivery delay causing loss of profits (*Hadley v. Baxendale*) and mistaken fruit delivery consumed (*Section 70*).
