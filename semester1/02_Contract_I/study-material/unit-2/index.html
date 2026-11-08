@@ -1,0 +1,846 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contract I – Unit 2 Master Study Guide | KSLU LL.B. Sem 1</title>
+  <style>
+    :root {
+      --navy: #142d68;
+      --blue: #2459a9;
+      --bg: #f3f6fb;
+      --card: #ffffff;
+      --text: #1d2737;
+      --muted: #667085;
+      --line: #dce3ef;
+      --gold: #f4c95d;
+      --green: #24784b;
+      --alert-bg: #ebf8ff;
+      --alert-border: #3182ce;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .hero {
+      background: linear-gradient(125deg, #10265b, #1f4f97);
+      color: #fff;
+      padding: 32px 20px 25px;
+    }
+    .wrap { max-width: 1080px; margin: auto; }
+    .eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #cbd9f5;
+      font-weight: 800;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.15;
+      margin: 8px 0;
+    }
+    .hero p {
+      max-width: 800px;
+      color: #e1e9f8;
+      margin: 10px 0 18px;
+    }
+    .stats { display: flex; flex-wrap: wrap; gap: 10px; }
+    .stat {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+    }
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      padding: 12px 16px;
+    }
+    .tools {
+      max-width: 1080px;
+      margin: auto;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .tools input[type="search"] {
+      flex: 1;
+      min-width: 220px;
+      padding: 11px 13px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font: inherit;
+    }
+    .btn, .filter {
+      border: 1px solid #cbd5e1;
+      background: #fff;
+      color: #20365e;
+      border-radius: 99px;
+      padding: 9px 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn:hover, .filter:hover { background: #edf3ff; }
+    .filter.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+    
+    main { max-width: 1080px; margin: 24px auto; padding: 0 16px 50px; }
+    
+    .notice {
+      background: #fff8df;
+      border: 1px solid #f0d98b;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+    }
+    .progress {
+      background: #e6ebf4;
+      border-radius: 99px;
+      height: 8px;
+      overflow: hidden;
+      margin: 10px 0 0;
+    }
+    .progress div { height: 100%; width: 0%; background: #278455; transition: width 0.2s; }
+    .small { font-size: 0.88rem; color: var(--muted); margin-top: 4px; }
+
+    /* Visual Concept Maps */
+    .visual-gallery {
+      margin: 24px 0 30px;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+    }
+    .visual-gallery h2 { margin-top: 0; color: var(--navy); font-size: 1.3rem; }
+    .flowchart-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+      margin-top: 15px;
+    }
+    .flowchart-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .flowchart-card h4 { margin: 0 0 10px 0; color: var(--blue); font-size: 1rem; }
+    .diagram-step {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--blue);
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      font-size: 0.88rem;
+    }
+
+    /* Q&A Cards */
+    .qa {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      margin: 16px 0;
+      padding: 20px;
+      box-shadow: 0 3px 12px rgba(24, 53, 101, 0.05);
+      scroll-margin-top: 90px;
+    }
+    .qtop { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+    .qid {
+      background: #e7eefc;
+      color: #16376f;
+      border-radius: 7px;
+      font-size: 0.8rem;
+      font-weight: 900;
+      padding: 3px 7px;
+      margin-right: 8px;
+    }
+    .unitlabel { color: var(--muted); font-size: 0.82rem; font-weight: 700; }
+    .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .tag {
+      font-size: 0.72rem;
+      line-height: 1.5;
+      padding: 3px 7px;
+      border-radius: 6px;
+      background: #eef2f7;
+      color: #475467;
+      font-weight: 800;
+    }
+    .tag.hot { background: #fff0cf; color: #875300; }
+    .tag.mid { background: #e5f4eb; color: #20623e; }
+    
+    .qa h3 { font-size: 1.15rem; line-height: 1.4; margin: 10px 0 6px; color: var(--navy); }
+    .source { color: var(--muted); font-size: 0.86rem; margin: 0 0 10px; }
+    
+    .qa details { border-top: 1px solid #edf0f5; margin-top: 12px; padding-top: 12px; }
+    .qa summary { cursor: pointer; color: #17478e; font-weight: 800; padding: 4px 0; }
+    
+    .answer { padding: 10px 0 4px; }
+    .answer h4 { margin: 12px 0 4px; color: #2d3748; font-size: 0.98rem; }
+    .answer table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 0.92rem; }
+    .answer th, .answer td { border: 1px solid var(--line); padding: 10px; text-align: left; }
+    .answer th { background: #eef3fb; color: var(--navy); }
+    
+    .formula-box {
+      background-color: var(--alert-bg);
+      border-left: 4px solid var(--alert-border);
+      padding: 10px 14px;
+      margin: 12px 0;
+      font-weight: bold;
+      border-radius: 0 8px 8px 0;
+    }
+    .writing-tip {
+      background: #f1f6ff;
+      border-left: 3px solid var(--blue);
+      padding: 10px 12px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 15px;
+      font-size: 0.92rem;
+    }
+    
+    .done { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 0.88rem; margin-top: 14px; cursor: pointer; }
+    .done input { width: 16px; height: 16px; }
+    
+    .empty { display: none; text-align: center; padding: 35px; background: #fff; border-radius: 12px; color: var(--muted); }
+    footer { background: #10265b; color: #e1e9f8; padding: 25px; text-align: center; font-size: 0.9rem; margin-top: 40px; }
+
+    @media print {
+      .toolbar, .notice, .done, .btn, .filter { display: none !important; }
+      body { background: #fff; font-size: 11pt; }
+      .hero { background: #fff; color: #000; padding: 0; }
+      .eyebrow, .hero p { color: #333; }
+      .qa { break-inside: avoid; box-shadow: none; border: 1px solid #bbb; margin: 10px 0; }
+      .qa details { display: block; }
+      .qa summary { display: none; }
+      .qa details .answer { display: block !important; }
+      footer { background: #fff; color: #000; }
+    }
+  </style>
+</head>
+<body><div style="max-width:1080px;margin:12px auto;padding:0 16px"><a href="../../gallery/index.html" style="display:inline-block;background:#edf3ff;color:#17478e;padding:9px 13px;border-radius:9px;text-decoration:none;font-weight:700">← Visual Learning &amp; Revision Gallery</a></div>
+<nav class="site-nav" style="background:#fff;border-bottom:1px solid #dce3ef;padding:10px 16px;font:600 14px system-ui;position:sticky;top:0;z-index:150">
+<div style="max-width:1080px;margin:auto;display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+<a href="../index.html" style="color:#17478e;text-decoration:none">← All Contract–I Units</a>
+<a href="../unit-1/index.html" style="color:#17478e;text-decoration:none">Unit 1</a> <a href="../unit-2/index.html" style="color:#17478e;text-decoration:none">Unit 2</a> <a href="../unit-3/index.html" style="color:#17478e;text-decoration:none">Unit 3</a> <a href="../unit-4/index.html" style="color:#17478e;text-decoration:none">Unit 4</a> <a href="../unit-5/index.html" style="color:#17478e;text-decoration:none">Unit 5</a>
+</div></nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">KSLU · LL.B. Semester I · Contract Law I</div>
+    <h1>Unit 2 Exam Study Master</h1>
+    <p>Comprehensive revision guide covering Consideration, Capacity to Contract, and Vitiating Factors of Free Consent under the Indian Contract Act, 1872.</p>
+    <div class="stats">
+      <span class="stat">Unit 2 Core Topics</span>
+      <span class="stat">9 Model Exam Questions</span>
+      <span class="stat">10-Mark & 6-Mark Formats</span>
+      <span class="stat">Interactive Progress Tracker</span>
+    </div>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="tools">
+    <input id="search" type="search" placeholder="Search section (e.g. Sec 11, Sec 25), case (e.g. Mohori Bibee), or topic...">
+    <button class="filter active" data-filter="all">All Questions</button>
+    <button class="filter" data-filter="HIGH">High Priority</button>
+    <button class="filter" data-filter="PROB">Problem Scenarios</button>
+    <button class="btn" id="expand">Expand All</button>
+    <button class="btn" id="collapse">Collapse All</button>
+    <button class="btn" onclick="window.print()">Print Notes</button>
+  </div>
+</div>
+
+<main>
+  <div class="notice">
+    <b>Exam Study Strategy:</b> For Unit 2, clearly master statutory sections: <b>Sec 2(d) & 25</b> (Consideration), <b>Sec 11 & 12</b> (Capacity & Minor), <b>Sec 13-22</b> (Consent). Always highlight statutory exceptions and landmark decisions like <i>Mohori Bibee</i> and <i>Chinnaya v. Ramayya</i>.
+    <div class="progress"><div id="bar"></div></div>
+    <div class="small" id="progressText">0 of 9 questions marked revised</div>
+  </div>
+
+  <!-- Visual Concept Maps -->
+  <section class="visual-gallery">
+    <h2>Unit 2 Visual Concept Maps & Flowcharts</h2>
+    <div class="flowchart-grid">
+      <div class="flowchart-card">
+        <h4>1. Privity of Consideration vs. Privity of Contract</h4>
+        <div class="diagram-step"><b>Consideration (Sec 2d):</b> Can move from promisee OR third party (<i>Chinnaya v. Ramayya</i>).</div>
+        <div class="diagram-step"><b>Contract (Privity):</b> Only a party to the contract can sue (<i>Dunlop v. Selfridge / M.C. Chacko</i>).</div>
+      </div>
+      <div class="flowchart-card">
+        <h4>2. Consequences of Minor's Agreement (Sec 11)</h4>
+        <div class="diagram-step"><b>General Rule:</b> Void <i>ab initio</i> (<i>Mohori Bibee v. Dharmodas Ghose</i>).</div>
+        <div class="diagram-step"><b>No Ratification:</b> Cannot ratify upon reaching majority.</div>
+        <div class="diagram-step"><b>Necessaries (Sec 68):</b> Estate liable for necessaries (no personal liability).</div>
+      </div>
+      <div class="flowchart-card">
+        <h4>3. Vitiating Factors of Free Consent (Sec 14)</h4>
+        <div class="diagram-step"><b>Coercion (Sec 15) & Undue Influence (Sec 16):</b> Voidable (Sec 19/19A).</div>
+        <div class="diagram-step"><b>Fraud (Sec 17) & Misrepresentation (Sec 18):</b> Voidable (Sec 19).</div>
+        <div class="diagram-step"><b>Bilateral Mistake of Fact (Sec 20):</b> Void <i>ab initio</i>.</div>
+      </div>
+    </div>
+  </section>
+
+  <div id="questionArea">
+
+    <!-- Q1 -->
+    <article class="qa" data-priority="HIGH" data-tags="ESSAY" data-search="an agreement without consideration is void nudum pactum section 25 exceptions natural love affection past voluntary service time barred debt kedarnath">
+      <div class="qtop">
+        <div><span class="qid">Q01</span><span class="unitlabel">UNIT II · Consideration</span></div>
+        <div class="tags"><span class="tag hot">REPEATED / HIGH PRIORITY</span><span class="tag">10 marks</span></div>
+      </div>
+      <h3>"An agreement without consideration is void." Discuss the doctrine of Consideration (Nudum Pactum) and explain its statutory exceptions under Section 25.</h3>
+      <p class="source">Past papers: Mar/Apr 2024; May 2025 Re-exam; Jan/Feb 2026</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Introduction</h4>
+          <p>Consideration is the foundational basis of every commercial contract, encapsulated in the Latin maxim <i>Ex nudo pacto non oritur actio</i> (No right of action arises from a bare promise/nudum pactum). Under the Indian Contract Act, 1872, a promise without consideration is unenforceable unless it falls under recognized exceptions.</p>
+
+          <h4>2. Statutory Definition [Section 2(d)]</h4>
+          <p><i>"When, at the desire of the promisor, the promisee or any other person has done or abstained from doing, or does or abstains from doing, or promises to do or to abstain from doing something, such act or abstinence or promise is called a consideration for the promise."</i></p>
+
+          <div class="formula-box">
+            General Rule [Section 25]: Agreement Without Consideration = VOID
+          </div>
+
+          <h4>3. Essential Rules of Valid Consideration</h4>
+          <ol>
+            <li><b>Must Move at the Desire of the Promisor:</b> Acts done voluntarily or at a third party's request do not constitute consideration (<i>Durga Prasad v. Baldeo</i>).</li>
+            <li><b>May Move from Promisee or Any Other Person:</b> Unlike English law, a stranger to consideration can enforce a contract in India (<i>Chinnaya v. Ramayya</i>).</li>
+            <li><b>May be Past, Present, or Executory:</b> Indian law expressly recognizes past consideration.</li>
+            <li><b>Need Not be Adequate:</b> Inadequacy of price does not void consent, but may be considered by courts to evaluate free consent.</li>
+            <li><b>Must be Real and Lawful:</b> Cannot be illusory, physically impossible, or illegal.</li>
+          </ol>
+
+          <h4>4. Statutory Exceptions under Section 25</h4>
+          <p>Section 25 lays down specific cases where agreements without consideration are legally valid and binding contracts:</p>
+          <ol>
+            <li><b>Natural Love and Affection [Sec 25(1)]:</b>
+              <ul>
+                <li>Must be expressed in <b>writing</b> and <b>registered</b> under law.</li>
+                <li>Made on account of <b>natural love and affection</b> between parties standing in <b>near relation</b> to each other (e.g., parent and child, spouses).</li>
+                <li><i>Rajlukhy Dabee v. Bhootnath Mookerjee:</i> Quarrels between spouses negative natural love and affection.</li>
+              </ul>
+            </li>
+            <li><b>Compensation for Past Voluntary Service [Sec 25(2)]:</b>
+              <ul>
+                <li>A promise to compensate, wholly or in part, a person who has already voluntarily done something for the promisor, or something the promisor was legally compellable to do.</li>
+              </ul>
+            </li>
+            <li><b>Promise to Pay Time-Barred Debt [Sec 25(3)]:</b>
+              <ul>
+                <li>A promise made in <b>writing</b> and <b>signed</b> by the debtor (or authorized agent) to pay a debt barred by the Law of Limitation.</li>
+              </ul>
+            </li>
+            <li><b>Completed Gifts [Explanation 1 to Sec 25]:</b> The rule does not affect gifts actually made and accepted.</li>
+            <li><b>Agency [Section 185]:</b> No consideration is necessary to create a contract of agency.</li>
+            <li><b>Remission [Section 63]:</b> A promisee may remit or dispense with performance without fresh consideration.</li>
+          </ol>
+
+          <h4>5. Landmark Case Laws</h4>
+          <ul>
+            <li><b>Kedarnath Bhattacharji v. Gorie Mohamed (1886):</b> A subscription promised for a public purpose becomes enforceable if the promisee incurs financial liability on the faith of the promise.</li>
+            <li><b>Abdul Aziz v. Masum Ali (1914):</b> A bare promise to donate to a charitable fund without any liability incurred by the promisee is unenforceable.</li>
+          </ul>
+
+          <h4>6. Conclusion</h4>
+          <p>While consideration remains the general rule for valid contracts, Section 25 provides necessary legal exceptions to uphold formal, voluntary, moral, and agency obligations.</p>
+          <div class="writing-tip"><b>Exam Writing Tip:</b> Always list all three sub-clauses of Section 25 with their explicit statutory requirements (writing, registration, near relationship, etc.) to get full marks.</div>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q1"> Mark as revised</label>
+    </article>
+
+    <!-- Q2 -->
+    <article class="qa" data-priority="HIGH" data-tags="ESSAY" data-search="privity of contract stranger to contract exceptions chinnaya v ramayya mc chacko dunlop selfridge">
+      <div class="qtop">
+        <div><span class="qid">Q02</span><span class="unitlabel">UNIT II · Consideration</span></div>
+        <div class="tags"><span class="tag hot">REPEATED / HIGH PRIORITY</span><span class="tag">10 marks</span></div>
+      </div>
+      <h3>Explain the doctrine of "Privity of Contract". How does Privity of Contract differ from Privity of Consideration under Indian Law? State the exceptions.</h3>
+      <p class="source">Past papers: Mar/Apr 2024; June/July 2025</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Concept of Privity of Contract</h4>
+          <p>The doctrine of <b>Privity of Contract</b> establishes that a contract is a private relationship between the contracting parties (*jus in personam*). Consequently, a third party (stranger to a contract) can neither sue to enforce contractual terms nor be bound by contractual obligations, even if the contract was made for their benefit.</p>
+
+          <h4>2. Privity of Contract vs. Privity of Consideration</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Privity of Consideration</th>
+                <th>Privity of Contract</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Core Rule</b></td>
+                <td>Refers to <i>who can pay</i> or supply consideration for a promise.</td>
+                <td>Refers to <i>who can sue</i> or enforce rights under the contract.</td>
+              </tr>
+              <tr>
+                <td><b>English Law Position</b></td>
+                <td>Consideration MUST move from the promisee only (No stranger to consideration).</td>
+                <td>Stranger to contract cannot sue.</td>
+              </tr>
+              <tr>
+                <td><b>Indian Law Position</b></td>
+                <td>Under <b>Section 2(d)</b>, consideration may move from promisee <i>or any other person</i>.</td>
+                <td>Indian courts strictly follow the doctrine that a stranger to contract CANNOT sue (<b>M.C. Chacko</b>).</td>
+              </tr>
+              <tr>
+                <td><b>Leading Authority</b></td>
+                <td><b>Chinnaya v. Ramayya (1882)</b></td>
+                <td><b>Dunlop Pneumatic Tyre Co. v. Selfridge (1915)</b></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4>3. Landmark Indian Case: Chinnaya v. Ramayya (1882)</h4>
+          <p>An old lady gifted property to her daughter (defendant) on the condition that the daughter pay an annuity to the lady's sister (plaintiff). On the same day, the daughter executed a written agreement in favor of the sister promising to pay the annuity. Later, the daughter refused to pay, arguing no consideration moved from her aunt. Held: Under Section 2(d), consideration moved from the mother (third party) was valid. The sister was entitled to enforce the contract.</p>
+
+          <h4>4. Recognized Exceptions to Privity of Contract</h4>
+          <p>Indian courts recognize specific exceptions where a beneficiary who is not a contracting party may institute a suit:</p>
+          <ol>
+            <li><b>Beneficiary under Trust or Charge:</b> Where a contract creates a trust or specific charge on property in favor of a third party, the beneficiary can enforce it (<i>Rana Uma Nath Baksh Singh v. Jang Bahadur</i>).</li>
+            <li><b>Marriage or Family Settlements:</b> Where provision is made for marriage, maintenance, or partition in a family arrangement, the affected family member may sue despite not being a party (<i>Rose Fernandez v. Joseph Gonsalves</i>).</li>
+            <li><b>Acknowledgment or Estoppel:</b> Where a promisor acknowledges to a third party that he holds money or obligations for them, an estoppel arises enabling the third party to sue.</li>
+            <li><b>Covenants Running with Land:</b> Purchaser of land is bound by covenants running with the land executed by prior owners.</li>
+            <li><b>Agency:</b> A principal can enforce contracts entered into by an authorized agent.</li>
+          </ol>
+
+          <h4>5. Supreme Court Ruling: M.C. Chacko v. State Bank of Travancore (1969)</h4>
+          <p>The Supreme Court affirmed that a person not a party to a contract cannot enforce its terms unless the case falls strictly within recognized equitable exceptions like trust or family settlements.</p>
+
+          <div class="writing-tip"><b>Exam Writing Tip:</b> Clearly state: <i>"Indian Law accepts a Stranger to Consideration, but DOES NOT accept a Stranger to Contract."</i></div>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q2"> Mark as revised</label>
+    </article>
+
+    <!-- Q3 -->
+    <article class="qa" data-priority="HIGH" data-tags="ESSAY" data-search="minor agreement legal position mohori bibee v dharmodas ghose section 11 section 68 necessaries doctrine of restitution">
+      <div class="qtop">
+        <div><span class="qid">Q03</span><span class="unitlabel">UNIT II · Capacity to Contract</span></div>
+        <div class="tags"><span class="tag hot">REPEATED / HIGH PRIORITY</span><span class="tag">10 marks</span></div>
+      </div>
+      <h3>"A Minor's Agreement is Void Ab Initio." Critically evaluate this rule with reference to Mohori Bibee v. Dharmodas Ghose and statutory protections.</h3>
+      <p class="source">Past papers: Mar/Apr 2024; May 2025 Re-exam; Jan/Feb 2026</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Statutory Framework on Capacity [Section 11]</h4>
+          <p>Under <b>Section 11</b> of the Indian Contract Act, 1872: <i>"Every person is competent to contract who is of the age of majority according to the law to which he is subject, and who is of sound mind, and is not disqualified from contracting by any law to which he is subject."</i></p>
+          <p>Under the Indian Majority Act, 1875, a minor is a person who has not attained 18 years of age.</p>
+
+          <h4>2. Landmark Case: Mohori Bibee v. Dharmodas Ghose (1903 30 IA 114)</h4>
+          <ul>
+            <li><b>Facts:</b> Dharmodas Ghose, a minor, mortgaged his property to secure a loan of ₹20,000 from Brahmo Dutt (a money lender). The money lender's attorney had full knowledge of Ghose's minority. The minor received part payment and later brought a suit for cancellation of the mortgage.</li>
+            <li><b>Privy Council Ruling:</b> The Judicial Committee held that Section 11 is mandatory. An agreement entered into by a minor is <b>absolutely void ab initio</b> (void from the very beginning), and not merely voidable.</li>
+          </ul>
+
+          <h4>3. Core Legal Rules Governing Minor's Agreements</h4>
+          <ol>
+            <li><b>Void Ab Initio:</b> A minor's contract carries no legal effect from inception.</li>
+            <li><b>No Ratification Upon Majority:</b> An agreement made during minority cannot be ratified after attaining majority because a void agreement cannot be validated retrospectively (<i>Arumugan v. Duraisinga</i>).</li>
+            <li><b>No Rule of Estoppel against Minor:</b> A minor who fraudulently misrepresents his age is not estopped from pleading minority as a defense. Law protects minors from contractual liability.</li>
+            <li><b>No Specific Performance:</b> Since a minor's agreement is void, courts will not decree specific performance against a minor.</li>
+            <li><b>Minor as a Beneficiary / Transferee:</b> While a minor cannot be bound, law does not prevent a minor from accepting benefits (e.g., mortgage in favor of a minor, or payee of a promissory note).</li>
+            <li><b>Minor in Partnership:</b> Under Section 30 of the Indian Partnership Act, 1932, a minor cannot be a partner, but may be admitted to the <i>benefits of partnership</i>.</li>
+          </ol>
+
+          <h4>4. Exceptions & Statutory Reliefs</h4>
+          <ul>
+            <li><b>Claim for Necessaries [Section 68]:</b> If a minor is supplied with necessaries suited to their condition in life, the supplier is entitled to reimbursement from the <b>minor's property</b>. The minor is NOT personally liable.</li>
+            <li><b>Doctrine of Equitable Restitution [Sec 33, Specific Relief Act, 1963]:</b> Where a minor seeks cancellation of an instrument, the court may compel the minor to restore any benefit/property obtained under the void transaction to the extent the benefit is traceable in their hands.</li>
+          </ul>
+
+          <div class="writing-tip"><b>Exam Writing Tip:</b> Distinguish clearly between *personal liability* (minor is never liable) and *property liability* under Sec 68 (estate is liable).</div>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q3"> Mark as revised</label>
+    </article>
+
+    <!-- Q4 -->
+    <article class="qa" data-priority="HIGH" data-tags="ESSAY" data-search="free consent coercion section 15 undue influence section 16 fraud section 17 misrepresentation section 18 section 19">
+      <div class="qtop">
+        <div><span class="qid">Q04</span><span class="unitlabel">UNIT II · Free Consent</span></div>
+        <div class="tags"><span class="tag hot">REPEATED / HIGH PRIORITY</span><span class="tag">10 marks</span></div>
+      </div>
+      <h3>Define "Free Consent" under Section 14. Explain the factors that vitiate free consent and state their legal consequences.</h3>
+      <p class="source">Past papers: Mar/Apr 2024; Jan/Feb 2026</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Definition of Consent and Free Consent</h4>
+          <ul>
+            <li><b>Consent [Section 13]:</b> Two or more persons are said to consent when they agree upon the same thing in the same sense (*Consensus ad idem*).</li>
+            <li><b>Free Consent [Section 14]:</b> Consent is free when it is NOT caused by:
+              <ol>
+                <li>Coercion (Section 15)</li>
+                <li>Undue Influence (Section 16)</li>
+                <li>Fraud (Section 17)</li>
+                <li>Misrepresentation (Section 18)</li>
+                <li>Mistake (Sections 20, 21, and 22)</li>
+              </ol>
+            </li>
+          </ul>
+
+          <h4>2. Vitiating Factors Detailed</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Factor</th>
+                <th>Statutory Definition & Core Test</th>
+                <th>Legal Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Coercion (Sec 15)</b></td>
+                <td>Committing/threatening to commit any act forbidden by IPC, or unlawful detaining of property to compel consent.</td>
+                <td>Voidable at the option of aggrieved party (Sec 19).</td>
+              </tr>
+              <tr>
+                <td><b>Undue Influence (Sec 16)</b></td>
+                <td>One party is in a position to dominate the will of another and uses that position to obtain an unfair advantage.</td>
+                <td>Voidable; Court may set aside absolutely or on terms (Sec 19A).</td>
+              </tr>
+              <tr>
+                <td><b>Fraud (Sec 17)</b></td>
+                <td>Intentional deception: making false statements knowingly, active concealment, or empty promises to deceive.</td>
+                <td>Voidable (Sec 19) + Claim for Damages in Torts.</td>
+              </tr>
+              <tr>
+                <td><b>Misrepresentation (Sec 18)</b></td>
+                <td>Innocent false statement believed to be true, without intent to deceive.</td>
+                <td>Voidable at option of party misled (Sec 19).</td>
+              </tr>
+              <tr>
+                <td><b>Mistake (Sec 20)</b></td>
+                <td>Bilateral mistake of essential fact by both parties.</td>
+                <td><b>VOID</b> ab initio (Sec 20).</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4>3. Landmark Decisions</h4>
+          <ul>
+            <li><b>Chikham Amiraju v. Chikham Seshamma (1917):</b> Threat to commit suicide constitutes coercion under Sec 15 as it is an act forbidden by the IPC.</li>
+            <li><b>Central Inland Water Transport Corp v. Brojo Nath Ganguly (1986):</b> Unconscionable terms in standard contracts signed under inequality of bargaining power are voidable for undue influence.</li>
+          </ul>
+
+          <div class="writing-tip"><b>Exam Writing Tip:</b> Note that while Coercion, Undue Influence, Fraud, and Misrepresentation make contracts *Voidable*, Bilateral Mistake makes it *Void*.</div>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q4"> Mark as revised</label>
+    </article>
+
+    <!-- Q5 -->
+    <article class="qa" data-priority="HIGH" data-tags="ESSAY" data-search="fraud vs misrepresentation section 17 section 18 silence as fraud dermott v dreyfus">
+      <div class="qtop">
+        <div><span class="qid">Q05</span><span class="unitlabel">UNIT II · Free Consent</span></div>
+        <div class="tags"><span class="tag hot">REPEATED / HIGH PRIORITY</span><span class="tag">10 marks</span></div>
+      </div>
+      <h3>Define Fraud (Section 17) and Misrepresentation (Section 18). Distinguish between them and explain when silence amounts to fraud.</h3>
+      <p class="source">Past papers: Mar/Apr 2024; June/July 2025</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Fraud [Section 17]</h4>
+          <p>Fraud means and includes any act committed by a party (or with his connivance/agent) with <b>intent to deceive</b> another party or to induce him to enter into the contract. It includes:</p>
+          <ol>
+            <li>The suggestion as a fact of that which is not true, by one who does not believe it to be true.</li>
+            <li>The active concealment of a fact by one having knowledge or belief of the fact.</li>
+            <li>A promise made without any intention of performing it.</li>
+            <li>Any other act fitted to deceive.</li>
+          </ol>
+
+          <h4>2. Misrepresentation [Section 18]</h4>
+          <p>Misrepresentation means an innocent false representation made without intent to deceive. It includes positive assertions made carelessly or without reasonable grounds, breach of duty gaining an advantage without intent to deceive, or causing a party to make a mistake as to the substance of the matter.</p>
+
+          <h4>3. Key Distinctions Table</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Basis</th>
+                <th>Fraud (Section 17)</th>
+                <th>Misrepresentation (Section 18)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Intention</b></td>
+                <td>Deliberate intention to deceive the other party.</td>
+                <td>No intention to deceive; made innocently.</td>
+              </tr>
+              <tr>
+                <td><b>Belief in Truth</b></td>
+                <td>The person making the statement does NOT believe it to be true.</td>
+                <td>The person making the statement believes it to be true.</td>
+              </tr>
+              <tr>
+                <td><b>Remedies Available</b></td>
+                <td>Rescission of contract + Action for tortious damages.</td>
+                <td>Rescission of contract only; no tortious damages.</td>
+              </tr>
+              <tr>
+                <td><b>Defense of Discovery</b></td>
+                <td>Cannot plead that plaintiff had means of discovering truth (except in fraudulent silence).</td>
+                <td>Contract is NOT voidable if plaintiff had means of discovering truth with ordinary diligence.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4>4. Does Silence Amount to Fraud? (Explanation to Sec 17)</h4>
+          <p><b>General Rule:</b> Mere silence as to facts likely to affect the willingness of a person to enter into a contract is NOT fraud (*Caveat Emptor* - Buyer beware).</p>
+          <p><b>Exceptions where Silence IS Fraud:</b></p>
+          <ol>
+            <li><b>Duty to Speak (Contracts *Uberrimae Fidei*):</b> Where the person keeping silence is under a legal/fiduciary duty to disclose facts (e.g., Insurance contracts, family settlements, allotment of company shares).</li>
+            <li><b>Where Silence is Equivalent to Speech:</b> Where silence itself conveys a positive assertion (e.g., A says to B "If you do not deny it, I shall assume the horse is sound." B says nothing).</li>
+            <li><b>Change of Circumstances:</b> If a true representation becomes false before contract execution, keeping silent about the change constitutes fraud.</li>
+          </ol>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q5"> Mark as revised</label>
+    </article>
+
+    <!-- Q6 -->
+    <article class="qa" data-priority="MED" data-tags="SHORT" data-search="soundness of mind capacity section 12 lucid interval intoxication">
+      <div class="qtop">
+        <div><span class="qid">Q06</span><span class="unitlabel">UNIT II · Capacity to Contract</span></div>
+        <div class="tags"><span class="tag mid">IMPORTANT</span><span class="tag">6 marks</span></div>
+      </div>
+      <h3>Explain "Soundness of Mind" for the purpose of contracting under Section 12.</h3>
+      <p class="source">Past papers: Mar/Apr 2024</p>
+      <details>
+        <summary>Study Model Answer</summary>
+        <div class="answer">
+          <h4>1. Statutory Test [Section 12]</h4>
+          <p>A person is said to be of sound mind for the purpose of making a contract if, at the time when he makes it, he is capable of:</p>
+          <ol>
+            <li><b>Understanding</b> the nature of the contract, and</li>
+            <li>Forming a <b>rational judgment</b> as to its effect upon his interests.</li>
+          </ol>
+
+          <h4>2. Rules Governing Temporary / Permanent Unsoundness</h4>
+          <ul>
+            <li><b>Usually of Unsound Mind:</b> A person who is usually of unsound mind, but occasionally of sound mind, MAY make a contract when he is in a <b>lucid interval</b> (period of sanity).</li>
+            <li><b>Usually of Sound Mind:</b> A person who is usually of sound mind, but occasionally of unsound mind (e.g., severe drunkenness, delirium from fever), MAY NOT make a contract while such unsoundness lasts.</li>
+          </ul>
+
+          <h4>3. Legal Effect</h4>
+          <p>An agreement entered into by a person of unsound mind is <b>void ab initio</b>. However, under <b>Section 68</b>, the estate of a person of unsound mind is liable for necessaries supplied to him or his dependants.</p>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q6"> Mark as revised</label>
+    </article>
+
+    <!-- Q7 (Problem 1) -->
+    <article class="qa" data-priority="HIGH" data-tags="PROB" data-search="problem minor misrepresents age credit purchase luxury goods seller restitution mohori bibee section 33 sra">
+      <div class="qtop">
+        <div><span class="qid">Q07</span><span class="unitlabel">UNIT II · Capacity to Contract</span></div>
+        <div class="tags"><span class="tag hot">PROBLEM SCENARIO</span><span class="tag">6 marks</span></div>
+      </div>
+      <h3>Problem: A minor fraudulently misrepresents his age to be 21 years and purchases a luxury laptop on credit from a shopkeeper. The minor fails to pay. Can the shopkeeper recover the price or laptop?</h3>
+      <p class="source">Past papers: Mar/Apr 2024, Unit II Problem</p>
+      <details>
+        <summary>Study IRAC Solution</summary>
+        <div class="answer">
+          <h4>1. Issue</h4>
+          <p>Whether a minor who fraudulently misrepresents his age is contractually liable to pay for luxury goods or can be compelled to return the item.</p>
+
+          <h4>2. Rule of Law</h4>
+          <ul>
+            <li>A minor's contract is <b>void ab initio</b> (<b>Mohori Bibee v. Dharmodas Ghose</b>).</li>
+            <li>There is <b>no estoppel against a minor</b> regarding age misrepresentation.</li>
+            <li>Luxury items do not fall under "necessaries" under <b>Section 68</b>.</li>
+            <li>Under <b>Section 33 of the Specific Relief Act, 1963</b>, the court may compel restitution of traceable benefit/property, but cannot issue a personal money decree enforcing a void contract.</li>
+          </ul>
+
+          <h4>3. Application to Facts</h4>
+          <p>The purchase of a luxury laptop on credit is a void agreement. The seller cannot recover the contract price from the minor personally. Furthermore, Section 68 is inapplicable as a luxury laptop is not a necessary suited to basic survival. However, if the laptop remains untransferred in the minor's possession, the court may apply the doctrine of equitable restitution under Section 33 SRA to compel the minor to restore the specific laptop to the shopkeeper.</p>
+
+          <h4>4. Conclusion</h4>
+          <p>The shopkeeper CANNOT recover the price. He can only recover the specific laptop if it is traceable in the minor's possession.</p>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q7"> Mark as revised</label>
+    </article>
+
+    <!-- Q8 (Problem 2) -->
+    <article class="qa" data-priority="HIGH" data-tags="PROB" data-search="problem teacher student sale property low price undue influence section 16 unconscionable burden of proof">
+      <div class="qtop">
+        <div><span class="qid">Q08</span><span class="unitlabel">UNIT II · Free Consent</span></div>
+        <div class="tags"><span class="tag hot">PROBLEM SCENARIO</span><span class="tag">6 marks</span></div>
+      </div>
+      <h3>Problem: A spiritual guru induces his disciple B to sell his ancestral house worth ₹50 Lakhs to the guru for ₹5 Lakhs. B later seeks to set aside the sale deed. Decide.</h3>
+      <p class="source">Past paper style: Jan/Feb 2026 Problem Variant</p>
+      <details>
+        <summary>Study IRAC Solution</summary>
+        <div class="answer">
+          <h4>1. Issue</h4>
+          <p>Whether the sale deed can be set aside on the ground of Undue Influence under Section 16 of the Indian Contract Act.</p>
+
+          <h4>2. Rule of Law</h4>
+          <ul>
+            <li>Under <b>Section 16(1)</b>, a contract is induced by undue influence where one party is in a position to dominate the will of another and uses that position to obtain an unfair advantage.</li>
+            <li>A person is deemed to dominate the will of another where he holds a <b>real or apparent authority</b> or stands in a <b>fiduciary relation</b> (e.g., spiritual adviser and disciple, doctor and patient).</li>
+            <li>Under <b>Section 16(3)</b>, where a party standing in a position to dominate enters into an <i>unconscionable transaction</i>, the <b>burden of proof shifts</b> to the stronger party to prove free consent.</li>
+          </ul>
+
+          <h4>3. Application to Facts</h4>
+          <p>The relationship between a spiritual guru and disciple is a fiduciary relationship of trust and dominance. Selling property worth ₹50 Lakhs for a nominal sum of ₹5 Lakhs is patently unconscionable. Therefore, the law presumes undue influence, placing the burden on the guru to prove that B acted independently with full advice.</p>
+
+          <h4>4. Conclusion</h4>
+          <p>The sale deed is voidable at B's option under Section 19A. B can successfully set aside the sale deed.</p>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q8"> Mark as revised</label>
+    </article>
+
+    <!-- Q9 (Problem 3) -->
+    <article class="qa" data-priority="MED" data-tags="PROB" data-search="problem supply food minor dependants section 68 necessaries reimbursement estate property">
+      <div class="qtop">
+        <div><span class="qid">Q09</span><span class="unitlabel">UNIT II · Capacity to Contract</span></div>
+        <div class="tags"><span class="tag mid">IMPORTANT PROBLEM</span><span class="tag">6 marks</span></div>
+      </div>
+      <h3>Problem: X supplies essential food, clothes, and tuition fees to the minor children of Y (who is a person of unsound mind). Can X recover the money spent?</h3>
+      <p class="source">Past papers: Jan/Feb 2026 Necessaries Problem</p>
+      <details>
+        <summary>Study IRAC Solution</summary>
+        <div class="answer">
+          <h4>1. Issue</h4>
+          <p>Whether a supplier can claim reimbursement for supplying necessaries to dependants of a person incapable of contracting.</p>
+
+          <h4>2. Rule of Law</h4>
+          <ul>
+            <li>Under <b>Section 68</b>, if a person incapable of entering into a contract, or *anyone whom he is legally bound to support*, is supplied by another with necessaries suited to his condition in life, the supplier is entitled to reimbursement from the property of such incapable person.</li>
+          </ul>
+
+          <h4>3. Application to Facts</h4>
+          <p>Y is of unsound mind and legally incapable of contracting. However, Y is legally bound to support his minor children. X provided food, clothing, and education, which qualify as genuine "necessaries" suited to their condition in life. Under Section 68, X is entitled to be reimbursed out of Y's estate/property.</p>
+
+          <h4>4. Conclusion</h4>
+          <p>Yes, X can recover the amount spent, but ONLY from the property/estate of Y. Y cannot be made personally liable.</p>
+        </div>
+      </details>
+      <label class="done"><input type="checkbox" class="revised" data-id="q9"> Mark as revised</label>
+    </article>
+
+  </div>
+
+  <div id="empty" class="empty">No questions match your search. Try another keyword or filter.</div>
+
+<section class="visual-gallery" id="syllabus-additions">
+<h2>Additional syllabus coverage — do not skip these topics</h2>
+<p>These questions are added to close syllabus gaps identified during the audit. They are <b>not labelled as repeated past-paper questions</b>. Study them alongside the original questions above.</p>
+<article class="qa supplemental" data-priority="MED" data-tags="SUPP" data-search="explain coercion under section 15 and its effect on a contract syllabus addition">
+<div class="qtop"><div><span class="qid">S2-01</span><span class="unitlabel">UNIT 2 · Syllabus-completion addition</span></div><div class="tags"><span class="tag mid">SYLLABUS ADDITION</span><span class="tag">6 marks</span></div></div>
+<h3>Explain coercion under Section 15 and its effect on a contract</h3><details><summary>Study model answer</summary><div class="answer"><p>Under <b>Section 15</b> of the Indian Contract Act, coercion includes committing or threatening to commit an act forbidden by the Indian Penal Code, or unlawfully detaining or threatening to detain property, to the prejudice of any person, with the intention of causing any person to enter into an agreement.</p><p><b>Essentials:</b> (1) an act or threat within the statutory definition; (2) intention to cause entry into an agreement; and (3) a causal connection between coercion and consent. The coercion need not necessarily be directed against the contracting party.</p><p><b>Effect:</b> Under Section 19, a contract whose consent is caused by coercion is voidable at the option of the party whose consent was so caused. Benefits received may have to be restored under the applicable restitution provisions.</p><p><b>Conclusion:</b> Identify the prohibited act or unlawful detention, show that it caused consent, and state the voidable consequence.</p></div></details></article><article class="qa supplemental" data-priority="MED" data-tags="SUPP" data-search="explain mistake under sections 20, 21 and 22 syllabus addition">
+<div class="qtop"><div><span class="qid">S2-02</span><span class="unitlabel">UNIT 2 · Syllabus-completion addition</span></div><div class="tags"><span class="tag mid">SYLLABUS ADDITION</span><span class="tag">10 marks</span></div></div>
+<h3>Explain mistake under Sections 20, 21 and 22</h3><details><summary>Study model answer</summary><div class="answer"><p><b>Section 20 — bilateral mistake of essential fact:</b> Where both parties are under a mistake as to a matter of fact essential to the agreement, the agreement is void. A wrong opinion as to value is not treated as a mistake of fact for this purpose.</p><p><b>Section 21 — mistake of law:</b> A contract is not voidable merely because it was caused by a mistake as to a law in force in India. A mistake as to a law not in force in India has the same effect as a mistake of fact.</p><p><b>Section 22 — unilateral mistake:</b> A contract is not voidable merely because one party was under a mistake as to a matter of fact. Special issues such as identity or nature of the document may require separate analysis under case law.</p><p><b>Exam approach:</b> State whether the mistake is mutual or unilateral, whether it concerns an essential fact, and whether it concerns Indian law or foreign law.</p><p><b>Conclusion:</b> Bilateral mistake of essential fact makes the agreement void; unilateral mistake and mistake of Indian law ordinarily do not.</p></div></details></article><article class="qa supplemental" data-priority="MED" data-tags="SUPP" data-search="explain unlawful consideration and unlawful object under section 23 syllabus addition">
+<div class="qtop"><div><span class="qid">S2-03</span><span class="unitlabel">UNIT 2 · Syllabus-completion addition</span></div><div class="tags"><span class="tag mid">SYLLABUS ADDITION</span><span class="tag">6 marks</span></div></div>
+<h3>Explain unlawful consideration and unlawful object under Section 23</h3><details><summary>Study model answer</summary><div class="answer"><p>Under <b>Section 23</b>, the consideration or object of an agreement is unlawful if it is forbidden by law; would defeat the provisions of any law; is fraudulent; involves or implies injury to the person or property of another; or is regarded by the court as immoral or opposed to public policy.</p><p>Every agreement whose consideration or object is unlawful is void. The court examines the substance and purpose of the transaction, not merely the label used by the parties.</p><p><b>Examples:</b> An agreement to commit an offence, to defraud creditors, or to defeat a statutory prohibition is unlawful.</p><p><b>Conclusion:</b> For an exam problem, identify the exact limb of Section 23 and explain why the object or consideration falls within it.</p></div></details></article>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    Contract Law I · Unit 2 Exam Master Study Guide · KSLU LL.B. Semester I
+  </div>
+</footer>
+
+<script>
+  // Search & Filter Logic
+  const searchInput = document.getElementById('search');
+  const cards = Array.from(document.querySelectorAll('.qa'));
+  const filters = Array.from(document.querySelectorAll('.filter'));
+  const emptyState = document.getElementById('empty');
+  let currentFilter = 'all';
+
+  function filterCards() {
+    const term = searchInput.value.trim().toLowerCase();
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const searchData = (card.dataset.search || '') + ' ' + card.innerText.toLowerCase();
+      const matchesSearch = !term || searchData.includes(term);
+      
+      let matchesFilter = true;
+      if (currentFilter === 'HIGH') matchesFilter = card.dataset.priority === 'HIGH';
+      if (currentFilter === 'PROB') matchesFilter = card.dataset.tags === 'PROB';
+
+      const show = matchesSearch && matchesFilter;
+      card.style.display = show ? 'block' : 'none';
+      if (show) visibleCount++;
+    });
+
+    emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+  }
+
+  searchInput.addEventListener('input', filterCards);
+
+  filters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filters.forEach(f => f.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      filterCards();
+    });
+  });
+
+  // Expand / Collapse details
+  document.getElementById('expand').onclick = () => cards.forEach(c => { if(c.style.display !== 'none') c.querySelector('details').open = true; });
+  document.getElementById('collapse').onclick = () => cards.forEach(c => c.querySelector('details').open = false);
+
+  // LocalStorage Progress Tracker
+  const checkboxes = Array.from(document.querySelectorAll('.revised'));
+  const storageKey = 'kslu_contract_unit2_progress';
+
+  function updateProgress() {
+    const checkedCount = checkboxes.filter(c => c.checked).length;
+    document.getElementById('bar').style.width = (checkedCount / checkboxes.length * 100) + '%';
+    document.getElementById('progressText').textContent = `${checkedCount} of ${checkboxes.length} questions marked revised`;
+  }
+
+  try {
+    const savedState = JSON.parse(localStorage.getItem(storageKey) || '{}');
+    checkboxes.forEach(cb => {
+      cb.checked = !!savedState[cb.dataset.id];
+      cb.addEventListener('change', () => {
+        const state = {};
+        checkboxes.forEach(x => state[x.dataset.id] = x.checked);
+        localStorage.setItem(storageKey, JSON.stringify(state));
+        updateProgress();
+      });
+    });
+  } catch(e) {
+    checkboxes.forEach(cb => cb.addEventListener('change', updateProgress));
+  }
+
+  updateProgress();
+</script>
+
+</body>
+</html>
+```
+
+### Summary of What's Inside `contract1_unit2.html`:
+1. <b>Interactive Visual Flowcharts:</b> Privity of Consideration vs. Privity of Contract, Minor's Agreement legal consequences (*Mohori Bibee*), and Vitiating Consent factors.
+2. <b>Comprehensive Exam Answers:</b> Fully written model answers covering 10-mark essay topics (Section 25 exceptions, Privity exceptions, Minor's position, Free Consent factors, Fraud vs. Misrepresentation) and short notes (Soundness of mind under Sec 12).
+3. <b>IRAC Scenario Solutions:</b> Practice IRAC answers for problem scenarios involving minor age misrepresentation, unconscionable spiritual guru transactions (Undue Influence), and supplying necessaries under Section 68.
